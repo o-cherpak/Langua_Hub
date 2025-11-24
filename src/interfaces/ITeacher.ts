@@ -1,4 +1,4 @@
-interface ITeacher {
+export interface ITeacher {
   email: string;
   id: number;
   name: string;
