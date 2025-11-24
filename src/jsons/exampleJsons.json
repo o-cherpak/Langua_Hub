@@ -1,0 +1,759 @@
+{
+  "students": [
+    {
+      "email": "piotr.nowak@email.com",
+      "id": 0,
+      "languages": [
+        {
+          "subject": "English",
+          "level": "A1"
+        },
+        {
+          "subject": "German",
+          "level": "A2"
+        }
+      ],
+      "name": "Piotr",
+      "phone": "+48 555 111 222",
+      "surname": "Nowak"
+    },
+    {
+      "email": "karolina.wisniewska@email.com",
+      "id": 1,
+      "languages": [
+        {
+          "subject": "Spanish",
+          "level": "B1"
+        },
+        {
+          "subject": "English",
+          "level": "A2"
+        }
+      ],
+      "name": "Karolina",
+      "phone": "+48 555 222 333",
+      "surname": "Wiśniewska"
+    },
+    {
+      "email": "tomasz.lewandowski@email.com",
+      "id": 2,
+      "languages": [
+        {
+          "subject": "French",
+          "level": "C1"
+        },
+        {
+          "subject": "English",
+          "level": "B2"
+        }
+      ],
+      "name": "Tomasz",
+      "phone": "+48 555 333 444",
+      "surname": "Lewandowski"
+    },
+    {
+      "email": "magdalena.kowalczyk@email.com",
+      "id": 3,
+      "languages": [
+        {
+          "subject": "English",
+          "level": "B1"
+        },
+        {
+          "subject": "Spanish",
+          "level": "A1"
+        }
+      ],
+      "name": "Magdalena",
+      "phone": "+48 555 444 555",
+      "surname": "Kowalczyk"
+    },
+    {
+      "email": "jakub.zielinski@email.com",
+      "id": 4,
+      "languages": [
+        {
+          "subject": "German",
+          "level": "A1"
+        },
+        {
+          "subject": "English",
+          "level": "B1"
+        }
+      ],
+      "name": "Jakub",
+      "phone": "+48 555 555 666",
+      "surname": "Zieliński"
+    },
+    {
+      "email": "natalia.szymanska@email.com",
+      "id": 5,
+      "languages": [
+        {
+          "subject": "Spanish",
+          "level": "B2"
+        },
+        {
+          "subject": "French",
+          "level": "A1"
+        }
+      ],
+      "name": "Natalia",
+      "phone": "+48 555 666 777",
+      "surname": "Szymańska"
+    },
+    {
+      "email": "michal.wozniak@email.com",
+      "id": 6,
+      "languages": [
+        {
+          "subject": "French",
+          "level": "B1"
+        },
+        {
+          "subject": "German",
+          "level": "A2"
+        }
+      ],
+      "name": "Michał",
+      "phone": "+48 555 777 888",
+      "surname": "Woźniak"
+    },
+    {
+      "email": "aleksandra.dabrowska@email.com",
+      "id": 7,
+      "languages": [
+        {
+          "subject": "German",
+          "level": "B1"
+        },
+        {
+          "subject": "English",
+          "level": "C1"
+        }
+      ],
+      "name": "Aleksandra",
+      "phone": "+48 555 888 999",
+      "surname": "Dąbrowska"
+    },
+    {
+      "email": "pawel.kozlowski@email.com",
+      "id": 8,
+      "languages": [
+        {
+          "subject": "English",
+          "level": "A2"
+        },
+        {
+          "subject": "Spanish",
+          "level": "A1"
+        }
+      ],
+      "name": "Paweł",
+      "phone": "+48 555 999 000",
+      "surname": "Kozłowski"
+    },
+    {
+      "email": "weronika.jankowska@email.com",
+      "id": 9,
+      "languages": [
+        {
+          "subject": "Spanish",
+          "level": "B1"
+        },
+        {
+          "subject": "French",
+          "level": "A2"
+        }
+      ],
+      "name": "Weronika",
+      "phone": "+48 555 000 111",
+      "surname": "Jankowska"
+    },
+    {
+      "email": "mateusz.mazur@email.com",
+      "id": 10,
+      "languages": [
+        {
+          "subject": "French",
+          "level": "B2"
+        },
+        {
+          "subject": "English",
+          "level": "B1"
+        }
+      ],
+      "name": "Mateusz",
+      "phone": "+48 555 112 223",
+      "surname": "Mazur"
+    },
+    {
+      "email": "zofia.krawczyk@email.com",
+      "id": 11,
+      "languages": [
+        {
+          "subject": "German",
+          "level": "A2"
+        },
+        {
+          "subject": "English",
+          "level": "A2"
+        }
+      ],
+      "name": "Zofia",
+      "phone": "+48 555 223 334",
+      "surname": "Krawczyk"
+    },
+    {
+      "email": "bartosz.piotrowski@email.com",
+      "id": 12,
+      "languages": [
+        {
+          "subject": "English",
+          "level": "C1"
+        },
+        {
+          "subject": "German",
+          "level": "B1"
+        }
+      ],
+      "name": "Bartosz",
+      "phone": "+48 555 334 445",
+      "surname": "Piotrowski"
+    },
+    {
+      "email": "julia.grabowska@email.com",
+      "id": 13,
+      "languages": [
+        {
+          "subject": "Spanish",
+          "level": "A2"
+        },
+        {
+          "subject": "French",
+          "level": "A1"
+        }
+      ],
+      "name": "Julia",
+      "phone": "+48 555 445 556",
+      "surname": "Grabowska"
+    },
+    {
+      "email": "kamil.pawlak@email.com",
+      "id": 14,
+      "languages": [
+        {
+          "subject": "French",
+          "level": "B1"
+        },
+        {
+          "subject": "Spanish",
+          "level": "A2"
+        }
+      ],
+      "name": "Kamil",
+      "phone": "+48 555 556 667",
+      "surname": "Pawlak"
+    },
+    {
+      "email": "oliwia.michalska@email.com",
+      "id": 15,
+      "languages": [
+        {
+          "subject": "German",
+          "level": "B2"
+        },
+        {
+          "subject": "English",
+          "level": "B2"
+        }
+      ],
+      "name": "Oliwia",
+      "phone": "+48 555 667 778",
+      "surname": "Michalska"
+    },
+    {
+      "email": "szymon.zajac@email.com",
+      "id": 16,
+      "languages": [
+        {
+          "subject": "English",
+          "level": "A1"
+        },
+        {
+          "subject": "French",
+          "level": "A1"
+        }
+      ],
+      "name": "Szymon",
+      "phone": "+48 555 778 889",
+      "surname": "Zając"
+    },
+    {
+      "email": "martyna.krol@email.com",
+      "id": 17,
+      "languages": [
+        {
+          "subject": "Spanish",
+          "level": "C1"
+        },
+        {
+          "subject": "English",
+          "level": "B2"
+        }
+      ],
+      "name": "Martyna",
+      "phone": "+48 555 889 990",
+      "surname": "Król"
+    },
+    {
+      "email": "filip.wojcik@email.com",
+      "id": 18,
+      "languages": [
+        {
+          "subject": "French",
+          "level": "A2"
+        },
+        {
+          "subject": "German",
+          "level": "A1"
+        }
+      ],
+      "name": "Filip",
+      "phone": "+48 555 990 001",
+      "surname": "Wójcik"
+    },
+    {
+      "email": "amelia.kaminska@email.com",
+      "id": 19,
+      "languages": [
+        {
+          "subject": "German",
+          "level": "B1"
+        },
+        {
+          "subject": "French",
+          "level": "A2"
+        }
+      ],
+      "name": "Amelia",
+      "phone": "+48 555 001 112",
+      "surname": "Kamińska"
+    },
+    {
+      "email": "kacper.adamczyk@email.com",
+      "id": 20,
+      "languages": [
+        {
+          "subject": "English",
+          "level": "B2"
+        },
+        {
+          "subject": "Spanish",
+          "level": "A1"
+        }
+      ],
+      "name": "Kacper",
+      "phone": "+48 555 112 224",
+      "surname": "Adamczyk"
+    },
+    {
+      "email": "lena.dudek@email.com",
+      "id": 21,
+      "languages": [
+        {
+          "subject": "Spanish",
+          "level": "A1"
+        },
+        {
+          "subject": "English",
+          "level": "A2"
+        }
+      ],
+      "name": "Lena",
+      "phone": "+48 555 224 335",
+      "surname": "Dudek"
+    },
+    {
+      "email": "igor.nowicki@email.com",
+      "id": 22,
+      "languages": [
+        {
+          "subject": "French",
+          "level": "C1"
+        },
+        {
+          "subject": "English",
+          "level": "C1"
+        }
+      ],
+      "name": "Igor",
+      "phone": "+48 555 335 446",
+      "surname": "Nowicki"
+    },
+    {
+      "email": "nikola.witkowska@email.com",
+      "id": 23,
+      "languages": [
+        {
+          "subject": "German",
+          "level": "A1"
+        },
+        {
+          "subject": "English",
+          "level": "B1"
+        }
+      ],
+      "name": "Nikola",
+      "phone": "+48 555 446 557",
+      "surname": "Witkowska"
+    },
+    {
+      "email": "adrian.walczak@email.com",
+      "id": 24,
+      "languages": [
+        {
+          "subject": "English",
+          "level": "A2"
+        },
+        {
+          "subject": "German",
+          "level": "A1"
+        }
+      ],
+      "name": "Adrian",
+      "phone": "+48 555 557 668",
+      "surname": "Walczak"
+    },
+    {
+      "email": "maja.rutkowska@email.com",
+      "id": 25,
+      "languages": [
+        {
+          "subject": "Spanish",
+          "level": "B1"
+        },
+        {
+          "subject": "French",
+          "level": "A2"
+        }
+      ],
+      "name": "Maja",
+      "phone": "+48 555 668 779",
+      "surname": "Rutkowska"
+    },
+    {
+      "email": "oskar.sikora@email.com",
+      "id": 26,
+      "languages": [
+        {
+          "subject": "French",
+          "level": "B1"
+        },
+        {
+          "subject": "Spanish",
+          "level": "A1"
+        }
+      ],
+      "name": "Oskar",
+      "phone": "+48 555 779 880",
+      "surname": "Sikora"
+    },
+    {
+      "email": "emilia.baran@email.com",
+      "id": 27,
+      "languages": [
+        {
+          "subject": "German",
+          "level": "A2"
+        },
+        {
+          "subject": "English",
+          "level": "A2"
+        }
+      ],
+      "name": "Emilia",
+      "phone": "+48 555 880 991",
+      "surname": "Baran"
+    },
+    {
+      "email": "dawid.jaworski@email.com",
+      "id": 28,
+      "languages": [
+        {
+          "subject": "English",
+          "level": "B1"
+        },
+        {
+          "subject": "French",
+          "level": "A1"
+        }
+      ],
+      "name": "Dawid",
+      "phone": "+48 555 991 002",
+      "surname": "Jaworski"
+    },
+    {
+      "email": "hanna.malinowska@email.com",
+      "id": 29,
+      "languages": [
+        {
+          "subject": "Spanish",
+          "level": "A2"
+        },
+        {
+          "subject": "English",
+          "level": "B1"
+        }
+      ],
+      "name": "Hanna",
+      "phone": "+48 555 002 113",
+      "surname": "Malinowska"
+    }
+  ],
+  "teachers": [
+    {
+      "email": "anna.kowalska@languageschool.com",
+      "id": 0,
+      "name": "Anna",
+      "phone": "+48 123 456 789",
+      "specialization": "English",
+      "surname": "Kowalska"
+    },
+    {
+      "email": "john.smith@languageschool.com",
+      "id": 1,
+      "name": "John",
+      "phone": "+48 234 567 890",
+      "specialization": "Spanish",
+      "surname": "Smith"
+    },
+    {
+      "email": "marie.dubois@languageschool.com",
+      "id": 2,
+      "name": "Marie",
+      "phone": "+48 345 678 901",
+      "specialization": "French",
+      "surname": "Dubois"
+    },
+    {
+      "email": "hans.mueller@languageschool.com",
+      "id": 3,
+      "name": "Hans",
+      "phone": "+48 456 789 012",
+      "specialization": "German",
+      "surname": "Mueller"
+    }
+  ],
+  "courses": [
+    {
+      "id": 0,
+      "name": "English Beginner Course",
+      "subject": "English",
+      "level": "A1",
+      "teacherId": 0,
+      "studentIds": [
+        0,
+        3,
+        8,
+        12,
+        16,
+        20,
+        24,
+        28
+      ],
+      "classroom": "Room 101",
+      "startTime": "2024-01-15T09:00:00",
+      "endTime": "2024-06-15T10:30:00"
+    },
+    {
+      "id": 1,
+      "name": "Spanish Intermediate Course",
+      "subject": "Spanish",
+      "level": "B1",
+      "teacherId": 1,
+      "studentIds": [
+        1,
+        5,
+        9,
+        13,
+        17,
+        21,
+        25,
+        29
+      ],
+      "classroom": "Room 102",
+      "startTime": "2024-01-15T11:00:00",
+      "endTime": "2024-06-15T12:30:00"
+    },
+    {
+      "id": 2,
+      "name": "French Advanced Course",
+      "subject": "French",
+      "level": "C1",
+      "teacherId": 2,
+      "studentIds": [
+        2,
+        6,
+        10,
+        14,
+        18,
+        22,
+        26
+      ],
+      "classroom": "Room 103",
+      "startTime": "2024-01-15T14:00:00",
+      "endTime": "2024-06-15T15:30:00"
+    },
+    {
+      "id": 3,
+      "name": "German Beginner Course",
+      "subject": "German",
+      "level": "A1",
+      "teacherId": 3,
+      "studentIds": [
+        4,
+        7,
+        11,
+        15,
+        19,
+        23,
+        27
+      ],
+      "classroom": "Room 104",
+      "startTime": "2024-01-15T16:00:00",
+      "endTime": "2024-06-15T17:30:00"
+    },
+    {
+      "id": 4,
+      "name": "English Intermediate Course",
+      "subject": "English",
+      "level": "B2",
+      "teacherId": 0,
+      "studentIds": [
+        0,
+        8,
+        16,
+        20,
+        24
+      ],
+      "classroom": "Room 201",
+      "startTime": "2024-01-16T10:00:00",
+      "endTime": "2024-06-16T11:30:00"
+    },
+    {
+      "id": 5,
+      "name": "Spanish Beginner Course",
+      "subject": "Spanish",
+      "level": "A1",
+      "teacherId": 1,
+      "studentIds": [
+        1,
+        9,
+        17,
+        21,
+        29
+      ],
+      "classroom": "Room 202",
+      "startTime": "2024-01-16T13:00:00",
+      "endTime": "2024-06-16T14:30:00"
+    },
+    {
+      "id": 6,
+      "name": "French Intermediate Course",
+      "subject": "French",
+      "level": "B1",
+      "teacherId": 2,
+      "studentIds": [
+        2,
+        10,
+        14,
+        18,
+        22
+      ],
+      "classroom": "Room 203",
+      "startTime": "2024-01-17T09:00:00",
+      "endTime": "2024-06-17T10:30:00"
+    },
+    {
+      "id": 7,
+      "name": "German Intermediate Course",
+      "subject": "German",
+      "level": "B2",
+      "teacherId": 3,
+      "studentIds": [
+        4,
+        11,
+        15,
+        19,
+        23
+      ],
+      "classroom": "Room 204",
+      "startTime": "2024-01-17T11:00:00",
+      "endTime": "2024-06-17T12:30:00"
+    },
+    {
+      "id": 8,
+      "name": "English Conversation Course",
+      "subject": "English",
+      "level": "B1",
+      "teacherId": 0,
+      "studentIds": [
+        3,
+        12,
+        20,
+        28
+      ],
+      "classroom": "Room 301",
+      "startTime": "2024-01-18T14:00:00",
+      "endTime": "2024-06-18T15:00:00"
+    },
+    {
+      "id": 9,
+      "name": "Spanish Business Course",
+      "subject": "Spanish",
+      "level": "B2",
+      "teacherId": 1,
+      "studentIds": [
+        5,
+        13,
+        25,
+        29
+      ],
+      "classroom": "Room 302",
+      "startTime": "2024-01-18T16:00:00",
+      "endTime": "2024-06-18T17:00:00"
+    },
+    {
+      "id": 10,
+      "name": "French Conversation Course",
+      "subject": "French",
+      "level": "A2",
+      "teacherId": 2,
+      "studentIds": [
+        6,
+        14,
+        18,
+        26
+      ],
+      "classroom": "Room 303",
+      "startTime": "2024-01-19T10:00:00",
+      "endTime": "2024-06-19T11:00:00"
+    },
+    {
+      "id": 11,
+      "name": "German Advanced Course",
+      "subject": "German",
+      "level": "C1",
+      "teacherId": 3,
+      "studentIds": [
+        7,
+        15,
+        19
+      ],
+      "classroom": "Room 304",
+      "startTime": "2024-01-19T12:00:00",
+      "endTime": "2024-06-19T13:30:00"
+    }
+  ]
+}
