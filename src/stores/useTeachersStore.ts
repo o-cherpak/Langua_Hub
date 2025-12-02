@@ -8,9 +8,10 @@ interface TeachersState {
   loading: boolean;
   fetchTeachers: () => Promise<void>;
   setTeachers: (t: ITeacher[]) => void;
+  getNameById: (id: number) => string | null;
 }
 
-export const useTeachersStore = create<TeachersState>((set) => ({
+export const useTeachersStore = create<TeachersState>((set, getState) => ({
   teachers: [],
   loading: false,
 
@@ -28,6 +29,17 @@ export const useTeachersStore = create<TeachersState>((set) => ({
       console.error("Error fetching teachers:", err);
       set({loading: false});
     }
+  },
+
+  getNameById: (id: number) => {
+    const teacher = getState().teachers.find(t => t.id === id);
+
+    if (!teacher) {
+      return null;
+    }
+
+    return `${teacher.name} ${teacher.surname}`;
   }
+
 
 }))
