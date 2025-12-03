@@ -1,11 +1,12 @@
 import {Button, Container} from "@mui/material";
-import {Header} from "../../components/header/Header.tsx";
+import {Header} from "../../components/Header.tsx";
 import {TodayActivity} from "./TodayActivity.tsx";
 import {useEffect, useMemo} from "react";
 import {useCoursesStore} from "../../stores/useCoursesStore.ts";
 import {useTeachersStore} from "../../stores/useTeachersStore.ts";
 import {isSameDay} from "date-fns";
 import Box from "@mui/material/Box";
+import {Footer} from "../../components/Footer.tsx";
 
 export function WelcomePage() {
   const id = 0;
@@ -50,6 +51,8 @@ export function WelcomePage() {
         </Box>
 
       </Container>
+
+      <Footer/>
     </>
   );
 }
