@@ -1,10 +1,11 @@
-import {Container} from "@mui/material";
+import {Button, Container} from "@mui/material";
 import {Header} from "../../components/header/Header.tsx";
 import {TodayActivity} from "./TodayActivity.tsx";
 import {useEffect, useMemo} from "react";
 import {useCoursesStore} from "../../stores/useCoursesStore.ts";
 import {useTeachersStore} from "../../stores/useTeachersStore.ts";
 import {isSameDay} from "date-fns";
+import Box from "@mui/material/Box";
 
 export function WelcomePage() {
   const id = 0;
@@ -35,7 +36,17 @@ export function WelcomePage() {
         maxWidth={"xl"}
 
       >
-        <TodayActivity courses={filtered}/>
+        <Box >
+          <TodayActivity courses={filtered}/>
+
+          <Button
+            variant="contained"
+            component="a"
+            href=""
+          >
+            Zobacz rozkład
+          </Button>
+        </Box>
 
       </Container>
     </>
