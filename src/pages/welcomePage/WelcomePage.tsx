@@ -34,6 +34,7 @@ export function WelcomePage() {
 
       <Container
         maxWidth={"xl"}
+        sx={{height: "100vh"}}
 
       >
         <Box >
