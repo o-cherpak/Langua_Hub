@@ -45,6 +45,13 @@ export function WelcomePage() {
             variant="contained"
             component="a"
             href=""
+            sx={{
+              paddingY: 1,
+              paddingX: 2,
+              fontSize: 16,
+              fontWeight: 600,
+              borderRadius: 2,
+            }}
           >
             Zobacz rozkład
           </Button>
