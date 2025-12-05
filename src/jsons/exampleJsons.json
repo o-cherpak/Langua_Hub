@@ -755,5 +755,43 @@
       "startTime": "2024-01-19T12:00:00",
       "endTime": "2024-06-19T13:30:00"
     }
+  ],
+  "announcements": [
+    {
+      "id": 0,
+      "teacherId": 0,
+      "message": "English A1 class is canceled tomorrow. Makeup class will be scheduled next week.",
+      "date": "2024-01-10T08:00:00"
+    },
+    {
+      "id": 1,
+      "teacherId": 1,
+      "message": "Spanish B1 mid-term exams will be held on February 15th. Please prepare accordingly.",
+      "date": "2024-01-12T10:30:00"
+    },
+    {
+      "id": 2,
+      "teacherId": 2,
+      "message": "French conversation club meeting this Friday at 5 PM in Room 303. All levels welcome!",
+      "date": "2024-01-15T14:00:00"
+    },
+    {
+      "id": 3,
+      "teacherId": 3,
+      "message": "German textbooks have arrived. Please collect them from the office before your next class.",
+      "date": "2024-01-18T09:15:00"
+    },
+    {
+      "id": 4,
+      "teacherId": 0,
+      "message": "Reminder: English placement tests for new students will be conducted next Monday.",
+      "date": "2024-01-20T11:45:00"
+    },
+    {
+      "id": 5,
+      "teacherId": 1,
+      "message": "Spanish cultural event: Flamenco dance workshop this Saturday. Sign up at reception.",
+      "date": "2024-01-22T16:20:00"
+    }
   ]
 }
