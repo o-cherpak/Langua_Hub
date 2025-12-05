@@ -15,7 +15,7 @@ export function ScheduleListItem({course}: ScheduleListItemProps) {
         gap: 3,
         background: "#f7f9fc",
         borderRadius: 2,
-        paddingY: 1.5,
+        paddingY: 2,
         paddingX: 2,
         mb: 1,
         transition: "0.2s",
