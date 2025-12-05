@@ -6,12 +6,30 @@ import {CardLink} from "../../components/CardLink.tsx";
 
 export function CardList() {
   return (
-    <Box>
-      <CardLink title={"Oceny i analiza"} href={"/"} icon={<AnalyticsIcon/>}/>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap:3
+      }}
+    >
+      <CardLink
+        title="Oceny i analiza"
+        href="/"
+        icon={<AnalyticsIcon/>}
+      />
 
-      <CardLink title={"Twoje dane"} href={"/"} icon={<AssignmentIndIcon/>}/>
+      <CardLink
+        title="Twoje dane"
+        href="/"
+        icon={<AssignmentIndIcon />}
+      />
 
-      <CardLink title={"Ogłoszenia"} href={"/"} icon={<NewspaperIcon/>}/>
+      <CardLink
+        title="Ogłoszenia"
+        href="/"
+        icon={<NewspaperIcon />}
+      />
     </Box>
   )
 }
