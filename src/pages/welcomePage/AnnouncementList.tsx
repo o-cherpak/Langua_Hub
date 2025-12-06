@@ -4,7 +4,7 @@ import { AnnouncementItem } from "../../components/AnnouncementItem.tsx";
 
 export function AnnouncementList() {
   const announcements = useAnnouncementsStore((state) => state.announcements);
-  const latestAnnouncements = announcements.slice(0, 5);
+  const latestAnnouncements = announcements.slice(0, 5).reverse();
 
 
   return (
