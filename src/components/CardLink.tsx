@@ -1,6 +1,7 @@
-import { Card, CardActionArea, Box, Typography } from "@mui/material";
-import type { ReactNode } from "react";
+import {Card, CardActionArea, Box, Typography} from "@mui/material";
+import type {ReactNode} from "react";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import {blue} from "@mui/material/colors";
 
 type CardLinkProps = {
   title: string;
@@ -8,7 +9,7 @@ type CardLinkProps = {
   icon: ReactNode;
 };
 
-export function CardLink({ title, icon }: CardLinkProps) {
+export function CardLink({title, icon}: CardLinkProps) {
   return (
     <Card
       elevation={0}
@@ -17,10 +18,10 @@ export function CardLink({ title, icon }: CardLinkProps) {
         border: "1px solid #edf2f7",
       }}
     >
-      <CardActionArea sx={{ p: 2 }}>
-        <Box sx={{ display: "flex", alignItems: "center", justifyContent: 'space-between' }}>
+      <CardActionArea sx={{p: 2}}>
+        <Box sx={{display: "flex", alignItems: "center", justifyContent: 'space-between'}}>
 
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+          <Box sx={{display: 'flex', alignItems: 'center', gap: 2}}>
             <Box
               className="icon-box"
               sx={{
@@ -28,18 +29,18 @@ export function CardLink({ title, icon }: CardLinkProps) {
                 p: 1.5,
                 borderRadius: "12px",
                 bgcolor: "#f5f7fa",
-                color: "text.secondary",
+                color: blue[600],
               }}
             >
               {icon}
             </Box>
 
-            <Typography variant="h6" sx={{ fontSize: 16, fontWeight: 600 }}>
+            <Typography variant="h6" sx={{fontSize: 16, fontWeight: 600}}>
               {title}
             </Typography>
           </Box>
 
-          <ArrowForwardIosIcon sx={{ fontSize: 14, color: 'text.disabled' }} />
+          <ArrowForwardIosIcon sx={{fontSize: 14, color: blue[600]}}/>
         </Box>
       </CardActionArea>
     </Card>
