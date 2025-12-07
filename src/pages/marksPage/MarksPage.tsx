@@ -5,6 +5,7 @@ import {Footer} from "../../components/Footer.tsx";
 import {useMarksStore} from "../../stores/useMarksStore.ts";
 import {useEffect} from "react";
 import {MarksStudentChart} from "./MarksStudentChart.tsx";
+import {MarksStudentViewer} from "./MarksStudentViewer.tsx";
 
 const id = 5;
 
@@ -27,6 +28,8 @@ export function MarksPage() {
 
           <Grid size={{xs: 12, md: 8, lg: 9}}>
             <Stack spacing={4}>
+              <MarksStudentViewer marks={filteredMark}/>
+
               <MarksStudentChart marks={filteredMark}/>
             </Stack>
           </Grid>
