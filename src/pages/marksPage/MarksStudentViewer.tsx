@@ -2,11 +2,12 @@ import {
   Box,
   List,
   Typography,
-  Divider, Button
+  Divider
 } from "@mui/material";
 import {SectionCard} from "../../components/SectionCard.tsx";
 import type {IMark} from "../../interfaces/IMark.ts";
 import {MarksListItem} from "./MarksListItem.tsx";
+import {ViewAllButton} from "../../components/ViewAllButton.tsx";
 
 type MarksStudentViewerProps = {
   marks: IMark[];
@@ -31,9 +32,7 @@ export function MarksStudentViewer({marks}: MarksStudentViewerProps) {
         ))}
       </List>
 
-      <Button variant="text" sx={{mt: 2, borderRadius: 2, fontWeight: 600}}>
-        Zobać wszystkie oceny
-      </Button>
+      <ViewAllButton href={'/'} title={"Zobać wszystkie oceny"}/>
     </SectionCard>
   );
 }
