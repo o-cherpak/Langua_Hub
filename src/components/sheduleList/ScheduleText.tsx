@@ -13,7 +13,7 @@ export function ScheduleText({course}: ScheduleTextProps) {
     <ListItemText
       primary={
         <Typography sx={{fontSize: 18, fontWeight: 600}}>
-          {course.subject} — {course.classroom}
+          {course.subject} — sala {course.classroom}
         </Typography>
       }
 
