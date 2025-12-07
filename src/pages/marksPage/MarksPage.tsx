@@ -3,21 +3,22 @@ import {Box, Container, Grid, Stack} from "@mui/material";
 import {Sidebar} from "../../components/Sidebar.tsx";
 import {Footer} from "../../components/Footer.tsx";
 import {useMarksStore} from "../../stores/useMarksStore.ts";
-import {useEffect} from "react";
 import {MarksStudentChart} from "./MarksStudentChart.tsx";
 import {MarksStudentViewer} from "./MarksStudentViewer.tsx";
 
 const id = 5;
 
+export const MarksPageLoader = async () => {
+  await Promise.all([
+    useMarksStore.getState().fetchMarks(),
+  ])
+
+  return null;
+}
+
 export function MarksPage() {
-  const fetchMark = useMarksStore(state => state.fetchMarks);
   const marks = useMarksStore(state => state.marks);
-
   const filteredMark = marks.filter((mark) => mark.studentId === id);
-
-  useEffect(() => {
-    fetchMark();
-  }, [fetchMark]);
 
   return (
     <Box sx={{display: 'flex', flexDirection: 'column', backgroundColor: "grey.100"}}>

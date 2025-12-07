@@ -1,6 +1,6 @@
 import {Container, Box, Stack, Grid} from "@mui/material";
 import {Header} from "../../components/Header.tsx";
-import {useEffect, useMemo} from "react";
+import {useMemo} from "react";
 import {useCoursesStore} from "../../stores/useCoursesStore.ts";
 import {useTeachersStore} from "../../stores/useTeachersStore.ts";
 import {isSameDay} from "date-fns";
@@ -13,17 +13,18 @@ import {ScheduleSection} from "./ScheduleSection.tsx";
 const id = 0;
 const selectedDate = new Date("2024-01-15");
 
+export const WelcomePageLoader = async () => {
+  await Promise.all([
+    useCoursesStore.getState().fetchCourses(),
+    useTeachersStore.getState().fetchTeachers(),
+    useAnnouncementsStore.getState().fetchAnnouncement(),
+  ])
+
+  return null;
+}
+
 export function WelcomePage() {
-
-  const {courses, fetchCourses} = useCoursesStore();
-  const fetchTeachers = useTeachersStore((state) => state.fetchTeachers);
-  const fetchAnnouncements = useAnnouncementsStore((state) => state.fetchAnnouncement);
-
-  useEffect(() => {
-    fetchCourses();
-    fetchTeachers();
-    fetchAnnouncements();
-  }, [fetchCourses, fetchTeachers, fetchAnnouncements]);
+  const {courses} = useCoursesStore();
 
   const filteredCourses = useMemo(
     () => courses

@@ -2,6 +2,7 @@ import {Card, CardActionArea, Box, Typography} from "@mui/material";
 import type {ReactNode} from "react";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import {blue} from "@mui/material/colors";
+import {Link} from "react-router";
 
 type CardLinkProps = {
   title: string;
@@ -12,10 +13,13 @@ type CardLinkProps = {
 export function CardLink({title, icon}: CardLinkProps) {
   return (
     <Card
+      component={Link}
+      to={`/marks`}
       elevation={0}
       sx={{
         borderRadius: 3,
         border: "1px solid #edf2f7",
+        textDecoration: "none",
       }}
     >
       <CardActionArea sx={{p: 2}}>
