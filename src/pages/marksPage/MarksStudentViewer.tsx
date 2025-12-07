@@ -2,7 +2,7 @@ import {
   Box,
   List,
   Typography,
-  Divider
+  Divider, Button
 } from "@mui/material";
 import {SectionCard} from "../../components/SectionCard.tsx";
 import type {IMark} from "../../interfaces/IMark.ts";
@@ -30,6 +30,10 @@ export function MarksStudentViewer({marks}: MarksStudentViewerProps) {
           </Box>
         ))}
       </List>
+
+      <Button variant="text" sx={{mt: 2, borderRadius: 2, fontWeight: 600}}>
+        Zobać wszystkie oceny
+      </Button>
     </SectionCard>
   );
 }
