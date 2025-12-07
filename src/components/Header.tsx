@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import {Avatar} from '@mui/material';
+import {Link} from 'react-router';
 
 export function Header() {
   return (
@@ -20,7 +21,12 @@ export function Header() {
             <MenuIcon sx={{fontSize: "2rem"}}/>
           </IconButton>
 
-          <Typography variant="h5" component="div" sx={{flexGrow: 1}}>
+          <Typography
+            component={Link}
+            to={'/'}
+            variant="h5"
+            sx={{flexGrow: 1, textDecoration: 'none', color: 'inherit'}}
+          >
             Lingua Hub
           </Typography>
 
