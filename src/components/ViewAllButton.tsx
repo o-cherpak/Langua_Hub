@@ -11,6 +11,9 @@ export function ViewAllButton({title, href}: ViewAllButtonProps) {
     <Button
       component={Link}
       to={href}
+      onClick={() => {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }}
       variant="text"
       sx={{
         mt: 2,

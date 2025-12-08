@@ -27,7 +27,7 @@ export function CardList() {
 
       <CardLink
         title="Ogłoszenia"
-        href="/"
+        href="/ann"
         icon={<NewspaperIcon />}
       />
     </Box>

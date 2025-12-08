@@ -1,16 +1,19 @@
 import {SectionCard} from "./SectionCard.tsx";
-import {AnnouncementList} from "../pages/welcomePage/AnnouncementList.tsx";
+import {AnnouncementList} from "./AnnouncementList.tsx";
 import {ViewAllButton} from "./ViewAllButton.tsx";
 import {SectionTitle} from "./SectionTitle.tsx";
+import {useAnnouncementsStore} from "../stores/useAnnouncementsStore.ts";
 
 export function NewsSection() {
+  const announcements = useAnnouncementsStore(state => state.announcements);
+
   return (
     <SectionCard>
       <SectionTitle title={"Ostatnie ogłoszenia"}/>
 
-      <AnnouncementList/>
+      <AnnouncementList announcements={announcements.slice(0, 5)}/>
 
-      <ViewAllButton href={"/"} title={"Zobać wszystkie nowości"}/>
+      <ViewAllButton href={"/ann"} title={"Zobać wszystkie nowości"}/>
     </SectionCard>
   );
 }
