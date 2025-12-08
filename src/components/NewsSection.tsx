@@ -1,14 +1,12 @@
 import {SectionCard} from "./SectionCard.tsx";
-import {Typography} from "@mui/material";
 import {AnnouncementList} from "../pages/welcomePage/AnnouncementList.tsx";
 import {ViewAllButton} from "./ViewAllButton.tsx";
+import {SectionTitle} from "./SectionTitle.tsx";
 
 export function NewsSection() {
   return (
     <SectionCard>
-      <Typography variant="h5" sx={{fontWeight: 700, mb: 2}}>
-        Ostatnie ogłoszenia
-      </Typography>
+      <SectionTitle title={"Ostatnie ogłoszenia"}/>
 
       <AnnouncementList/>
 

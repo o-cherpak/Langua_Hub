@@ -1,13 +1,13 @@
 import {
   Box,
   List,
-  Typography,
   Divider
 } from "@mui/material";
 import {SectionCard} from "../../components/SectionCard.tsx";
 import type {IMark} from "../../interfaces/IMark.ts";
 import {MarksListItem} from "./MarksListItem.tsx";
 import {ViewAllButton} from "../../components/ViewAllButton.tsx";
+import {SectionTitle} from "../../components/SectionTitle.tsx";
 
 type MarksStudentViewerProps = {
   marks: IMark[];
@@ -18,9 +18,7 @@ export function MarksStudentViewer({marks}: MarksStudentViewerProps) {
 
   return (
     <SectionCard>
-      <Typography variant="h5" fontWeight="bold">
-        Oceny i analiza
-      </Typography>
+      <SectionTitle title={"Oceny i analiza"}/>
 
       <List>
         {reversedMarks.map((mark, index) => (
