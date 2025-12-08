@@ -10,11 +10,11 @@ type CardLinkProps = {
   icon: ReactNode;
 };
 
-export function CardLink({title, icon}: CardLinkProps) {
+export function CardLink({title, icon, href}: CardLinkProps) {
   return (
     <Card
       component={Link}
-      to={`/marks`}
+      to={href}
       elevation={0}
       sx={{
         borderRadius: 3,

@@ -6,10 +6,9 @@ import type {IAnnouncement} from "../interfaces/IAnnouncement.ts";
 
 type AnnouncementItemProps = {
   data: IAnnouncement;
-  key: number
 };
 
-export function AnnouncementItem({data, key}: AnnouncementItemProps) {
+export function AnnouncementItem({data}: AnnouncementItemProps) {
   const getTeacherNameById = useTeachersStore(state => state.getNameById);
 
   const formattedDate = format(new Date(data.date), "d MMMM, HH:mm", {
@@ -18,7 +17,6 @@ export function AnnouncementItem({data, key}: AnnouncementItemProps) {
 
   return (
     <ListItem
-      key={key}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -31,6 +29,7 @@ export function AnnouncementItem({data, key}: AnnouncementItemProps) {
       </Typography>
 
       <ListItemText
+        secondaryTypographyProps={{component: "div"}}
         sx={{width: "100%", borderBottom: "1px solid rgba(0,0,0,0.08)"}}
         secondary={
           <Box sx={{display: "flex", justifyContent: "space-between"}}>

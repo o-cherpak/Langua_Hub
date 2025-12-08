@@ -15,13 +15,13 @@ export function CardList() {
     >
       <CardLink
         title="Oceny i analiza"
-        href="/"
+        href="/marks"
         icon={<AnalyticsIcon/>}
       />
 
       <CardLink
         title="Twoje dane"
-        href="/"
+        href="/student"
         icon={<AssignmentIndIcon />}
       />
 
