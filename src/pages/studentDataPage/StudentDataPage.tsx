@@ -5,7 +5,7 @@ import {Footer} from "../../components/Footer.tsx";
 import {useStudentsStore} from "../../stores/useStudentsStore.ts";
 import {StudentInfoViewer} from "./StudentInfoViewer.tsx";
 
-const id = 0;
+const id = 20;
 
 export const StudentDataPageLoader = async () => {
   await Promise.all([

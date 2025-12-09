@@ -48,7 +48,7 @@ export function AnnListContainer({itemsPerPage}: AnnListContainerProps) {
 
   return (
     <SectionCard>
-      <Box height={"560px"} sx={{display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
+      <Box sx={{display: "flex", flexDirection:"column", gap:6}}>
         <AnnMainInfo
           dataToDisplay={paginatedData}
           searchQuery={searchQuery}
