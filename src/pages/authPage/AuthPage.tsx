@@ -5,7 +5,6 @@ import {AuthLogin} from "./AuthLogin.tsx";
 
 
 export function AuthPage() {
-
   return (
     <Container
       maxWidth="xl"

@@ -5,7 +5,6 @@ import {AuthLoginForm} from "./AuthLoginForm.tsx";
 
 
 export function AuthLogin() {
-
   return (
     <Box
       minWidth={"400px"}

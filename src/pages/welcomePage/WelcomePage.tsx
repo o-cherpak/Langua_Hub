@@ -1,6 +1,6 @@
 import {Container, Box, Stack, Grid} from "@mui/material";
 import {Header} from "../../components/Header.tsx";
-import {useMemo} from "react";
+import {useMemo, useState} from "react";
 import {useCoursesStore} from "../../stores/useCoursesStore.ts";
 import {useTeachersStore} from "../../stores/useTeachersStore.ts";
 import {isSameDay} from "date-fns";
@@ -9,8 +9,8 @@ import {useAnnouncementsStore} from "../../stores/useAnnouncementsStore.ts";
 import {NewsSection} from "../../components/NewsSection.tsx";
 import {Sidebar} from "../../components/Sidebar.tsx";
 import {ScheduleSection} from "./ScheduleSection.tsx";
+import {useLocation} from "react-router";
 
-const id = 0;
 const selectedDate = new Date("2024-01-15");
 
 export const WelcomePageLoader = async () => {
@@ -25,12 +25,15 @@ export const WelcomePageLoader = async () => {
 
 export function WelcomePage() {
   const {courses} = useCoursesStore();
+  const location = useLocation();
+
+  const [userId, setUserId] = useState<number>(location.state);
 
   const filteredCourses = useMemo(
     () => courses
-      .filter((c) => c.studentIds.includes(id))
+      .filter((c) => c.studentIds.includes(userId))
       .filter((c) => isSameDay(new Date(c.startTime), selectedDate)),
-    [courses]
+    [courses, userId]
   );
 
   return (
