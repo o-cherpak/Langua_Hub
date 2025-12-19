@@ -3,11 +3,11 @@ import {Box, Container, Grid, Stack} from "@mui/material";
 import {Sidebar} from "../../components/Sidebar.tsx";
 import {Footer} from "../../components/Footer.tsx";
 import {useMarksStore} from "../../stores/useMarksStore.ts";
-import {MarksStudentChart} from "./MarksStudentChart.tsx";
-import {MarksStudentViewer} from "./MarksStudentViewer.tsx";
+import {DashboardStudentChart} from "./DashboardStudentChart.tsx";
+import {DashboardStudentViewer} from "./DashboardStudentViewer.tsx";
 import {useStudentsStore} from "../../stores/useStudentsStore.ts";
 
-export const MarksPageLoader = async () => {
+export const DashboardPageLoader = async () => {
   await Promise.all([
     useMarksStore.getState().fetchMarks(),
     useStudentsStore.getState().fetchStudents(),
@@ -16,7 +16,7 @@ export const MarksPageLoader = async () => {
   return null;
 }
 
-export function MarksPage() {
+export function DashboardPage() {
   const marks = useMarksStore(state => state.marks);
   const userId = useStudentsStore(state => state.currentUserId)
   const filteredMark = marks.filter((mark) => mark.studentId === userId);
@@ -30,9 +30,9 @@ export function MarksPage() {
 
           <Grid size={{xs: 12, md: 8, lg: 9}}>
             <Stack spacing={4}>
-              <MarksStudentViewer marks={filteredMark}/>
+              <DashboardStudentViewer marks={filteredMark}/>
 
-              <MarksStudentChart marks={filteredMark}/>
+              <DashboardStudentChart marks={filteredMark}/>
             </Stack>
           </Grid>
 

@@ -1,10 +1,10 @@
 import {createBrowserRouter} from "react-router";
 import {WelcomePage, WelcomePageLoader} from "./pages/welcomePage/WelcomePage.tsx";
-import {MarksPage, MarksPageLoader} from "./pages/marksPage/MarksPage.tsx";
 import {StudentDataPage, StudentDataPageLoader} from "./pages/studentDataPage/StudentDataPage.tsx";
 import {AnnListingsPage, AnnListingsPageLoader} from "./pages/annListingsPage/AnnListingsPage.tsx";
 import {AuthPage} from "./pages/authPage/AuthPage.tsx";
 import {AuthLoginFormLoader} from "./pages/authPage/AuthLoginForm.tsx";
+import {DashboardPage, DashboardPageLoader} from "./pages/dashboardPage/DashboardPage.tsx";
 
 export const router = createBrowserRouter([
   {
@@ -19,8 +19,8 @@ export const router = createBrowserRouter([
   },
   {
     path: "/marks",
-    element: <MarksPage/>,
-    loader: MarksPageLoader
+    element: <DashboardPage/>,
+    loader: DashboardPageLoader
   },
   {
     path: "/student",

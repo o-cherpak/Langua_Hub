@@ -5,11 +5,11 @@ import {pl} from "date-fns/locale";
 import type {IMark} from "../../interfaces/IMark.ts";
 import {SectionCard} from "../../components/SectionCard.tsx";
 
-type MarksChartProps = {
+type DashboardStudentChartProps = {
   marks: IMark[];
 };
 
-export function MarksStudentChart({marks}: MarksChartProps) {
+export function DashboardStudentChart({marks}: DashboardStudentChartProps) {
 
   const {xLabels, series} = useMemo(() => {
     const uniqueDates = Array.from(new Set(marks.map((m) => m.date)));

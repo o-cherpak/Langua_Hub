@@ -5,7 +5,7 @@ import {pl} from "date-fns/locale";
 import type {IMark} from "../../interfaces/IMark.ts";
 import {blue} from "@mui/material/colors";
 
-type MarksListItemProps = {
+type DashboardListItemProps = {
   mark: IMark;
 }
 
@@ -15,7 +15,7 @@ const getScoreColor = (mark: number) => {
   return "error.main";
 };
 
-export function MarksListItem({mark}: MarksListItemProps) {
+export function DashboardListItem({mark}: DashboardListItemProps) {
   return (
     <ListItem sx={{py: 2}}>
       <ListItemAvatar>

@@ -5,15 +5,15 @@ import {
 } from "@mui/material";
 import {SectionCard} from "../../components/SectionCard.tsx";
 import type {IMark} from "../../interfaces/IMark.ts";
-import {MarksListItem} from "./MarksListItem.tsx";
+import {DashboardListItem} from "./DashboardListItem.tsx";
 import {ViewAllButton} from "../../components/ViewAllButton.tsx";
 import {SectionTitle} from "../../components/SectionTitle.tsx";
 
-type MarksStudentViewerProps = {
+type DashboardStudentViewerProps = {
   marks: IMark[];
 }
 
-export function MarksStudentViewer({marks}: MarksStudentViewerProps) {
+export function DashboardStudentViewer({marks}: DashboardStudentViewerProps) {
   const reversedMarks = [...marks].reverse();
 
   return (
@@ -25,7 +25,7 @@ export function MarksStudentViewer({marks}: MarksStudentViewerProps) {
           <Box key={mark.id}>
             {index > 0 && <Divider/>}
 
-            <MarksListItem mark={mark}/>
+            <DashboardListItem mark={mark}/>
           </Box>
         ))}
       </List>
