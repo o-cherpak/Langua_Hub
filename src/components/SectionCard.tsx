@@ -7,7 +7,15 @@ type SectionCardProps = {
 
 export function SectionCard({children}: SectionCardProps) {
   return (
-    <Paper elevation={0} sx={{p: 4, borderRadius: 4, border: '1px solid #e0e0e0'}}>
+    <Paper
+      elevation={0}
+      sx={{
+        p: 4,
+        borderRadius: 4,
+        border: '1px solid #e0e0e0',
+        boxShadow: 2
+    }}
+    >
       {children}
     </Paper>
   )

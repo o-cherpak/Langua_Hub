@@ -1,20 +1,8 @@
 import {
-  Container,
-  keyframes
+  Container
 } from "@mui/material";
 import {AuthLogin} from "./AuthLogin.tsx";
 
-const gradientAnimation = keyframes`
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-`;
 
 export function AuthPage() {
 
@@ -22,14 +10,15 @@ export function AuthPage() {
     <Container
       maxWidth="xl"
       sx={{
-        background: "linear-gradient(-45deg, #1976d2, #0d47a1)",
-        backgroundSize: "400% 400%",
-        animation: `${gradientAnimation} 100s ease infinite`,
         display: "flex",
-        justifyContent: "center",
-        backgroundImage: `url(${gradientAnimation})`,
+        minHeight: "100vh",
+        justifyContent: "space-evenly",
+        alignItems: "center",
+        flexDirection: "column",
+        background: "linear-gradient(135deg, #1976d2 0%, #664fa2 100%)",
       }}
     >
+
       <AuthLogin/>
     </Container>
   );
