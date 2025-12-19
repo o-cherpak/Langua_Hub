@@ -20,6 +20,7 @@ export function CardLink({title, icon, href}: CardLinkProps) {
         borderRadius: 3,
         border: "1px solid #edf2f7",
         textDecoration: "none",
+        boxShadow: 1,
       }}
     >
       <CardActionArea sx={{p: 2}}>
