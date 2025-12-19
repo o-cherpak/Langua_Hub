@@ -1,4 +1,4 @@
-import {Box, Button, Link, TextField} from "@mui/material";
+import {Box, Button, TextField} from "@mui/material";
 import {useState} from "react";
 
 export function AuthLoginForm() {
@@ -39,20 +39,6 @@ export function AuthLoginForm() {
         Zaloguj się
       </Button>
 
-      <Box sx={{textAlign: "center"}}>
-        <Link
-          component="button"
-          variant="body2"
-          type="button"
-          onClick={() => {
-            setEmail("");
-            setPassword("");
-          }}
-        >
-          Nie masz konta? Zarejestruj się
-
-        </Link>
-      </Box>
     </Box>
   );
 }
