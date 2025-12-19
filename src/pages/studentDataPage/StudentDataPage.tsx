@@ -5,8 +5,6 @@ import {Footer} from "../../components/Footer.tsx";
 import {useStudentsStore} from "../../stores/useStudentsStore.ts";
 import {StudentInfoViewer} from "./StudentInfoViewer.tsx";
 
-const id = 20;
-
 export const StudentDataPageLoader = async () => {
   await Promise.all([
     useStudentsStore.getState().fetchStudents(),
@@ -17,7 +15,8 @@ export const StudentDataPageLoader = async () => {
 
 export function StudentDataPage() {
   const students = useStudentsStore(state => state.students);
-  const studentData = students.find(student => student.id === id);
+  const userId = useStudentsStore(state => state.currentUserId)
+  const studentData = students.find(student => student.id === userId);
 
   if (!studentData) return null;
 

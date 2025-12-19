@@ -5,12 +5,12 @@ import {Footer} from "../../components/Footer.tsx";
 import {useMarksStore} from "../../stores/useMarksStore.ts";
 import {MarksStudentChart} from "./MarksStudentChart.tsx";
 import {MarksStudentViewer} from "./MarksStudentViewer.tsx";
-
-const id = 5;
+import {useStudentsStore} from "../../stores/useStudentsStore.ts";
 
 export const MarksPageLoader = async () => {
   await Promise.all([
     useMarksStore.getState().fetchMarks(),
+    useStudentsStore.getState().fetchStudents(),
   ])
 
   return null;
@@ -18,7 +18,8 @@ export const MarksPageLoader = async () => {
 
 export function MarksPage() {
   const marks = useMarksStore(state => state.marks);
-  const filteredMark = marks.filter((mark) => mark.studentId === id);
+  const userId = useStudentsStore(state => state.currentUserId)
+  const filteredMark = marks.filter((mark) => mark.studentId === userId);
 
   return (
     <Box sx={{display: 'flex', flexDirection: 'column', backgroundColor: "grey.100"}}>

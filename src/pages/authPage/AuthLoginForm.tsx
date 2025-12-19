@@ -2,9 +2,9 @@ import {Box, Button, TextField} from "@mui/material";
 import {signInWithEmailAndPassword} from "firebase/auth";
 import {type FormEvent, useState} from "react";
 import {auth} from "../../firebaseConfig.ts";
-import {useNavigate} from "react-router";
 import {getIdByEmail} from "../../services/getIdByEmail.ts";
 import {useStudentsStore} from "../../stores/useStudentsStore.ts";
+import {useNavigate} from "react-router";
 
 export const AuthLoginFormLoader = async () => {
   await Promise.all([
@@ -17,7 +17,8 @@ export const AuthLoginFormLoader = async () => {
 export function AuthLoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const students = useStudentsStore().students;
+  const students = useStudentsStore(state => state.students);
+  const setCurrentUserId = useStudentsStore((state) => state.setCurrentUserId);
 
   const navigate = useNavigate();
 
@@ -33,9 +34,8 @@ export function AuthLoginForm() {
       }
 
       const userId = getIdByEmail({list: students, email: userCredential.user.email});
-
-
-      navigate("/welcome", {state: {userId: userId}});
+      setCurrentUserId(userId);
+      navigate("/welcome");
 
     } catch (error) {
       console.log(error);

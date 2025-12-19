@@ -1,4 +1,4 @@
-import { get, ref } from "firebase/database";
+import {get, ref} from "firebase/database";
 import type {IStudent} from "../interfaces/IStudent.ts";
 import {create} from "zustand/react";
 import {db} from "../firebaseConfig.ts";
@@ -8,6 +8,8 @@ interface StudentsState {
   loading: boolean;
   fetchStudents: () => Promise<void>;
   setStudents: (s: IStudent[]) => void;
+  currentUserId: number | null;
+  setCurrentUserId: (id: number | null) => void;
 }
 
 export const useStudentsStore = create<StudentsState>((set) => ({
@@ -28,6 +30,11 @@ export const useStudentsStore = create<StudentsState>((set) => ({
       console.error("Error fetching students:", err);
       set({loading: false});
     }
-  }
+  },
 
-  }))
+  currentUserId: null,
+
+  setCurrentUserId: (id => set({currentUserId: id}))
+
+
+}))
