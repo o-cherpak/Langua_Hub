@@ -1,6 +1,6 @@
 export interface IAnnouncement {
-  id: number;
-  teacherId: number;
+  id: string;
+  teacherId: string;
   message: string;
   date: string;
 }

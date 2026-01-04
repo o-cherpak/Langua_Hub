@@ -1,10 +1,10 @@
 export interface ICourse {
-  id: number;
+  id: string;
   name: string;
   subject: string;
   level: 'A1' | 'A2' | 'B1' | 'B2' | 'C1';
-  teacherId: number;
-  studentIds: number[];
+  teacherId: string;
+  studentIds: string[];
   classroom: string;
   startTime: string;
   endTime: string;

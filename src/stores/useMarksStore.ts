@@ -23,7 +23,16 @@ export const useMarksStore = create<MarksState>((set) => ({
       const snap = await get(ref(db, "marks"));
       const val = snap.val() as IMark[];
 
-      set({marks: val, loading: false});
+      if (val) {
+        const transformed: IMark[] = Object.entries(val).map(([key, value]: [string, any]) => ({
+          ...value,
+          id: key,
+        }));
+
+        set({ marks: transformed, loading: false });
+      } else {
+        set({ marks: [], loading: false });
+      }
     } catch (err) {
       console.error("Error fetching marks:", err);
       set({loading: false});

@@ -1,12 +1,7 @@
-import type {IStudent} from "../interfaces/IStudent.ts";
 import type {ITeacher} from "../interfaces/ITeacher.ts";
+import type {IStudent} from "../interfaces/IStudent.ts";
 
-type listProps = {
-  list: IStudent[] | ITeacher[];
-  id: number
-}
-
-export function getNameById({list, id} : listProps)  {
+export function getNameById(list: IStudent[] | ITeacher[], id: string)  {
   const user = list.find(u => u.id === id);
 
   if (!user) {

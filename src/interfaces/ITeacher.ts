@@ -1,6 +1,6 @@
 export interface ITeacher {
   email: string;
-  id: number;
+  id: string;
   name: string;
   phone: string;
   specialization: string;

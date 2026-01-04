@@ -23,7 +23,16 @@ export const useCoursesStore = create<CoursesState>((set) => ({
       const snap = await get(ref(db, "courses"));
       const val = snap.val() as ICourse[];
 
-      set({courses: val, loading: false});
+      if (val) {
+        const transformed: ICourse[] = Object.entries(val).map(([key, value]: [string, any]) => ({
+          ...value,
+          id: key,
+        }));
+
+        set({ courses: transformed, loading: false });
+      } else {
+        set({ courses: [], loading: false });
+      }
     } catch (err) {
       console.error("Error fetching courses:", err);
       set({loading: false});

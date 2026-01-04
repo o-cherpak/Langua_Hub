@@ -8,8 +8,8 @@ interface StudentsState {
   loading: boolean;
   fetchStudents: () => Promise<void>;
   setStudents: (s: IStudent[]) => void;
-  currentUserId: number | null;
-  setCurrentUserId: (id: number | null) => void;
+  currentUserId: string | null;
+  setCurrentUserId: (id: string | null) => void;
 }
 
 export const useStudentsStore = create<StudentsState>((set) => ({
@@ -25,7 +25,16 @@ export const useStudentsStore = create<StudentsState>((set) => ({
       const snap = await get(ref(db, "students"));
       const val = snap.val() as IStudent[];
 
-      set({students: val, loading: false});
+      if (val) {
+        const transformed: IStudent[] = Object.entries(val).map(([key, value]: [string, any]) => ({
+          ...value,
+          id: key,
+        }));
+
+        set({ students: transformed, loading: false });
+      } else {
+        set({ students: [], loading: false });
+      }
     } catch (err) {
       console.error("Error fetching students:", err);
       set({loading: false});

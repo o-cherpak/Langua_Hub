@@ -8,10 +8,9 @@ interface TeachersState {
   loading: boolean;
   fetchTeachers: () => Promise<void>;
   setTeachers: (t: ITeacher[]) => void;
-  getNameById: (id: number) => string | null;
 }
 
-export const useTeachersStore = create<TeachersState>((set, getState) => ({
+export const useTeachersStore = create<TeachersState>((set) => ({
   teachers: [],
   loading: false,
 
@@ -24,22 +23,20 @@ export const useTeachersStore = create<TeachersState>((set, getState) => ({
       const snap = await get(ref(db, "teachers"));
       const val = snap.val() as ITeacher[];
 
-      set({teachers: val, loading: false});
+      if (val) {
+        const transformed: ITeacher[] = Object.entries(val).map(([key, value]: [string, any]) => ({
+          ...value,
+          id: key,
+        }));
+
+        set({ teachers: transformed, loading: false });
+      } else {
+        set({ teachers: [], loading: false });
+      }
     } catch (err) {
       console.error("Error fetching teachers:", err);
       set({loading: false});
     }
   },
-
-  getNameById: (id: number) => {
-    const teacher = getState().teachers.find(t => t.id === id);
-
-    if (!teacher) {
-      return null;
-    }
-
-    return `${teacher.name} ${teacher.surname}`;
-  }
-
 
 }))

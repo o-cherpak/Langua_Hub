@@ -17,16 +17,25 @@ export const useAnnouncementsStore = create<AnnouncementState>((set) => ({
   setAnnouncement: (a => set({announcements: a})),
 
   fetchAnnouncement: async () => {
-    set({loading: true});
+    set({ loading: true });
 
     try {
       const snap = await get(ref(db, "announcements"));
-      const val = snap.val() as IAnnouncement[];
+      const val = snap.val();
 
-      set({announcements: val, loading: false});
+      if (val) {
+        const transformed: IAnnouncement[] = Object.entries(val).map(([key, value]: [string, any]) => ({
+          ...value,
+          id: key,
+        }));
+
+        set({ announcements: transformed, loading: false });
+      } else {
+        set({ announcements: [], loading: false });
+      }
     } catch (err) {
       console.error("Error fetching announcement:", err);
-      set({loading: false});
+      set({ loading: false });
     }
   }
 }))
