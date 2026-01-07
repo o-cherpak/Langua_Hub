@@ -1,7 +1,7 @@
 import {Header} from "../../components/Header.tsx";
 import {Box, Container, Grid, Stack} from "@mui/material";
 import {Sidebar} from "../../components/Sidebar.tsx";
-import {Footer} from "../../components/Footer.tsx";
+import {Footer} from "../../components/footer/Footer.tsx";
 import {useMarksStore} from "../../stores/useMarksStore.ts";
 import {DashboardStudentChart} from "./DashboardStudentChart.tsx";
 import {DashboardStudentViewer} from "./DashboardStudentViewer.tsx";

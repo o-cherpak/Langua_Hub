@@ -4,7 +4,7 @@ import {useMemo} from "react";
 import {useCoursesStore} from "../../stores/useCoursesStore.ts";
 import {useTeachersStore} from "../../stores/useTeachersStore.ts";
 import {isSameDay} from "date-fns";
-import {Footer} from "../../components/Footer.tsx";
+import {Footer} from "../../components/footer/Footer.tsx";
 import {useAnnouncementsStore} from "../../stores/useAnnouncementsStore.ts";
 import {NewsSection} from "../../components/NewsSection.tsx";
 import {Sidebar} from "../../components/Sidebar.tsx";

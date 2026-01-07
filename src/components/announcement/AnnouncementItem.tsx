@@ -1,9 +1,9 @@
 import {ListItem, ListItemText, Typography, Box} from "@mui/material";
 import {format} from "date-fns";
 import {pl} from "date-fns/locale";
-import type {IAnnouncement} from "../interfaces/IAnnouncement.ts";
-import {getNameById} from "../services/getNameById.ts";
-import {useTeachersStore} from "../stores/useTeachersStore.ts";
+import type {IAnnouncement} from "../../interfaces/IAnnouncement.ts";
+import {getNameById} from "../../services/getNameById.ts";
+import {useTeachersStore} from "../../stores/useTeachersStore.ts";
 
 type AnnouncementItemProps = {
   data: IAnnouncement;

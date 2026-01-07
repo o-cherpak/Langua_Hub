@@ -1,5 +1,5 @@
 import {SectionCard} from "./SectionCard.tsx";
-import {AnnouncementList} from "./AnnouncementList.tsx";
+import {AnnouncementList} from "./Announcement/AnnouncementList.tsx";
 import {ViewAllButton} from "./ViewAllButton.tsx";
 import {SectionTitle} from "./SectionTitle.tsx";
 import {useAnnouncementsStore} from "../stores/useAnnouncementsStore.ts";

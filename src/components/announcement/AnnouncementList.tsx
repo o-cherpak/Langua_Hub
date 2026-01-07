@@ -1,5 +1,5 @@
 import {List} from "@mui/material";
-import type {IAnnouncement} from "../interfaces/IAnnouncement.ts";
+import type {IAnnouncement} from "../../interfaces/IAnnouncement.ts";
 import {AnnouncementItem} from "./AnnouncementItem.tsx";
 
 type AnnouncementListProps = {

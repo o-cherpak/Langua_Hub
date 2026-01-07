@@ -1,7 +1,7 @@
 import {Header} from "../../components/Header.tsx";
 import {Box, Container, Grid} from "@mui/material";
 import {Sidebar} from "../../components/Sidebar.tsx";
-import {Footer} from "../../components/Footer.tsx";
+import {Footer} from "../../components/footer/Footer.tsx";
 import {useAnnouncementsStore} from "../../stores/useAnnouncementsStore.ts";
 import {useTeachersStore} from "../../stores/useTeachersStore.ts";
 import {AnnListContainer} from "./AnnListContainer.tsx";
