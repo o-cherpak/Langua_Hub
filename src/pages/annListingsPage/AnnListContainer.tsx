@@ -5,6 +5,7 @@ import {type ChangeEvent, useMemo, useState} from "react";
 import {AnnPagination} from "./AnnPagination.tsx";
 import {AnnMainInfo} from "./AnnMainInfo.tsx";
 import {useTeachersStore} from "../../stores/useTeachersStore.ts";
+import {getNameById} from "../../services/getNameById.ts";
 
 type AnnListContainerProps = {
   itemsPerPage: number;
@@ -12,7 +13,7 @@ type AnnListContainerProps = {
 
 export function AnnListContainer({itemsPerPage}: AnnListContainerProps) {
   const announcement = useAnnouncementsStore(state => state.announcements);
-  const getNameById = useTeachersStore(state => state.getNameById);
+  const teachers = useTeachersStore(state => state.teachers);
 
   const [page, setPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
@@ -21,7 +22,7 @@ export function AnnListContainer({itemsPerPage}: AnnListContainerProps) {
     if (!searchQuery) return announcement;
 
     return announcement.filter((ann) => {
-      const teacher = getNameById(ann.teacherId);
+      const teacher = getNameById(teachers, ann.teacherId);
       const query = searchQuery.toLowerCase();
 
       return (
@@ -30,7 +31,7 @@ export function AnnListContainer({itemsPerPage}: AnnListContainerProps) {
         teacher?.toLowerCase().includes(query)
       );
     });
-  }, [searchQuery, announcement, getNameById]);
+  }, [searchQuery, announcement, teachers]);
 
   const paginatedData = useMemo(() => {
     const startIndex = (page - 1) * itemsPerPage;
@@ -48,7 +49,7 @@ export function AnnListContainer({itemsPerPage}: AnnListContainerProps) {
 
   return (
     <SectionCard>
-      <Box sx={{display: "flex", flexDirection:"column", gap:6}}>
+      <Box sx={{display: "flex", flexDirection: "column", gap: 6}}>
         <AnnMainInfo
           dataToDisplay={paginatedData}
           searchQuery={searchQuery}

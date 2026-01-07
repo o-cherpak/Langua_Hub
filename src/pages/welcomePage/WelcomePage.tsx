@@ -16,6 +16,7 @@ const selectedDate = new Date("2024-01-15");
 export const WelcomePageLoader = async () => {
   await Promise.all([
     useCoursesStore.getState().fetchCourses(),
+    useStudentsStore.getState().fetchStudents(),
     useTeachersStore.getState().fetchTeachers(),
     useAnnouncementsStore.getState().fetchAnnouncement(),
   ])

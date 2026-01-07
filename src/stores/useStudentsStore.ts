@@ -1,7 +1,9 @@
 import {get, ref} from "firebase/database";
 import type {IStudent} from "../interfaces/IStudent.ts";
 import {create} from "zustand/react";
-import {db} from "../firebaseConfig.ts";
+import {auth, db} from "../firebaseConfig.ts";
+import {onAuthStateChanged} from "firebase/auth";
+import {getIdByEmail} from "../services/getIdByEmail.ts";
 
 interface StudentsState {
   students: IStudent[];
@@ -10,6 +12,7 @@ interface StudentsState {
   setStudents: (s: IStudent[]) => void;
   currentUserId: string | null;
   setCurrentUserId: (id: string | null) => void;
+  initializeAuth: () => void;
 }
 
 export const useStudentsStore = create<StudentsState>((set) => ({
@@ -43,7 +46,17 @@ export const useStudentsStore = create<StudentsState>((set) => ({
 
   currentUserId: null,
 
-  setCurrentUserId: (id => set({currentUserId: id}))
+  setCurrentUserId: (id => set({currentUserId: id})),
 
+  initializeAuth: () => {
+    onAuthStateChanged(auth, (user) => {
+      if (user?.email) {
+        const students = useStudentsStore.getState().students;
+        const userId = getIdByEmail({ list: students, email: user.email });
 
+        set({ currentUserId: userId });
+      } else {
+        set({ currentUserId: null });
+      }
+    })}
 }))

@@ -32,6 +32,7 @@ export function DashboardListItem({mark}: DashboardListItemProps) {
           </Typography>
         }
 
+        secondaryTypographyProps={{ component: 'div' }}
         secondary={
           <Box sx={{display: 'flex', alignItems: 'center', gap: 0.5}}>
             <CalendarTodayIcon sx={{fontSize: 14}}/>
