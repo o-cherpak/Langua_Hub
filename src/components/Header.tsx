@@ -11,24 +11,26 @@ export function Header() {
   return (
     <Box>
       <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon sx={{fontSize: "2rem"}}/>
-          </IconButton>
+        <Toolbar sx={{display: 'flex', justifyContent: 'space-between'}}>
+          <Box sx={{display: 'flex', alignItems: 'center'}}>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+            >
+              <MenuIcon sx={{fontSize: "2rem"}}/>
+            </IconButton>
 
-          <Typography
-            component={Link}
-            to={'/'}
-            variant="h5"
-            sx={{flexGrow: 1, textDecoration: 'none', color: 'inherit'}}
-          >
-            Lingua Hub
-          </Typography>
+            <Typography
+              component={Link}
+              to={'/'}
+              variant="h5"
+              sx={{textDecoration: 'none', color: 'inherit'}}
+            >
+              Lingua Hub
+            </Typography>
+          </Box>
 
           <IconButton
             sx={{
