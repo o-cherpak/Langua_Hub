@@ -1,6 +1,5 @@
 import Typography from "@mui/material/Typography";
 import {Box, Chip, Grid, Stack} from "@mui/material";
-import {theme} from "../../theme.ts";
 import type {IStudent} from "../../interfaces/IStudent.ts";
 import {StudentSectionSubtitle} from "./StudentSectionSubtitle.tsx";
 
@@ -23,7 +22,8 @@ export function StudentLanguagesSection({student}: StudentLanguagesSectionProps)
               alignItems: 'center',
               p: 1.5,
               borderRadius: 2,
-              border: `1px solid ${theme.palette.divider}`,
+              border: '1px solid',
+              borderColor: "divider"
             }}
           >
             <Box display="flex" alignItems="center" gap={1}>

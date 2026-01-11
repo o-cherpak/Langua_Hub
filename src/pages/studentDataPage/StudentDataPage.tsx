@@ -22,8 +22,6 @@ export function StudentDataPage() {
 
   if (!studentData) return null;
 
-  console.log(studentData);
-
   return (
     <Box sx={{display: 'flex', flexDirection: 'column', backgroundColor: "grey.100"}}>
       <Header/>
