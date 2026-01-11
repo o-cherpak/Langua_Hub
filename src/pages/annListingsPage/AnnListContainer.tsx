@@ -47,13 +47,18 @@ export function AnnListContainer({itemsPerPage}: AnnListContainerProps) {
     event.preventDefault();
   };
 
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+    setPage(1);
+  };
+
   return (
     <SectionCard>
       <Box sx={{display: "flex", flexDirection: "column", gap: 6}}>
         <AnnMainInfo
           dataToDisplay={paginatedData}
           searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
+          setSearchQuery={handleSearch}
         />
 
         {filteredData.length > 0 && (
