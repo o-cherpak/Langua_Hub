@@ -1,7 +1,7 @@
 import {SectionCard} from "../../components/SectionCard.tsx";
 import {Box} from "@mui/material";
 import {useAnnouncementsStore} from "../../stores/useAnnouncementsStore.ts";
-import {type ChangeEvent, useMemo, useState} from "react";
+import {type ChangeEvent, useDeferredValue, useMemo, useState} from "react";
 import {AnnPagination} from "./AnnPagination.tsx";
 import {AnnMainInfo} from "./AnnMainInfo.tsx";
 import {useTeachersStore} from "../../stores/useTeachersStore.ts";
@@ -17,13 +17,14 @@ export function AnnListContainer({itemsPerPage}: AnnListContainerProps) {
 
   const [page, setPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
+  const deferredSearchQuery = useDeferredValue(searchQuery);
 
   const filteredData = useMemo(() => {
     if (!searchQuery) return announcement;
 
     return announcement.filter((ann) => {
       const teacher = getNameById(teachers, ann.teacherId);
-      const query = searchQuery.toLowerCase();
+      const query = deferredSearchQuery.trim().toLowerCase();
 
       return (
         ann.message?.toLowerCase().includes(query) ||
@@ -31,7 +32,7 @@ export function AnnListContainer({itemsPerPage}: AnnListContainerProps) {
         teacher?.toLowerCase().includes(query)
       );
     });
-  }, [searchQuery, announcement, teachers]);
+  }, [searchQuery, announcement, teachers, deferredSearchQuery]);
 
   const paginatedData = useMemo(() => {
     const startIndex = (page - 1) * itemsPerPage;
@@ -57,7 +58,7 @@ export function AnnListContainer({itemsPerPage}: AnnListContainerProps) {
       <Box sx={{display: "flex", flexDirection: "column", gap: 6}}>
         <AnnMainInfo
           dataToDisplay={paginatedData}
-          searchQuery={searchQuery}
+          searchQuery={deferredSearchQuery}
           setSearchQuery={handleSearch}
         />
 
