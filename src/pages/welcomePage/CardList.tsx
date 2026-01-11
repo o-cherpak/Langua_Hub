@@ -15,7 +15,7 @@ export function CardList() {
     >
       <CardLink
         title="Oceny i analiza"
-        href="/marks"
+        href="/dashboard"
         icon={<AnalyticsIcon/>}
       />
 

@@ -24,7 +24,7 @@ export function Header() {
 
             <Typography
               component={Link}
-              to={'/'}
+              to={'/welcome'}
               variant="h5"
               sx={{textDecoration: 'none', color: 'inherit'}}
             >

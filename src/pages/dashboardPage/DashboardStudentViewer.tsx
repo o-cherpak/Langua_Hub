@@ -30,7 +30,7 @@ export function DashboardStudentViewer({marks}: DashboardStudentViewerProps) {
         ))}
       </List>
 
-      <ViewAllButton href={'/'} title={"Zobać wszystkie oceny"}/>
+      <ViewAllButton href={'/marks'} title={"Zobać wszystkie oceny"}/>
     </SectionCard>
   );
 }
