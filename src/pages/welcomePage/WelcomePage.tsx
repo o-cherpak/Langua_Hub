@@ -25,15 +25,16 @@ export const WelcomePageLoader = async () => {
 }
 
 export function WelcomePage() {
-  const {courses} = useCoursesStore();
+  const courses = useCoursesStore(state => state.courses);
   const userId = useStudentsStore(state => state.currentUserId);
 
   const filteredCourses = useMemo(() => {
     if (userId === null) return [];
 
-    return courses
-      .filter((c) => c.studentIds.includes(userId))
-      .filter((c) => isSameDay(new Date(c.startTime), selectedDate))
+    return courses.filter((c) =>
+      c.studentIds.includes(userId) &&
+      isSameDay(new Date(c.startTime), selectedDate)
+    );
 
   }, [courses, userId]);
 
