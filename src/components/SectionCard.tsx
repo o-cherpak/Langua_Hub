@@ -13,7 +13,7 @@ export function SectionCard({children}: SectionCardProps) {
         p: 4,
         borderRadius: 4,
         border: '1px solid #e0e0e0',
-        boxShadow: 2
+        boxShadow: 1
     }}
     >
       {children}

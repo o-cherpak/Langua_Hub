@@ -5,6 +5,7 @@ import {AnnListingsPage, AnnListingsPageLoader} from "./pages/annListingsPage/An
 import {AuthPage} from "./pages/authPage/AuthPage.tsx";
 import {AuthLoginFormLoader} from "./pages/authPage/AuthLoginForm.tsx";
 import {DashboardPage, DashboardPageLoader} from "./pages/dashboardPage/DashboardPage.tsx";
+import {MarksPage, MarksPageLoader} from "./pages/marksPage/MarksPage.tsx";
 
 export const router = createBrowserRouter([
   {
@@ -18,7 +19,7 @@ export const router = createBrowserRouter([
     loader: WelcomePageLoader
   },
   {
-    path: "/marks",
+    path: "/dashboard",
     element: <DashboardPage/>,
     loader: DashboardPageLoader
   },
@@ -31,5 +32,10 @@ export const router = createBrowserRouter([
     path: "/ann",
     element: <AnnListingsPage/>,
     loader: AnnListingsPageLoader
+  },
+  {
+    path: "/marks",
+    element: <MarksPage/>,
+    loader: MarksPageLoader
   }
 ]);

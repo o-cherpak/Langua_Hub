@@ -1,7 +1,7 @@
 import {Box} from "@mui/material";
 import {SectionTitle} from "../../components/SectionTitle.tsx";
 import {AnnSearchBar} from "./AnnSearchBar.tsx";
-import {AnnouncementList} from "../../components/Announcement/AnnouncementList.tsx";
+import {AnnouncementList} from "../../components/announcement/AnnouncementList.tsx";
 import type {IAnnouncement} from "../../interfaces/IAnnouncement.ts";
 
 type AnnMainInfoProps = {
