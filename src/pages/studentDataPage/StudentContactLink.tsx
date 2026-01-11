@@ -10,7 +10,9 @@ type StudentContactLinkProps = {
 export function StudentContactLink({href, title, info}: StudentContactLinkProps) {
   return (
     <Box>
-      <Typography variant="caption" color="text.secondary" display="block">{title}</Typography>
+      <Typography variant="caption" color="text.secondary" display="block">
+        {title}
+      </Typography>
 
       <Typography
         variant="body1"

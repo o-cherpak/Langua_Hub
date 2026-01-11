@@ -16,7 +16,7 @@ export const MarksPageLoader = async () => {
 
 export function MarksPage() {
   return (
-    <Box sx={{display: 'flex', flexDirection: 'column', minHeight: '100vh', bgcolor: "#f4f6f8"}}>
+    <Box sx={{display: 'flex', flexDirection: 'column', bgcolor: "#f4f6f8"}}>
       <Header/>
 
       <MarksContainer/>
