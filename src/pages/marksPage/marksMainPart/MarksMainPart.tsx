@@ -47,11 +47,11 @@ export function MarksMainPart({activeFilter, setActiveFilter, marks, currentStud
 
       <Box sx={{display: 'flex', justifyContent: 'center', mt: 4}}>
         {
-          hasMore ? <LoadMoreButton onClickHandler={handleLoadMore}/>
-          :
-          <Typography variant="body2" color="text.disabled">
-            To są wszystkie Twoje oceny.
-          </Typography>
+          hasMore ? <LoadMoreButton title={"Pokaż więcej ocen"} onClickHandler={handleLoadMore}/>
+            :
+            <Typography variant="body2" color="text.disabled">
+              To są wszystkie Twoje oceny.
+            </Typography>
         }
       </Box>
     </Grid>

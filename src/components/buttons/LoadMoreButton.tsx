@@ -2,9 +2,10 @@ import {Button} from "@mui/material";
 
 type LoadMoreButtonProps = {
   onClickHandler?: () => void;
+  title: string;
 }
 
-export function LoadMoreButton({onClickHandler}: LoadMoreButtonProps) {
+export function LoadMoreButton({title,onClickHandler}: LoadMoreButtonProps) {
   return (
     <Button
       variant="outlined"
@@ -22,7 +23,7 @@ export function LoadMoreButton({onClickHandler}: LoadMoreButtonProps) {
         }
       }}
     >
-      Pokaż więcej ocen
+      {title}
     </Button>
   );
 }
