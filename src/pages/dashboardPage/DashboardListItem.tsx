@@ -3,7 +3,6 @@ import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import {format} from "date-fns";
 import {pl} from "date-fns/locale";
 import type {IMark} from "../../interfaces/IMark.ts";
-import {blue} from "@mui/material/colors";
 
 type DashboardListItemProps = {
   mark: IMark;
@@ -19,7 +18,7 @@ export function DashboardListItem({mark}: DashboardListItemProps) {
   return (
     <ListItem sx={{py: 2}}>
       <ListItemAvatar>
-        <Avatar sx={{bgcolor: blue[500]}}>
+        <Avatar sx={{bgcolor: "primary.main"}}>
           {mark.language.subject[0]}
         </Avatar>
 
