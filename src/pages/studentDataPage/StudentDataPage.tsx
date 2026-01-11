@@ -14,9 +14,11 @@ export const StudentDataPageLoader = async () => {
 }
 
 export function StudentDataPage() {
-  const students = useStudentsStore(state => state.students);
   const userId = useStudentsStore(state => state.currentUserId)
-  const studentData = students.find(student => student.id === userId);
+
+  const studentData = useStudentsStore(state =>
+    state.students.find(student => student.id === userId)
+  );
 
   if (!studentData) return null;
 
