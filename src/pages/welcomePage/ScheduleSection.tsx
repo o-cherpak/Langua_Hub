@@ -1,7 +1,7 @@
 import type {ICourse} from "../../interfaces/ICourse.ts";
 import {SectionCard} from "../../components/SectionCard.tsx";
 import {TodayActivity} from "./todayActivity/TodayActivity.tsx";
-import {ViewAllButton} from "../../components/ViewAllButton.tsx";
+import {ViewAllButton} from "../../components/buttons/ViewAllButton.tsx";
 
 export function ScheduleSection({courses}: { courses: ICourse[] }) {
   return (

@@ -4,6 +4,8 @@ import type {IMark} from "../../../interfaces/IMark.ts";
 import {MarksCardList} from "./MarksCardList.tsx";
 import {MarksFilters} from "./MarksFilters.tsx";
 import {SectionTitle} from "../../../components/SectionTitle.tsx";
+import {useMemo, useState} from "react";
+import {LoadMoreButton} from "../../../components/buttons/LoadMoreButton.tsx";
 
 type MarksMainPartProps = {
   activeFilter: string,
@@ -13,6 +15,18 @@ type MarksMainPartProps = {
 }
 
 export function MarksMainPart({activeFilter, setActiveFilter, marks, currentStudent}: MarksMainPartProps) {
+  const [visibleCount, setVisibleCount] = useState(4);
+  const STEP = 4;
+  const hasMore = visibleCount < marks.length;
+
+  const displayedMarks = useMemo(() => {
+    return marks.slice(0, visibleCount);
+  }, [marks, visibleCount]);
+
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + STEP);
+  };
+
   return (
     <Grid size={{xs: 12, md: 8}}>
       <Box sx={{mb: 4}}>
@@ -29,7 +43,17 @@ export function MarksMainPart({activeFilter, setActiveFilter, marks, currentStud
         setActiveFilter={setActiveFilter}
       />
 
-      <MarksCardList marks={marks}/>
+      <MarksCardList marks={displayedMarks}/>
+
+      <Box sx={{display: 'flex', justifyContent: 'center', mt: 4}}>
+        {
+          hasMore ? <LoadMoreButton onClickHandler={handleLoadMore}/>
+          :
+          <Typography variant="body2" color="text.disabled">
+            To są wszystkie Twoje oceny.
+          </Typography>
+        }
+      </Box>
     </Grid>
   );
 }

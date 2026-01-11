@@ -6,7 +6,7 @@ import {
 import {SectionCard} from "../../components/SectionCard.tsx";
 import type {IMark} from "../../interfaces/IMark.ts";
 import {DashboardListItem} from "./DashboardListItem.tsx";
-import {ViewAllButton} from "../../components/ViewAllButton.tsx";
+import {ViewAllButton} from "../../components/buttons/ViewAllButton.tsx";
 import {SectionTitle} from "../../components/SectionTitle.tsx";
 
 type DashboardStudentViewerProps = {
