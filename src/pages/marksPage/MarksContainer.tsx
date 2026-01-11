@@ -38,7 +38,6 @@ export function MarksContainer() {
         <MarksSideBar
           marks={filteredMarks}
           activeFilter={activeFilter}
-          currentStudent={currentStudent}
         />
 
       </Grid>

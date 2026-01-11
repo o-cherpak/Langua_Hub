@@ -2,17 +2,15 @@ import {SectionCard} from "../../../components/SectionCard.tsx";
 import {Box, Divider, Stack} from "@mui/material";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import {SectionTitle} from "../../../components/SectionTitle.tsx";
-import type {IStudent} from "../../../interfaces/IStudent.ts";
 import {MarksSideBarTop} from "./MarksSideBarTop.tsx";
 import {MarksSideBarBottom} from "./MarksSideBarBottom.tsx";
 
 type MarksSideBarContainerProps = {
   stats: { avg: string; count: number }
   activeFilter: string,
-  currentStudent?: IStudent,
 }
 
-export function MarksSideBarContainer({stats, activeFilter, currentStudent}: MarksSideBarContainerProps) {
+export function MarksSideBarContainer({stats, activeFilter}: MarksSideBarContainerProps) {
   return (
     <SectionCard>
       <Box sx={{display: "flex", alignItems: "center", mb: 2}}>
@@ -29,7 +27,6 @@ export function MarksSideBarContainer({stats, activeFilter, currentStudent}: Mar
         <MarksSideBarBottom
           count={stats.count}
           activeFilter={activeFilter}
-          currentStudent={currentStudent}
         />
       </Stack>
     </SectionCard>

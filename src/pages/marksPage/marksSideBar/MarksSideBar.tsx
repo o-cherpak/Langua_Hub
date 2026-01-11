@@ -1,16 +1,14 @@
 import { Grid, Stack} from "@mui/material";
 import {useMemo} from "react";
 import type {IMark} from "../../../interfaces/IMark.ts";
-import type {IStudent} from "../../../interfaces/IStudent.ts";
 import {MarksSideBarContainer} from "./MarksSideBarContainer.tsx";
 
 type MarksSideBarProps = {
   marks: IMark[],
   activeFilter: string,
-  currentStudent?: IStudent,
 }
 
-export function MarksSideBar({marks, currentStudent, activeFilter}: MarksSideBarProps) {
+export function MarksSideBar({marks, activeFilter}: MarksSideBarProps) {
   const stats = useMemo(() => {
     if (marks.length === 0) return {avg: String(0), count: 0};
 
@@ -28,7 +26,6 @@ export function MarksSideBar({marks, currentStudent, activeFilter}: MarksSideBar
         <MarksSideBarContainer
           stats={stats}
           activeFilter={activeFilter}
-          currentStudent={currentStudent}
         />
       </Stack>
     </Grid>
