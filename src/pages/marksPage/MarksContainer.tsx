@@ -4,25 +4,20 @@ import {
 } from "@mui/material";
 import {useMemo, useState} from "react";
 import {useMarksStore} from "../../stores/useMarksStore.ts";
-import {useStudentsStore} from "../../stores/useStudentsStore.ts";
 import {MarksSideBar} from "./marksSideBar/MarksSideBar.tsx";
 import {MarksMainPart} from "./marksMainPart/MarksMainPart.tsx";
+import {useStudentsStore} from "../../stores/useStudentsStore.ts";
 
 export function MarksContainer() {
   const [activeFilter, setActiveFilter] = useState<string>("All");
 
   const {marks} = useMarksStore();
-  const {currentUserId, students} = useStudentsStore();
-
-  const currentStudent = useMemo(() => students.find(s => s.id === currentUserId)
-    , [students, currentUserId]);
+  const user = useStudentsStore(state => state.user);
 
   const filteredMarks = useMemo(() => {
-    const studentMarks = marks.filter(m => m.studentId === currentUserId)
-
-    if (activeFilter === "All") return studentMarks;
-    return studentMarks.filter(m => m.language.subject === activeFilter);
-  }, [marks, currentUserId, activeFilter]);
+    if (activeFilter === "All") return marks;
+    return marks.filter(m => m.language.subject === activeFilter);
+  }, [marks, activeFilter]);
 
   return (
     <Container maxWidth="lg" sx={{py: 5}}>
@@ -32,7 +27,7 @@ export function MarksContainer() {
           activeFilter={activeFilter}
           setActiveFilter={setActiveFilter}
           marks={filteredMarks}
-          currentStudent={currentStudent}
+          currentStudent={user}
         />
 
         <MarksSideBar

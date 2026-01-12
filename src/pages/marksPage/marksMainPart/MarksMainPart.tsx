@@ -11,7 +11,7 @@ type MarksMainPartProps = {
   activeFilter: string,
   setActiveFilter: (activeFilter: string) => void,
   marks: IMark[],
-  currentStudent?: IStudent,
+  currentStudent: IStudent | null,
 }
 
 export function MarksMainPart({activeFilter, setActiveFilter, marks, currentStudent}: MarksMainPartProps) {

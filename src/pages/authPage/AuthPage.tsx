@@ -6,25 +6,23 @@ import {useEffect} from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebaseConfig.ts";
 import {useStudentsStore} from "../../stores/useStudentsStore.ts";
-import {getIdByEmail} from "../../services/getIdByEmail.ts";
+import {useNavigate} from "react-router";
 
 
 export function AuthPage() {
-  const students = useStudentsStore(state => state.students);
-  const setUser = useStudentsStore(state => state.setCurrentUserId)
+  const navigate = useNavigate();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      if (user?.email) {
-        const userId = getIdByEmail({ list: students, email: user.email });
-        setUser(userId);
+      if (user) {
+        await useStudentsStore.getState().fetchUser(user.uid);
+        navigate("/welcome");
       } else {
-        setUser(null);
+        useStudentsStore.getState().clearAuth();
       }
     });
-
     return () => unsubscribe();
-  }, [setUser, students]);
+  }, [navigate]);
 
   return (
     <Container

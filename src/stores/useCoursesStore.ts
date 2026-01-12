@@ -1,4 +1,4 @@
-import { get, ref } from "firebase/database";
+import {get,ref} from "firebase/database";
 import {create} from "zustand/react";
 import {db} from "../firebaseConfig.ts";
 import type {ICourse} from "../interfaces/ICourse.ts";
@@ -14,29 +14,28 @@ export const useCoursesStore = create<CoursesState>((set) => ({
   courses: [],
   loading: false,
 
-  setCourses: (c => set({courses: c})),
-
   fetchCourses: async () => {
-    set({loading: true});
-
+    set({ loading: true });
     try {
       const snap = await get(ref(db, "courses"));
-      const val = snap.val() as ICourse[];
+      const val = snap.val();
 
       if (val) {
         const transformed: ICourse[] = Object.entries(val).map(([key, value]: [string, any]) => ({
           ...value,
           id: key,
         }));
-
         set({ courses: transformed, loading: false });
       } else {
         set({ courses: [], loading: false });
       }
     } catch (err) {
       console.error("Error fetching courses:", err);
-      set({loading: false});
+      set({ loading: false });
     }
-  }
+  },
 
-}))
+  setCourses (courses) {
+    set({ courses: courses })
+  }
+}));

@@ -2,23 +2,11 @@ import {Box, Button, TextField} from "@mui/material";
 import {signInWithEmailAndPassword} from "firebase/auth";
 import {type FormEvent, useState} from "react";
 import {auth} from "../../firebaseConfig.ts";
-import {getIdByEmail} from "../../services/getIdByEmail.ts";
-import {useStudentsStore} from "../../stores/useStudentsStore.ts";
 import {useNavigate} from "react-router";
-
-export const AuthLoginFormLoader = async () => {
-  await Promise.all([
-    useStudentsStore.getState().fetchStudents(),
-  ])
-
-  return null;
-}
 
 export function AuthLoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const students = useStudentsStore(state => state.students);
-  const setCurrentUserId = useStudentsStore((state) => state.setCurrentUserId);
 
   const navigate = useNavigate();
 
@@ -32,9 +20,6 @@ export function AuthLoginForm() {
       if (!userCredential.user.email) {
         throw new Error("Email not found");
       }
-
-      const userId = getIdByEmail({list: students, email: userCredential.user.email});
-      setCurrentUserId(userId);
       navigate("/welcome");
 
     } catch (error) {

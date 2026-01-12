@@ -5,22 +5,12 @@ import {Footer} from "../../components/footer/Footer.tsx";
 import {useStudentsStore} from "../../stores/useStudentsStore.ts";
 import {StudentInfoViewer} from "./StudentInfoViewer.tsx";
 
-export const StudentDataPageLoader = async () => {
-  await Promise.all([
-    useStudentsStore.getState().fetchStudents(),
-  ])
-
-  return null;
-}
-
 export function StudentDataPage() {
-  const userId = useStudentsStore(state => state.currentUserId)
+  const studentData = useStudentsStore(state => state.user);
 
-  const studentData = useStudentsStore(state =>
-    state.students.find(student => student.id === userId)
-  );
-
-  if (!studentData) return null;
+  if(!studentData) {
+    return null;
+  }
 
   return (
     <Box sx={{display: 'flex', flexDirection: 'column', backgroundColor: "grey.100"}}>

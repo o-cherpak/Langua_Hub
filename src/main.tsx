@@ -3,12 +3,16 @@ import {createRoot} from 'react-dom/client'
 import './index.css'
 import { ThemeProvider } from '@emotion/react';
 import {theme} from "./theme.ts";
-import {App} from "./App.tsx";
+import {router} from "./router.tsx";
+import {RouterProvider} from "react-router";
+import {useStudentsStore} from "./stores/useStudentsStore.ts";
+
+useStudentsStore.getState().initializeAuth();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
-      <App />
+      <RouterProvider router={router} />
     </ThemeProvider>
   </StrictMode>,
 )

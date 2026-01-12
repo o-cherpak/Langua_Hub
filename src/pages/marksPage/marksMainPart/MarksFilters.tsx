@@ -2,7 +2,7 @@ import {Chip, Stack} from "@mui/material";
 import type {IStudent} from "../../../interfaces/IStudent.ts";
 
 type MarksFiltersProps = {
-  currentStudent?: IStudent,
+  currentStudent: IStudent | null,
   activeFilter: string,
   setActiveFilter: (activeFilter: string) => void,
 }
