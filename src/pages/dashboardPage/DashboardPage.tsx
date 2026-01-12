@@ -1,4 +1,4 @@
-import {Header} from "../../components/Header.tsx";
+import {Header} from "../../components/header/Header.tsx";
 import {Box} from "@mui/material";
 import {Footer} from "../../components/footer/Footer.tsx";
 import {useMarksStore} from "../../stores/useMarksStore.ts";

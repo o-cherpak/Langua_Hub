@@ -4,8 +4,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import {Avatar} from '@mui/material';
 import {Link} from 'react-router';
+import {UserMenu} from "./UserMenu.tsx";
 
 export function Header() {
   return (
@@ -32,15 +32,7 @@ export function Header() {
             </Typography>
           </Box>
 
-          <IconButton
-            sx={{
-              "&:hover": {
-                background: "transparent",
-              },
-            }}
-          >
-            <Avatar>H</Avatar>
-          </IconButton>
+          <UserMenu />
 
         </Toolbar>
       </AppBar>

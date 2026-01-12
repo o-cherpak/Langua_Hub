@@ -1,4 +1,4 @@
-import {Header} from "../../components/Header.tsx";
+import {Header} from "../../components/header/Header.tsx";
 import {Box, Container, Grid} from "@mui/material";
 import {Sidebar} from "../../components/Sidebar.tsx";
 import {Footer} from "../../components/footer/Footer.tsx";

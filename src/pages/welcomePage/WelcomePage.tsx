@@ -1,5 +1,5 @@
 import {Container, Box, Stack, Grid} from "@mui/material";
-import {Header} from "../../components/Header.tsx";
+import {Header} from "../../components/header/Header.tsx";
 import {useMemo} from "react";
 import {useCoursesStore} from "../../stores/useCoursesStore.ts";
 import {isSameDay} from "date-fns";
