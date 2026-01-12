@@ -1,5 +1,5 @@
 import {Box, Button, TextField} from "@mui/material";
-import {signInWithEmailAndPassword} from "firebase/auth";
+import {browserSessionPersistence, setPersistence, signInWithEmailAndPassword} from "firebase/auth";
 import {type FormEvent, useState} from "react";
 import {auth} from "../../firebaseConfig.ts";
 import {useNavigate} from "react-router";
@@ -10,11 +10,11 @@ export function AuthLoginForm() {
 
   const navigate = useNavigate();
 
-
   const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
 
     try {
+      await setPersistence(auth, browserSessionPersistence);
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
 
       if (!userCredential.user.email) {
