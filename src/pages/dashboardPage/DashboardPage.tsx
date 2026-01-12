@@ -4,7 +4,7 @@ import {Footer} from "../../components/footer/Footer.tsx";
 import {useMarksStore} from "../../stores/useMarksStore.ts";
 import {useStudentsStore} from "../../stores/useStudentsStore.ts";
 import {DashboardContainer} from "./DashboardContainer.tsx";
-import {getCurrentUser} from "../../services/getCurrentUser.tsx";
+import {getCurrentUser} from "../../services/getCurrentUser.ts";
 
 export const DashboardPageLoader = async () => {
   const user = await getCurrentUser();

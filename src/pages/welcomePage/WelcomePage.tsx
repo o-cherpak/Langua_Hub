@@ -8,7 +8,7 @@ import {NewsSection} from "../../components/NewsSection.tsx";
 import {Sidebar} from "../../components/Sidebar.tsx";
 import {ScheduleSection} from "./ScheduleSection.tsx";
 import {useStudentsStore} from "../../stores/useStudentsStore.ts";
-import {getCurrentUser} from "../../services/getCurrentUser.tsx";
+import {getCurrentUser} from "../../services/getCurrentUser.ts";
 
 const selectedDate = new Date("2024-01-15");
 

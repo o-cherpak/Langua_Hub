@@ -3,7 +3,7 @@ import {useMarksStore} from "../../stores/useMarksStore.ts";
 import {Header} from "../../components/Header.tsx";
 import {Footer} from "../../components/footer/Footer.tsx";
 import {MarksContainer} from "./MarksContainer.tsx";
-import { getCurrentUser } from "../../services/getCurrentUser.tsx";
+import { getCurrentUser } from "../../services/getCurrentUser.ts";
 
 export const MarksPageLoader = async () => {
   const user = await getCurrentUser();
