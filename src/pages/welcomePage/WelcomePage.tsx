@@ -9,6 +9,7 @@ import {Sidebar} from "../../components/Sidebar.tsx";
 import {ScheduleSection} from "./ScheduleSection.tsx";
 import {useStudentsStore} from "../../stores/useStudentsStore.ts";
 import {getCurrentUser} from "../../services/getCurrentUser.ts";
+import {useAnnouncementsStore} from "../../stores/useAnnouncementsStore.ts";
 
 const selectedDate = new Date("2024-01-15");
 
@@ -18,7 +19,8 @@ export const WelcomePageLoader = async () => {
   if (user) {
     await Promise.all([
       useCoursesStore.getState().fetchCourses(),
-      useStudentsStore.getState().fetchUser(user.uid)
+      useStudentsStore.getState().fetchUser(user.uid),
+      useAnnouncementsStore.getState().fetchAnnouncement()
     ]);
   }
 
@@ -38,8 +40,6 @@ export function WelcomePage() {
     );
 
   }, [courses, userId]);
-
-  console.log(courses);
 
   return (
     <Box sx={{display: 'flex', flexDirection: 'column', backgroundColor: "grey.100"}}>
