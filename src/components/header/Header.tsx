@@ -2,25 +2,17 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import {Link} from 'react-router';
 import {UserMenu} from "./UserMenu.tsx";
+import {MainMenu} from "./MainMenu.tsx";
 
 export function Header() {
   return (
-    <Box>
-      <AppBar position="static">
+    <Box sx={{mb:10}}>
+      <AppBar position="fixed">
         <Toolbar sx={{display: 'flex', justifyContent: 'space-between'}}>
           <Box sx={{display: 'flex', alignItems: 'center'}}>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-            >
-              <MenuIcon sx={{fontSize: "2rem"}}/>
-            </IconButton>
+            <MainMenu/>
 
             <Typography
               component={Link}

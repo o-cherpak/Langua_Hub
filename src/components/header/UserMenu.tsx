@@ -1,10 +1,11 @@
-import { IconButton, Avatar, Menu, MenuItem } from '@mui/material';
+import {IconButton, Avatar, MenuItem, Divider} from '@mui/material';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebaseConfig';
 import { useNavigate } from 'react-router';
 import * as React from "react";
+import {useEffect, useState} from "react";
 import {useStudentsStore} from "../../stores/useStudentsStore.ts";
-import {useState} from "react";
+import {HeaderMenu} from "./HeaderMenu.tsx";
 
 export function UserMenu() {
   const user = useStudentsStore(state => state.user);
@@ -18,6 +19,20 @@ export function UserMenu() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  useEffect(() => {
+    let timer: number;
+
+    if (anchorEl) {
+      timer = window.setTimeout(() => {
+        handleClose();
+      }, 5000);
+    }
+
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
+  }, [anchorEl]);
 
   const handleLogout = async () => {
     try {
@@ -39,20 +54,21 @@ export function UserMenu() {
   return (
     <>
       <IconButton onClick={handleClick}>
-        <Avatar>
+        <Avatar sx={{bgcolor: "white", color: "primary.main", fontWeight: 500}}>
           {user?.name?.[0]}{user?.surname?.[0]}
         </Avatar>
       </IconButton>
 
-      <Menu
+      <HeaderMenu
         anchorEl={anchorEl}
-        open={Boolean(anchorEl)}
         onClose={handleClose}
       >
         <MenuItem onClick={handleProfileClick}>Konto</MenuItem>
 
-        <MenuItem onClick={handleLogout}>Wyloguj się</MenuItem>
-      </Menu>
+        <Divider/>
+
+        <MenuItem sx={{color: "error.main"}} onClick={handleLogout}>Wyloguj się</MenuItem>
+      </HeaderMenu>
     </>
   );
 }
