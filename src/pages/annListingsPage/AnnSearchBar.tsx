@@ -13,6 +13,7 @@ export function AnnSearchBar({ value, onChange }: AnnSearchBarProps) {
       size="small"
       placeholder="Jutro..."
       value={value}
+      sx={{width:"280px"}}
       onChange={(e) => onChange(e.target.value)}
       InputProps={{
         startAdornment: (
@@ -23,7 +24,7 @@ export function AnnSearchBar({ value, onChange }: AnnSearchBarProps) {
         endAdornment: value ? (
           <InputAdornment position="end">
             <IconButton onClick={() => onChange("")} size="small">
-              <ClearIcon fontSize="small" />
+              <ClearIcon fontSize="small" sx={{color: "error.main"}} />
             </IconButton>
           </InputAdornment>
         ) : null,
