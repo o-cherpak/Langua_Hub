@@ -7,6 +7,8 @@ import {getIdByEmail} from "../services/getIdByEmail.ts";
 
 interface StudentsState {
   students: IStudent[];
+  currentStudent: IStudent | null;
+  fetchCurrentStudent: (uid: string) => Promise<void>;
   loading: boolean;
   fetchStudents: () => Promise<void>;
   setStudents: (s: IStudent[]) => void;
@@ -41,6 +43,28 @@ export const useStudentsStore = create<StudentsState>((set) => ({
     } catch (err) {
       console.error("Error fetching students:", err);
       set({loading: false});
+    }
+  },
+
+  fetchCurrentStudent: async (uid: string) => {
+    set({ loading: true });
+    try {
+      const studentRef = ref(db, `students/${uid}`);
+      const snap = await get(studentRef);
+
+      if (snap.exists()) {
+        set(
+          {
+            currentStudent: { ...snap.val(), id: uid },
+            loading: false,
+            currentUserId: uid
+          });
+      } else {
+        set({ currentStudent: null, loading: false });
+      }
+    } catch (err) {
+      console.error(err);
+      set({ loading: false });
     }
   },
 
