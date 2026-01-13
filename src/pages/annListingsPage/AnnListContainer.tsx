@@ -4,8 +4,6 @@ import {useAnnouncementsStore} from "../../stores/useAnnouncementsStore.ts";
 import {type ChangeEvent, useDeferredValue, useMemo, useState} from "react";
 import {AnnPagination} from "./AnnPagination.tsx";
 import {AnnMainInfo} from "./AnnMainInfo.tsx";
-import {useTeachersStore} from "../../stores/useTeachersStore.ts";
-import {getNameById} from "../../services/getNameById.ts";
 
 type AnnListContainerProps = {
   itemsPerPage: number;
@@ -13,7 +11,6 @@ type AnnListContainerProps = {
 
 export function AnnListContainer({itemsPerPage}: AnnListContainerProps) {
   const announcement = useAnnouncementsStore(state => state.announcements);
-  const teachers = useTeachersStore(state => state.teachers);
 
   const [page, setPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
@@ -23,16 +20,16 @@ export function AnnListContainer({itemsPerPage}: AnnListContainerProps) {
     if (!searchQuery) return announcement;
 
     return announcement.filter((ann) => {
-      const teacher = getNameById(teachers, ann.teacherId);
       const query = deferredSearchQuery.trim().toLowerCase();
 
       return (
         ann.message?.toLowerCase().includes(query) ||
         ann.date?.toLowerCase().includes(query) ||
-        teacher?.toLowerCase().includes(query)
+        ann.authorName?.toLowerCase().includes(query) ||
+        ann.authorSurname?.toLowerCase().includes(query)
       );
     });
-  }, [searchQuery, announcement, teachers, deferredSearchQuery]);
+  }, [searchQuery, announcement, deferredSearchQuery]);
 
   const paginatedData = useMemo(() => {
     const startIndex = (page - 1) * itemsPerPage;

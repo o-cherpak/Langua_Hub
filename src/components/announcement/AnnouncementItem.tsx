@@ -2,8 +2,6 @@ import {ListItem, ListItemText, Typography, Box} from "@mui/material";
 import {format} from "date-fns";
 import {pl} from "date-fns/locale";
 import type {IAnnouncement} from "../../interfaces/IAnnouncement.ts";
-import {getNameById} from "../../services/getNameById.ts";
-import {useTeachersStore} from "../../stores/useTeachersStore.ts";
 
 type AnnouncementItemProps = {
   data: IAnnouncement;
@@ -13,8 +11,6 @@ export function AnnouncementItem({data}: AnnouncementItemProps) {
   const formattedDate = format(new Date(data.date), "d MMMM, HH:mm", {
     locale: pl,
   });
-
-  const teacher = useTeachersStore(state => state.teachers);
 
   return (
     <ListItem
@@ -35,7 +31,7 @@ export function AnnouncementItem({data}: AnnouncementItemProps) {
         secondary={
           <Box sx={{display: "flex", justifyContent: "space-between"}}>
             <Typography sx={{color: "gray", fontSize: 14}}>
-              {getNameById(teacher, data.teacherId)}
+              {data.authorName} {data.authorSurname}
             </Typography>
 
             <Typography sx={{color: "gray", fontSize: 14}}>

@@ -1,6 +1,7 @@
 export interface IAnnouncement {
   id: string;
-  teacherId: string;
+  authorName: string,
+  authorSurname: string,
   message: string;
   date: string;
 }

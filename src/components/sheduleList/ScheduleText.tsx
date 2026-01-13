@@ -1,15 +1,11 @@
 import {ListItemText, Typography} from "@mui/material";
 import type {ICourse} from "../../interfaces/ICourse.ts";
-import {getNameById} from "../../services/getNameById.ts";
-import {useTeachersStore} from "../../stores/useTeachersStore.ts";
 
 type ScheduleTextProps = {
   course: ICourse;
 }
 
 export function ScheduleText({course}: ScheduleTextProps) {
-  const teachers = useTeachersStore(state => state.teachers);
-
   return (
     <ListItemText
       primary={
@@ -20,7 +16,7 @@ export function ScheduleText({course}: ScheduleTextProps) {
 
       secondary={
         <Typography sx={{color: "gray", fontSize: 18}}>
-          Prowadzący: {getNameById(teachers, course.teacherId)}
+          Prowadzący: {course.teacherName + " " + course.teacherSurname}
         </Typography>
       }
     />

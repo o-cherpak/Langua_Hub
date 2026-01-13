@@ -2,63 +2,144 @@
   "students": {
     "pN9uamtkAQS8WlLD7f6fr3jeP8F3": {
       "email": "piotr.nowak@email.com",
-      "languages": [{ "subject": "English", "level": "A1" }, { "subject": "German", "level": "A2" }],
+      "languages": [
+        {
+          "subject": "English",
+          "level": "A1"
+        },
+        {
+          "subject": "German",
+          "level": "A2"
+        }
+      ],
       "name": "Piotr",
       "phone": "+48 555 111 222",
       "surname": "Nowak"
     },
     "pyJjZmMVZnZU8nd6zycolDsaByy1": {
       "email": "karolina.wisniewska@email.com",
-      "languages": [{ "subject": "Spanish", "level": "B1" }, { "subject": "English", "level": "A2" }],
+      "languages": [
+        {
+          "subject": "Spanish",
+          "level": "B1"
+        },
+        {
+          "subject": "English",
+          "level": "A2"
+        }
+      ],
       "name": "Karolina",
       "phone": "+48 555 222 333",
       "surname": "Wiśniewska"
     },
     "HaKRh2t2PPWQsgKJSbIZsJySyOu1": {
       "email": "tomasz.lewandowski@email.com",
-      "languages": [{ "subject": "French", "level": "C1" }, { "subject": "English", "level": "B2" }],
+      "languages": [
+        {
+          "subject": "French",
+          "level": "C1"
+        },
+        {
+          "subject": "English",
+          "level": "B2"
+        }
+      ],
       "name": "Tomasz",
       "phone": "+48 555 333 444",
       "surname": "Lewandowski"
     },
     "0p1JZlXZj1S6JEjG8dStKScZaHz2": {
       "email": "magdalena.kowalczyk@email.com",
-      "languages": [{ "subject": "English", "level": "B1" }, { "subject": "Spanish", "level": "A1" }],
+      "languages": [
+        {
+          "subject": "English",
+          "level": "B1"
+        },
+        {
+          "subject": "Spanish",
+          "level": "A1"
+        }
+      ],
       "name": "Magdalena",
       "phone": "+48 555 444 555",
       "surname": "Kowalczyk"
     },
     "80d4aEf1aNX4cTlk2kErztbLH9F3": {
       "email": "jakub.zielinski@email.com",
-      "languages": [{ "subject": "German", "level": "A1" }, { "subject": "English", "level": "B1" }],
+      "languages": [
+        {
+          "subject": "German",
+          "level": "A1"
+        },
+        {
+          "subject": "English",
+          "level": "B1"
+        }
+      ],
       "name": "Jakub",
       "phone": "+48 555 555 666",
       "surname": "Zieliński"
     },
     "T4RlVlIkCxVwAwC1N5BmuYKyVtX2": {
       "email": "natalia.szymanska@email.com",
-      "languages": [{ "subject": "Spanish", "level": "B2" }, { "subject": "French", "level": "A1" }],
+      "languages": [
+        {
+          "subject": "Spanish",
+          "level": "B2"
+        },
+        {
+          "subject": "French",
+          "level": "A1"
+        }
+      ],
       "name": "Natalia",
       "phone": "+48 555 666 777",
       "surname": "Szymańska"
     },
     "2w4WSmk8hGORhZS74HCK6xgu6PI3": {
       "email": "michal.wozniak@email.com",
-      "languages": [{ "subject": "French", "level": "B1" }, { "subject": "German", "level": "A2" }],
+      "languages": [
+        {
+          "subject": "French",
+          "level": "B1"
+        },
+        {
+          "subject": "German",
+          "level": "A2"
+        }
+      ],
       "name": "Michał",
       "phone": "+48 555 777 888",
       "surname": "Woźniak"
     },
     "AQ2xHYen5DRQn7Kdd6YLQxLgr8k2": {
       "email": "aleksandra.dabrowska@email.com",
-      "languages": [{ "subject": "German", "level": "B1" }, { "subject": "English", "level": "C1" }],
+      "languages": [
+        {
+          "subject": "German",
+          "level": "B1"
+        },
+        {
+          "subject": "English",
+          "level": "C1"
+        }
+      ],
       "name": "Aleksandra",
       "phone": "+48 555 888 999",
       "surname": "Dąbrowska"
     },
     "BjgRqcJRlPRnJ1elYLYNL4jhdAH3": {
       "email": "pawel.kozlowski@email.com",
-      "languages": [{ "subject": "English", "level": "A2" }, { "subject": "Spanish", "level": "A1" }],
+      "languages": [
+        {
+          "subject": "English",
+          "level": "A2"
+        },
+        {
+          "subject": "Spanish",
+          "level": "A1"
+        }
+      ],
       "name": "Paweł",
       "phone": "+48 555 999 000",
       "surname": "Kozłowski"
@@ -96,446 +177,731 @@
   },
   "courses": {
     "course_0": {
-      "name": "English Beginner Course",
+      "name": "English Survival A1",
       "subject": "English",
       "level": "A1",
       "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
+      "teacherName": "Anna",
+      "teacherSurname": "Kowalska",
       "studentIds": [
-        "pN9uamtkAQS8WlLD7f6fr3jeP8F3",
-        "0p1JZlXZj1S6JEjG8dStKScZaHz2",
-        "BjgRqcJRlPRnJ1elYLYNL4jhdAH3"
+        "pN9uamtkAQS8WlLD7f6fr3jeP8F3"
       ],
       "classroom": "101",
       "startTime": "2024-01-15T09:00:00",
       "endTime": "2024-06-15T10:30:00"
     },
     "course_1": {
-      "name": "Spanish Intermediate Course",
+      "name": "Spanish para Viajes B1",
       "subject": "Spanish",
       "level": "B1",
       "teacherId": "vLN0OtavfDNMeC2tEJRBTmIqYQv1",
+      "teacherName": "John",
+      "teacherSurname": "Smith",
       "studentIds": [
-        "pyJjZmMVZnZU8nd6zycolDsaByy1",
-        "T4RlVlIkCxVwAwC1N5BmuYKyVtX2"
+        "pyJjZmMVZnZU8nd6zycolDsaByy1"
       ],
       "classroom": "102",
       "startTime": "2024-01-15T11:00:00",
       "endTime": "2024-06-15T12:30:00"
     },
     "course_2": {
-      "name": "French Advanced Course",
+      "name": "French Perfection C1",
       "subject": "French",
       "level": "C1",
       "teacherId": "ybRIKPrv7LQAzoEA8NHWuHIuEzd2",
+      "teacherName": "Marie",
+      "teacherSurname": "Dubois",
       "studentIds": [
-        "HaKRh2t2PPWQsgKJSbIZsJySyOu1",
-        "2w4WSmk8hGORhZS74HCK6xgu6PI3"
+        "HaKRh2t2PPWQsgKJSbIZsJySyOu1"
       ],
       "classroom": "103",
       "startTime": "2024-01-15T14:00:00",
       "endTime": "2024-06-15T15:30:00"
     },
     "course_3": {
-      "name": "German Beginner Course",
+      "name": "Deutsch Start A1",
       "subject": "German",
       "level": "A1",
       "teacherId": "xZNOtMrHaXN2vgh5Wt4cb6cSoV82",
+      "teacherName": "Hans",
+      "teacherSurname": "Mueller",
       "studentIds": [
-        "80d4aEf1aNX4cTlk2kErztbLH9F3",
-        "AQ2xHYen5DRQn7Kdd6YLQxLgr8k2"
+        "80d4aEf1aNX4cTlk2kErztbLH9F3"
       ],
       "classroom": "104",
       "startTime": "2024-01-15T16:00:00",
       "endTime": "2024-06-15T17:30:00"
     },
     "course_4": {
-      "name": "English Intermediate Course",
+      "name": "English Intermediate B1",
       "subject": "English",
-      "level": "B2",
+      "level": "B1",
       "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
+      "teacherName": "Anna",
+      "teacherSurname": "Kowalska",
       "studentIds": [
-        "pN9uamtkAQS8WlLD7f6fr3jeP8F3",
-        "BjgRqcJRlPRnJ1elYLYNL4jhdAH3"
+        "0p1JZlXZj1S6JEjG8dStKScZaHz2",
+        "80d4aEf1aNX4cTlk2kErztbLH9F3"
       ],
       "classroom": "201",
-      "startTime": "2024-01-16T10:00:00",
-      "endTime": "2024-06-16T11:30:00"
+      "startTime": "2024-01-16T09:00:00",
+      "endTime": "2024-06-16T10:30:00"
     },
     "course_5": {
-      "name": "Spanish Beginner Course",
+      "name": "Spanish Inicial A1",
       "subject": "Spanish",
       "level": "A1",
       "teacherId": "vLN0OtavfDNMeC2tEJRBTmIqYQv1",
+      "teacherName": "John",
+      "teacherSurname": "Smith",
       "studentIds": [
-        "pyJjZmMVZnZU8nd6zycolDsaByy1"
+        "0p1JZlXZj1S6JEjG8dStKScZaHz2",
+        "BjgRqcJRlPRnJ1elYLYNL4jhdAH3"
       ],
       "classroom": "202",
-      "startTime": "2024-01-16T13:00:00",
-      "endTime": "2024-06-16T14:30:00"
+      "startTime": "2024-01-16T11:00:00",
+      "endTime": "2024-06-16T12:30:00"
     },
     "course_6": {
-      "name": "French Intermediate Course",
-      "subject": "French",
-      "level": "B1",
-      "teacherId": "ybRIKPrv7LQAzoEA8NHWuHIuEzd2",
+      "name": "Deutsch Kommunikation A2",
+      "subject": "German",
+      "level": "A2",
+      "teacherId": "xZNOtMrHaXN2vgh5Wt4cb6cSoV82",
+      "teacherName": "Hans",
+      "teacherSurname": "Mueller",
       "studentIds": [
-        "HaKRh2t2PPWQsgKJSbIZsJySyOu1"
+        "pN9uamtkAQS8WlLD7f6fr3jeP8F3",
+        "2w4WSmk8hGORhZS74HCK6xgu6PI3"
       ],
       "classroom": "203",
+      "startTime": "2024-01-16T14:00:00",
+      "endTime": "2024-06-16T15:30:00"
+    },
+    "course_7": {
+      "name": "English Pre-Intermediate A2",
+      "subject": "English",
+      "level": "A2",
+      "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
+      "teacherName": "Anna",
+      "teacherSurname": "Kowalska",
+      "studentIds": [
+        "pyJjZmMVZnZU8nd6zycolDsaByy1",
+        "BjgRqcJRlPRnJ1elYLYNL4jhdAH3"
+      ],
+      "classroom": "204",
+      "startTime": "2024-01-16T16:00:00",
+      "endTime": "2024-06-16T17:30:00"
+    },
+    "course_8": {
+      "name": "French Debutant A1",
+      "subject": "French",
+      "level": "A1",
+      "teacherId": "ybRIKPrv7LQAzoEA8NHWuHIuEzd2",
+      "teacherName": "Marie",
+      "teacherSurname": "Dubois",
+      "studentIds": [
+        "T4RlVlIkCxVwAwC1N5BmuYKyVtX2"
+      ],
+      "classroom": "301",
       "startTime": "2024-01-17T09:00:00",
       "endTime": "2024-06-17T10:30:00"
     },
-    "course_7": {
-      "name": "German Intermediate Course",
-      "subject": "German",
-      "level": "B2",
-      "teacherId": "xZNOtMrHaXN2vgh5Wt4cb6cSoV82",
-      "studentIds": [
-        "80d4aEf1aNX4cTlk2kErztbLH9F3"
-      ],
-      "classroom": "204",
-      "startTime": "2024-01-17T11:00:00",
-      "endTime": "2024-06-17T12:30:00"
-    },
-    "course_8": {
-      "name": "English Conversation Course",
-      "subject": "English",
-      "level": "B1",
-      "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
-      "studentIds": [
-        "0p1JZlXZj1S6JEjG8dStKScZaHz2"
-      ],
-      "classroom": "301",
-      "startTime": "2024-01-18T14:00:00",
-      "endTime": "2024-06-18T15:00:00"
-    },
     "course_9": {
-      "name": "Spanish Business Course",
+      "name": "Spanish Avanzado B2",
       "subject": "Spanish",
       "level": "B2",
       "teacherId": "vLN0OtavfDNMeC2tEJRBTmIqYQv1",
+      "teacherName": "John",
+      "teacherSurname": "Smith",
       "studentIds": [
         "T4RlVlIkCxVwAwC1N5BmuYKyVtX2"
       ],
       "classroom": "302",
-      "startTime": "2024-01-18T16:00:00",
-      "endTime": "2024-06-18T17:00:00"
+      "startTime": "2024-01-17T11:00:00",
+      "endTime": "2024-06-17T12:30:00"
     },
     "course_10": {
-      "name": "French Conversation Course",
+      "name": "French Intermédiaire B1",
       "subject": "French",
-      "level": "A2",
+      "level": "B1",
       "teacherId": "ybRIKPrv7LQAzoEA8NHWuHIuEzd2",
+      "teacherName": "Marie",
+      "teacherSurname": "Dubois",
       "studentIds": [
         "2w4WSmk8hGORhZS74HCK6xgu6PI3"
       ],
       "classroom": "303",
-      "startTime": "2024-01-19T10:00:00",
-      "endTime": "2024-06-19T11:00:00"
+      "startTime": "2024-01-17T14:00:00",
+      "endTime": "2024-06-17T15:30:00"
     },
     "course_11": {
-      "name": "German Advanced Course",
+      "name": "English Upper-Int B2",
+      "subject": "English",
+      "level": "B2",
+      "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
+      "teacherName": "Anna",
+      "teacherSurname": "Kowalska",
+      "studentIds": [
+        "HaKRh2t2PPWQsgKJSbIZsJySyOu1"
+      ],
+      "classroom": "304",
+      "startTime": "2024-01-17T16:00:00",
+      "endTime": "2024-06-17T17:30:00"
+    },
+    "course_12": {
+      "name": "Deutsch Mittelstufe B1",
       "subject": "German",
-      "level": "C1",
+      "level": "B1",
       "teacherId": "xZNOtMrHaXN2vgh5Wt4cb6cSoV82",
+      "teacherName": "Hans",
+      "teacherSurname": "Mueller",
       "studentIds": [
         "AQ2xHYen5DRQn7Kdd6YLQxLgr8k2"
       ],
-      "classroom": "304",
-      "startTime": "2024-01-19T12:00:00",
-      "endTime": "2024-06-19T13:30:00"
+      "classroom": "401",
+      "startTime": "2024-01-18T09:00:00",
+      "endTime": "2024-06-18T10:30:00"
+    },
+    "course_13": {
+      "name": "English Advanced C1",
+      "subject": "English",
+      "level": "C1",
+      "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
+      "teacherName": "Anna",
+      "teacherSurname": "Kowalska",
+      "studentIds": [
+        "AQ2xHYen5DRQn7Kdd6YLQxLgr8k2"
+      ],
+      "classroom": "402",
+      "startTime": "2024-01-18T11:00:00",
+      "endTime": "2024-06-18T12:30:00"
+    },
+    "course_14": {
+      "name": "English Grammar A1-A2",
+      "subject": "English",
+      "level": "A2",
+      "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
+      "teacherName": "Anna",
+      "teacherSurname": "Kowalska",
+      "studentIds": [
+        "pN9uamtkAQS8WlLD7f6fr3jeP8F3",
+        "BjgRqcJRlPRnJ1elYLYNL4jhdAH3"
+      ],
+      "classroom": "403",
+      "startTime": "2024-01-18T14:00:00",
+      "endTime": "2024-06-18T15:30:00"
+    },
+    "course_15": {
+      "name": "Spanish Conversation B1",
+      "subject": "Spanish",
+      "level": "B1",
+      "teacherId": "vLN0OtavfDNMeC2tEJRBTmIqYQv1",
+      "teacherName": "John",
+      "teacherSurname": "Smith",
+      "studentIds": [
+        "pyJjZmMVZnZU8nd6zycolDsaByy1"
+      ],
+      "classroom": "101",
+      "startTime": "2024-01-19T09:00:00",
+      "endTime": "2024-06-19T10:30:00"
+    },
+    "course_16": {
+      "name": "French Culture C1",
+      "subject": "French",
+      "level": "C1",
+      "teacherId": "ybRIKPrv7LQAzoEA8NHWuHIuEzd2",
+      "teacherName": "Marie",
+      "teacherSurname": "Dubois",
+      "studentIds": [
+        "HaKRh2t2PPWQsgKJSbIZsJySyOu1"
+      ],
+      "classroom": "102",
+      "startTime": "2024-01-19T11:00:00",
+      "endTime": "2024-06-19T12:30:00"
+    },
+    "course_17": {
+      "name": "German Intensive A1",
+      "subject": "German",
+      "level": "A1",
+      "teacherId": "xZNOtMrHaXN2vgh5Wt4cb6cSoV82",
+      "teacherName": "Hans",
+      "teacherSurname": "Mueller",
+      "studentIds": [
+        "80d4aEf1aNX4cTlk2kErztbLH9F3"
+      ],
+      "classroom": "103",
+      "startTime": "2024-01-19T14:00:00",
+      "endTime": "2024-06-19T15:30:00"
+    },
+    "course_18": {
+      "name": "Business English B1",
+      "subject": "English",
+      "level": "B1",
+      "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
+      "teacherName": "Anna",
+      "teacherSurname": "Kowalska",
+      "studentIds": [
+        "0p1JZlXZj1S6JEjG8dStKScZaHz2"
+      ],
+      "classroom": "104",
+      "startTime": "2024-01-20T10:00:00",
+      "endTime": "2024-06-20T12:00:00"
+    },
+    "course_19": {
+      "name": "Spanish for Beginners A1 (Sat)",
+      "subject": "Spanish",
+      "level": "A1",
+      "teacherId": "vLN0OtavfDNMeC2tEJRBTmIqYQv1",
+      "teacherName": "John",
+      "teacherSurname": "Smith",
+      "studentIds": [
+        "BjgRqcJRlPRnJ1elYLYNL4jhdAH3"
+      ],
+      "classroom": "201",
+      "startTime": "2024-01-20T13:00:00",
+      "endTime": "2024-06-20T15:00:00"
     }
   },
   "announcements": {
-    "announcement_0": {
+    "ann_0": {
       "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
-      "message": "Zajęcia z angielskiego A1 są jutro odwołane. Termin odrabiania zostanie ustalony w przyszłym tygodniu.",
+      "authorName": "Anna",
+      "authorSurname": "Kowalska",
+      "message": "Zajęcia z angielskiego A1 są jutro odwołane. Termin odrabiania zostanie ustalony.",
       "date": "2024-01-10T08:00:00"
     },
-    "announcement_1": {
+    "ann_1": {
       "teacherId": "vLN0OtavfDNMeC2tEJRBTmIqYQv1",
-      "message": "Egzaminy śródsemestralne z hiszpańskiego B1 odbędą się 15 lutego. Proszę się odpowiednio przygotować.",
+      "authorName": "John",
+      "authorSurname": "Smith",
+      "message": "Egzaminy śródsemestralne z hiszpańskiego B1 odbędą się 15 lutego.",
       "date": "2024-01-12T10:30:00"
     },
-    "announcement_2": {
+    "ann_2": {
       "teacherId": "ybRIKPrv7LQAzoEA8NHWuHIuEzd2",
-      "message": "Spotkanie klubu konwersacyjnego z francuskiego w ten piątek o 17:00 w sali 303. Wszystkie poziomy mile widziane!",
+      "authorName": "Marie",
+      "authorSurname": "Dubois",
+      "message": "Spotkanie klubu konwersacyjnego z francuskiego w ten piątek o 17:00 w sali 303.",
       "date": "2024-01-15T14:00:00"
     },
-    "announcement_3": {
+    "ann_3": {
       "teacherId": "xZNOtMrHaXN2vgh5Wt4cb6cSoV82",
+      "authorName": "Hans",
+      "authorSurname": "Mueller",
       "message": "Podręczniki do niemieckiego dotarły. Proszę odebrać je w sekretariacie.",
       "date": "2024-01-18T09:15:00"
     },
-    "announcement_4": {
+    "ann_4": {
       "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
-      "message": "Przypomnienie: Testy poziomujące z angielskiego dla nowych uczniów odbędą się we wtorek.",
+      "authorName": "Anna",
+      "authorSurname": "Kowalska",
+      "message": "Przypomnienie: Testy poziomujące dla nowych uczniów odbędą się we wtorek.",
       "date": "2024-01-20T11:45:00"
     },
-    "announcement_5": {
+    "ann_5": {
       "teacherId": "vLN0OtavfDNMeC2tEJRBTmIqYQv1",
-      "message": "Wydarzenie kulturalne: Warsztaty tańca Flamenco w środe",
+      "authorName": "John",
+      "authorSurname": "Smith",
+      "message": "Wydarzenie kulturalne: Warsztaty tańca Flamenco w środę o 18:00.",
       "date": "2024-01-22T16:20:00"
     },
-    "announcement_6": {
+    "ann_6": {
       "teacherId": "ybRIKPrv7LQAzoEA8NHWuHIuEzd2",
-      "message": "Wieczór filmowy z francuskim: Oglądamy 'Amelię' w piątek o 18:00.",
+      "authorName": "Marie",
+      "authorSurname": "Dubois",
+      "message": "Wieczór filmowy: Oglądamy 'Amelię' w piątek o 18:00.",
       "date": "2024-01-25T18:00:00"
     },
-    "announcement_7": {
+    "ann_7": {
       "teacherId": "xZNOtMrHaXN2vgh5Wt4cb6cSoV82",
-      "message": "Ważne: Czwartkowe zajęcia z niemieckiego A1 zostały przeniesione do sali 104.",
+      "authorName": "Hans",
+      "authorSurname": "Mueller",
+      "message": "Ważne: Czwartkowe zajęcia z niemieckiego A1 przeniesione do sali 104.",
       "date": "2024-01-28T09:00:00"
     },
-    "announcement_8": {
+    "ann_8": {
       "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
-      "message": "Nowe materiały do gramatyki angielskiej zostały dodane",
+      "authorName": "Anna",
+      "authorSurname": "Kowalska",
+      "message": "Nowe materiały do gramatyki angielskiej zostały dodane do platformy.",
       "date": "2024-02-01T10:00:00"
     },
-    "announcement_9": {
+    "ann_9": {
       "teacherId": "vLN0OtavfDNMeC2tEJRBTmIqYQv1",
-      "message": "Termin oddania pracy domowej z hiszpańskiego do 16 stycznia",
+      "authorName": "John",
+      "authorSurname": "Smith",
+      "message": "Termin oddania prac domowych z hiszpańskiego mija w piątek.",
       "date": "2024-02-03T15:30:00"
     },
-    "announcement_10": {
+    "ann_10": {
       "teacherId": "ybRIKPrv7LQAzoEA8NHWuHIuEzd2",
-      "message": "Zapraszamy na degustację naleśników we wtorek La Chandeleur!",
+      "authorName": "Marie",
+      "authorSurname": "Dubois",
+      "message": "Zapraszamy na degustację naleśników we wtorek - La Chandeleur!",
       "date": "2024-02-05T12:00:00"
     },
-    "announcement_11": {
+    "ann_11": {
       "teacherId": "xZNOtMrHaXN2vgh5Wt4cb6cSoV82",
-      "message": "Gość specjalny: Prelekcja o życiu w Berlinie. Środa o 16:00.",
+      "authorName": "Hans",
+      "authorSurname": "Mueller",
+      "message": "Gość specjalny: Prelekcja o życiu в Berlinie. Środa o 16:00.",
       "date": "2024-02-08T14:00:00"
     },
-    "announcement_12": {
+    "ann_12": {
       "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
-      "message": "Warsztaty przygotowawcze do egzaminu IELTS czwartek 14:00 .",
+      "authorName": "Anna",
+      "authorSurname": "Kowalska",
+      "message": "Warsztaty IELTS: Dodatkowa sesja w czwartek o 14:00.",
       "date": "2024-02-10T09:00:00"
     },
-    "announcement_13": {
+    "ann_13": {
       "teacherId": "vLN0OtavfDNMeC2tEJRBTmIqYQv1",
-      "message": "Korekta: Egzamin z hiszpańskiego B1 w sali 202.",
+      "authorName": "John",
+      "authorSurname": "Smith",
+      "message": "Korekta sali: Egzamin z hiszpańskiego B1 odbędzie się в sali 202.",
       "date": "2024-02-14T08:30:00"
     },
-    "announcement_14": {
+    "ann_14": {
       "teacherId": "ybRIKPrv7LQAzoEA8NHWuHIuEzd2",
-      "message": "Przypomnienie: Proszę jutro przynieść słowniki francuskie.",
+      "authorName": "Marie",
+      "authorSurname": "Dubois",
+      "message": "Przypomnienie: Proszę przynieść słowniki na zajęcia w poniedziałek.",
       "date": "2024-02-18T16:00:00"
     },
-    "announcement_15": {
+    "ann_15": {
       "teacherId": "xZNOtMrHaXN2vgh5Wt4cb6cSoV82",
-      "message": "Temat klubu dyskusyjnego z niemieckiego: 'Środowisko i recykling'.",
+      "authorName": "Hans",
+      "authorSurname": "Mueller",
+      "message": "Klub dyskusyjny: 'Ekologia w Niemczech'. Zapraszamy w czwartek.",
       "date": "2024-02-20T11:00:00"
+    },
+    "ann_16": {
+      "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
+      "authorName": "Anna",
+      "authorSurname": "Kowalska",
+      "message": "Letnia szkoła językowa - ruszają zapisy! Szczegóły в sekretariacie.",
+      "date": "2024-02-22T10:00:00"
+    },
+    "ann_17": {
+      "teacherId": "vLN0OtavfDNMeC2tEJRBTmIqYQv1",
+      "authorName": "John",
+      "authorSurname": "Smith",
+      "message": "Konkurs recytatorski z hiszpańskiego - zgłoś się do końca tygodnia.",
+      "date": "2024-02-25T13:00:00"
+    },
+    "ann_18": {
+      "teacherId": "ybRIKPrv7LQAzoEA8NHWuHIuEzd2",
+      "authorName": "Marie",
+      "authorSurname": "Dubois",
+      "message": "Wyniki egzaminów DELF są już dostępne u wykładowcy.",
+      "date": "2024-02-27T15:00:00"
+    },
+    "ann_19": {
+      "teacherId": "xZNOtMrHaXN2vgh5Wt4cb6cSoV82",
+      "authorName": "Hans",
+      "authorSurname": "Mueller",
+      "message": "Zmiana planu: Piątkowe zajęcia C1 odwołane z powodu wyjazdu.",
+      "date": "2024-03-01T12:00:00"
     }
   },
   "marks": {
     "mark_0": {
       "studentId": "pN9uamtkAQS8WlLD7f6fr3jeP8F3",
       "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
-      "language": { "subject": "English", "level": "A1" },
+      "language": {
+        "subject": "English",
+        "level": "A1"
+      },
       "mark": 85,
       "date": "2024-01-15T09:00:00"
     },
     "mark_1": {
       "studentId": "pN9uamtkAQS8WlLD7f6fr3jeP8F3",
       "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
-      "language": { "subject": "English", "level": "A1" },
+      "language": {
+        "subject": "English",
+        "level": "A1"
+      },
       "mark": 78,
       "date": "2024-02-15T09:00:00"
     },
     "mark_2": {
       "studentId": "pN9uamtkAQS8WlLD7f6fr3jeP8F3",
       "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
-      "language": { "subject": "English", "level": "A1" },
+      "language": {
+        "subject": "English",
+        "level": "A1"
+      },
       "mark": 92,
       "date": "2024-03-15T09:00:00"
     },
     "mark_3": {
       "studentId": "pyJjZmMVZnZU8nd6zycolDsaByy1",
       "teacherId": "vLN0OtavfDNMeC2tEJRBTmIqYQv1",
-      "language": { "subject": "Spanish", "level": "B1" },
+      "language": {
+        "subject": "Spanish",
+        "level": "B1"
+      },
       "mark": 88,
       "date": "2024-01-20T11:00:00"
     },
     "mark_4": {
       "studentId": "pyJjZmMVZnZU8nd6zycolDsaByy1",
       "teacherId": "vLN0OtavfDNMeC2tEJRBTmIqYQv1",
-      "language": { "subject": "Spanish", "level": "B1" },
+      "language": {
+        "subject": "Spanish",
+        "level": "B1"
+      },
       "mark": 91,
       "date": "2024-02-20T11:00:00"
     },
     "mark_5": {
       "studentId": "pyJjZmMVZnZU8nd6zycolDsaByy1",
       "teacherId": "vLN0OtavfDNMeC2tEJRBTmIqYQv1",
-      "language": { "subject": "Spanish", "level": "B1" },
+      "language": {
+        "subject": "Spanish",
+        "level": "B1"
+      },
       "mark": 84,
       "date": "2024-03-20T11:00:00"
     },
     "mark_6": {
       "studentId": "HaKRh2t2PPWQsgKJSbIZsJySyOu1",
       "teacherId": "ybRIKPrv7LQAzoEA8NHWuHIuEzd2",
-      "language": { "subject": "French", "level": "C1" },
+      "language": {
+        "subject": "French",
+        "level": "C1"
+      },
       "mark": 95,
       "date": "2024-01-25T14:00:00"
     },
     "mark_7": {
       "studentId": "HaKRh2t2PPWQsgKJSbIZsJySyOu1",
       "teacherId": "ybRIKPrv7LQAzoEA8NHWuHIuEzd2",
-      "language": { "subject": "French", "level": "C1" },
+      "language": {
+        "subject": "French",
+        "level": "C1"
+      },
       "mark": 93,
       "date": "2024-02-25T14:00:00"
     },
     "mark_8": {
       "studentId": "HaKRh2t2PPWQsgKJSbIZsJySyOu1",
       "teacherId": "ybRIKPrv7LQAzoEA8NHWuHIuEzd2",
-      "language": { "subject": "French", "level": "C1" },
+      "language": {
+        "subject": "French",
+        "level": "C1"
+      },
       "mark": 96,
       "date": "2024-03-25T14:00:00"
     },
     "mark_9": {
       "studentId": "0p1JZlXZj1S6JEjG8dStKScZaHz2",
       "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
-      "language": { "subject": "English", "level": "B1" },
+      "language": {
+        "subject": "English",
+        "level": "B1"
+      },
       "mark": 72,
       "date": "2024-01-10T09:00:00"
     },
     "mark_10": {
       "studentId": "0p1JZlXZj1S6JEjG8dStKScZaHz2",
       "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
-      "language": { "subject": "English", "level": "B1" },
+      "language": {
+        "subject": "English",
+        "level": "B1"
+      },
       "mark": 81,
       "date": "2024-02-10T09:00:00"
     },
     "mark_11": {
       "studentId": "0p1JZlXZj1S6JEjG8dStKScZaHz2",
       "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
-      "language": { "subject": "English", "level": "B1" },
+      "language": {
+        "subject": "English",
+        "level": "B1"
+      },
       "mark": 85,
       "date": "2024-03-10T09:00:00"
     },
     "mark_12": {
       "studentId": "80d4aEf1aNX4cTlk2kErztbLH9F3",
       "teacherId": "xZNOtMrHaXN2vgh5Wt4cb6cSoV82",
-      "language": { "subject": "German", "level": "A1" },
+      "language": {
+        "subject": "German",
+        "level": "A1"
+      },
       "mark": 68,
       "date": "2024-01-18T16:00:00"
     },
     "mark_13": {
       "studentId": "80d4aEf1aNX4cTlk2kErztbLH9F3",
       "teacherId": "xZNOtMrHaXN2vgh5Wt4cb6cSoV82",
-      "language": { "subject": "German", "level": "A1" },
+      "language": {
+        "subject": "German",
+        "level": "A1"
+      },
       "mark": 75,
       "date": "2024-02-18T16:00:00"
     },
     "mark_14": {
       "studentId": "80d4aEf1aNX4cTlk2kErztbLH9F3",
       "teacherId": "xZNOtMrHaXN2vgh5Wt4cb6cSoV82",
-      "language": { "subject": "German", "level": "A1" },
+      "language": {
+        "subject": "German",
+        "level": "A1"
+      },
       "mark": 82,
       "date": "2024-03-18T16:00:00"
     },
     "mark_15": {
       "studentId": "T4RlVlIkCxVwAwC1N5BmuYKyVtX2",
       "teacherId": "vLN0OtavfDNMeC2tEJRBTmIqYQv1",
-      "language": { "subject": "Spanish", "level": "B2" },
+      "language": {
+        "subject": "Spanish",
+        "level": "B2"
+      },
       "mark": 94,
       "date": "2024-01-22T11:00:00"
     },
     "mark_16": {
       "studentId": "T4RlVlIkCxVwAwC1N5BmuYKyVtX2",
       "teacherId": "vLN0OtavfDNMeC2tEJRBTmIqYQv1",
-      "language": { "subject": "Spanish", "level": "B2" },
+      "language": {
+        "subject": "Spanish",
+        "level": "B2"
+      },
       "mark": 96,
       "date": "2024-02-22T11:00:00"
     },
     "mark_17": {
       "studentId": "T4RlVlIkCxVwAwC1N5BmuYKyVtX2",
       "teacherId": "vLN0OtavfDNMeC2tEJRBTmIqYQv1",
-      "language": { "subject": "Spanish", "level": "B2" },
+      "language": {
+        "subject": "Spanish",
+        "level": "B2"
+      },
       "mark": 98,
       "date": "2024-03-22T11:00:00"
     },
     "mark_18": {
       "studentId": "2w4WSmk8hGORhZS74HCK6xgu6PI3",
       "teacherId": "ybRIKPrv7LQAzoEA8NHWuHIuEzd2",
-      "language": { "subject": "French", "level": "B1" },
+      "language": {
+        "subject": "French",
+        "level": "B1"
+      },
       "mark": 71,
       "date": "2024-01-28T14:00:00"
     },
     "mark_19": {
       "studentId": "2w4WSmk8hGORhZS74HCK6xgu6PI3",
       "teacherId": "ybRIKPrv7LQAzoEA8NHWuHIuEzd2",
-      "language": { "subject": "French", "level": "B1" },
+      "language": {
+        "subject": "French",
+        "level": "B1"
+      },
       "mark": 79,
       "date": "2024-02-28T14:00:00"
     },
     "mark_20": {
       "studentId": "2w4WSmk8hGORhZS74HCK6xgu6PI3",
       "teacherId": "ybRIKPrv7LQAzoEA8NHWuHIuEzd2",
-      "language": { "subject": "French", "level": "B1" },
+      "language": {
+        "subject": "French",
+        "level": "B1"
+      },
       "mark": 83,
       "date": "2024-03-28T14:00:00"
     },
     "mark_21": {
       "studentId": "AQ2xHYen5DRQn7Kdd6YLQxLgr8k2",
       "teacherId": "xZNOtMrHaXN2vgh5Wt4cb6cSoV82",
-      "language": { "subject": "German", "level": "B1" },
+      "language": {
+        "subject": "German",
+        "level": "B1"
+      },
       "mark": 88,
       "date": "2024-01-19T16:00:00"
     },
     "mark_22": {
       "studentId": "AQ2xHYen5DRQn7Kdd6YLQxLgr8k2",
       "teacherId": "xZNOtMrHaXN2vgh5Wt4cb6cSoV82",
-      "language": { "subject": "German", "level": "B1" },
+      "language": {
+        "subject": "German",
+        "level": "B1"
+      },
       "mark": 92,
       "date": "2024-02-19T16:00:00"
     },
     "mark_23": {
       "studentId": "AQ2xHYen5DRQn7Kdd6YLQxLgr8k2",
       "teacherId": "xZNOtMrHaXN2vgh5Wt4cb6cSoV82",
-      "language": { "subject": "German", "level": "B1" },
+      "language": {
+        "subject": "German",
+        "level": "B1"
+      },
       "mark": 90,
       "date": "2024-03-19T16:00:00"
     },
     "mark_24": {
       "studentId": "BjgRqcJRlPRnJ1elYLYNL4jhdAH3",
       "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
-      "language": { "subject": "English", "level": "A2" },
+      "language": {
+        "subject": "English",
+        "level": "A2"
+      },
       "mark": 63,
       "date": "2024-01-12T09:00:00"
     },
     "mark_25": {
       "studentId": "BjgRqcJRlPRnJ1elYLYNL4jhdAH3",
       "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
-      "language": { "subject": "English", "level": "A2" },
+      "language": {
+        "subject": "English",
+        "level": "A2"
+      },
       "mark": 70,
       "date": "2024-02-12T09:00:00"
     },
     "mark_26": {
       "studentId": "BjgRqcJRlPRnJ1elYLYNL4jhdAH3",
       "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
-      "language": { "subject": "English", "level": "A2" },
+      "language": {
+        "subject": "English",
+        "level": "A2"
+      },
       "mark": 76,
       "date": "2024-03-12T09:00:00"
     },
     "mark_27": {
       "studentId": "80d4aEf1aNX4cTlk2kErztbLH9F3",
       "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
-      "language": { "subject": "English", "level": "B1" },
+      "language": {
+        "subject": "English",
+        "level": "B1"
+      },
       "mark": 86,
       "date": "2024-03-14T09:00:00"
     },
     "mark_28": {
       "studentId": "80d4aEf1aNX4cTlk2kErztbLH9F3",
       "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
-      "language": { "subject": "English", "level": "B1" },
+      "language": {
+        "subject": "English",
+        "level": "B1"
+      },
       "mark": 77,
       "date": "2024-04-14T09:00:00"
     },
     "mark_29": {
       "studentId": "80d4aEf1aNX4cTlk2kErztbLH9F3",
       "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
-      "language": { "subject": "English", "level": "B1" },
+      "language": {
+        "subject": "English",
+        "level": "B1"
+      },
       "mark": 64,
       "date": "2024-04-24T09:00:00"
     }
