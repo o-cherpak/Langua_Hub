@@ -10,7 +10,7 @@ type StudentContactSectionProps = {
 export function StudentContactSection({student}: StudentContactSectionProps) {
   return (
     <Grid size={{xs: 12, md: 6}}>
-      <StudentSectionSubtitle title={"Contact Info"}/>
+      <StudentSectionSubtitle title={"Informacja"}/>
 
       <Stack spacing={3}>
         <StudentContactLink
@@ -21,7 +21,7 @@ export function StudentContactSection({student}: StudentContactSectionProps) {
 
         <StudentContactLink
           href={`tel:${student.phone}`}
-          title={"Phone"}
+          title={"Numer telefonu"}
           info={student.phone}
         />
       </Stack>

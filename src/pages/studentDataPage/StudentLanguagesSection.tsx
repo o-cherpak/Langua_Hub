@@ -10,7 +10,7 @@ type StudentLanguagesSectionProps = {
 export function StudentLanguagesSection({student}: StudentLanguagesSectionProps) {
   return (
     <Grid size={{xs: 12, md: 6}}>
-      <StudentSectionSubtitle title={"Enrolled Languages"}/>
+      <StudentSectionSubtitle title={"Języki"}/>
 
       <Stack spacing={1}>
         {student.languages.map((lang, index) => (
