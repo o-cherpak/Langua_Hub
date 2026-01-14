@@ -1,7 +1,6 @@
-import {Box} from "@mui/material";
+import { Box } from "@mui/material";
 
-import {FooterContainer} from "./FooterContainer.tsx";
-
+import { FooterContainer } from "./FooterContainer.tsx";
 
 export function Footer() {
   return (
@@ -14,7 +13,7 @@ export function Footer() {
         borderColor: "grey.200",
       }}
     >
-      <FooterContainer/>
+      <FooterContainer />
     </Box>
   );
 }

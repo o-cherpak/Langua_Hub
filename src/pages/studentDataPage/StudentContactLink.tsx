@@ -1,13 +1,17 @@
 import Typography from "@mui/material/Typography";
-import {Box} from "@mui/material";
+import { Box } from "@mui/material";
 
 type StudentContactLinkProps = {
   href: string;
   title: string;
   info: string;
-}
+};
 
-export function StudentContactLink({href, title, info}: StudentContactLinkProps) {
+export function StudentContactLink({
+  href,
+  title,
+  info,
+}: StudentContactLinkProps) {
   return (
     <Box>
       <Typography variant="caption" color="text.secondary" display="block">
@@ -18,7 +22,7 @@ export function StudentContactLink({href, title, info}: StudentContactLinkProps)
         variant="body1"
         component="a"
         href={href}
-        sx={{textDecoration: 'none', color: 'inherit'}}
+        sx={{ textDecoration: "none", color: "inherit" }}
       >
         {info}
       </Typography>

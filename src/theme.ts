@@ -1,4 +1,4 @@
-import {createTheme} from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({
   typography: {
@@ -10,5 +10,5 @@ export const theme = createTheme({
     h4: { fontFamily: '"Poppins", sans-serif' },
     h5: { fontFamily: '"Poppins", sans-serif', fontWeight: 700 },
     h6: { fontFamily: '"Poppins", sans-serif', fontWeight: 600 },
-  }
+  },
 });

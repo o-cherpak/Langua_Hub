@@ -1,11 +1,11 @@
-import {Link, Stack} from "@mui/material";
+import { Link, Stack } from "@mui/material";
 
 const links = [
-  {title: "Kursy", url: "#"},
-  {title: "Lektorzy", url: "#"},
-  {title: "O nas", url: "#"},
-  {title: "Kontakt", url: "#"}
-]
+  { title: "Kursy", url: "#" },
+  { title: "Lektorzy", url: "#" },
+  { title: "O nas", url: "#" },
+  { title: "Kontakt", url: "#" },
+];
 
 export function FooterLinks() {
   return (
@@ -20,7 +20,7 @@ export function FooterLinks() {
             color: "text.primary",
             fontWeight: 500,
             transition: "0.2s",
-            "&:hover": {color: "primary.main"},
+            "&:hover": { color: "primary.main" },
           }}
         >
           {item.title}

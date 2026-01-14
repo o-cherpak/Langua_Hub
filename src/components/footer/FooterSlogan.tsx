@@ -1,8 +1,8 @@
-import {Box, Typography} from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 export function FooterSlogan() {
   return (
-    <Box sx={{textAlign: {xs: "center", md: "left"}}}>
+    <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
       <Typography variant="h6" color="primary.main">
         Langua_Hub
       </Typography>

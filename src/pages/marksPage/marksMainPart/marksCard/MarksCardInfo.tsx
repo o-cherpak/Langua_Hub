@@ -1,14 +1,14 @@
-import {Box, Chip, Stack, Typography} from "@mui/material";
+import { Box, Chip, Stack, Typography } from "@mui/material";
 import AssignmentCheckIcon from "@mui/icons-material/AssignmentTurnedIn";
-import {format} from "date-fns";
-import {pl} from "date-fns/locale";
-import type {IMark} from "../../../../interfaces/IMark.ts";
+import { format } from "date-fns";
+import { pl } from "date-fns/locale";
+import type { IMark } from "../../../../interfaces/IMark.ts";
 
 type MarksCardInfoProps = {
   m: IMark;
-}
+};
 
-export function MarksCardInfo({m}: MarksCardInfoProps) {
+export function MarksCardInfo({ m }: MarksCardInfoProps) {
   return (
     <Box>
       <Stack direction="row" alignItems="center" spacing={1}>
@@ -18,8 +18,9 @@ export function MarksCardInfo({m}: MarksCardInfoProps) {
 
         <Chip
           label={m.language.level}
-          size="small" variant="outlined"
-          sx={{height: 20, fontWeight: 700}}
+          size="small"
+          variant="outlined"
+          sx={{ height: 20, fontWeight: 700 }}
         />
       </Stack>
 
@@ -27,14 +28,14 @@ export function MarksCardInfo({m}: MarksCardInfoProps) {
         variant="caption"
         color="text.secondary"
         sx={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 0.6
+          display: "flex",
+          alignItems: "center",
+          gap: 0.6,
         }}
       >
-        <AssignmentCheckIcon sx={{fontSize: 12}}/>
+        <AssignmentCheckIcon sx={{ fontSize: 12 }} />
 
-        {format(new Date(m.date), "d MMMM yyyy 'o' HH:mm", {locale: pl})}
+        {format(new Date(m.date), "d MMMM yyyy 'o' HH:mm", { locale: pl })}
       </Typography>
     </Box>
   );

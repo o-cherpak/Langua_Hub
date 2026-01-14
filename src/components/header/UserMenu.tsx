@@ -1,14 +1,14 @@
-import {IconButton, Avatar, MenuItem, Divider} from '@mui/material';
-import { signOut } from 'firebase/auth';
-import { auth } from '../../firebaseConfig';
-import { useNavigate } from 'react-router';
+import { IconButton, Avatar, MenuItem, Divider } from "@mui/material";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebaseConfig";
+import { useNavigate } from "react-router";
 import * as React from "react";
-import {useEffect, useState} from "react";
-import {useStudentsStore} from "../../stores/useStudentsStore.ts";
-import {HeaderMenu} from "./HeaderMenu.tsx";
+import { useEffect, useState } from "react";
+import { useStudentsStore } from "../../stores/useStudentsStore.ts";
+import { HeaderMenu } from "./HeaderMenu.tsx";
 
 export function UserMenu() {
-  const user = useStudentsStore(state => state.user);
+  const user = useStudentsStore((state) => state.user);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const navigate = useNavigate();
 
@@ -49,25 +49,27 @@ export function UserMenu() {
     handleClose();
 
     navigate("/student");
-  }
+  };
 
   return (
     <>
       <IconButton onClick={handleClick}>
-        <Avatar sx={{bgcolor: "white", color: "primary.main", fontWeight: 500}}>
-          {user?.name?.[0]}{user?.surname?.[0]}
+        <Avatar
+          sx={{ bgcolor: "white", color: "primary.main", fontWeight: 500 }}
+        >
+          {user?.name?.[0]}
+          {user?.surname?.[0]}
         </Avatar>
       </IconButton>
 
-      <HeaderMenu
-        anchorEl={anchorEl}
-        onClose={handleClose}
-      >
+      <HeaderMenu anchorEl={anchorEl} onClose={handleClose}>
         <MenuItem onClick={handleProfileClick}>Konto</MenuItem>
 
-        <Divider/>
+        <Divider />
 
-        <MenuItem sx={{color: "error.main"}} onClick={handleLogout}>Wyloguj się</MenuItem>
+        <MenuItem sx={{ color: "error.main" }} onClick={handleLogout}>
+          Wyloguj się
+        </MenuItem>
       </HeaderMenu>
     </>
   );

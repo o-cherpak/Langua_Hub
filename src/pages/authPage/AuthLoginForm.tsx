@@ -1,8 +1,12 @@
-import {Box, Button, TextField} from "@mui/material";
-import {browserSessionPersistence, setPersistence, signInWithEmailAndPassword} from "firebase/auth";
-import {type FormEvent, useState} from "react";
-import {auth} from "../../firebaseConfig.ts";
-import {useNavigate} from "react-router";
+import { Box, Button, TextField } from "@mui/material";
+import {
+  browserSessionPersistence,
+  setPersistence,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { type FormEvent, useState } from "react";
+import { auth } from "../../firebaseConfig.ts";
+import { useNavigate } from "react-router";
 
 export function AuthLoginForm() {
   const [email, setEmail] = useState("");
@@ -15,20 +19,23 @@ export function AuthLoginForm() {
 
     try {
       await setPersistence(auth, browserSessionPersistence);
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password,
+      );
 
       if (!userCredential.user.email) {
         throw new Error("Email not found");
       }
       navigate("/welcome");
-
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   return (
-    <Box component="form" sx={{width: "100%"}} onSubmit={handleLogin}>
+    <Box component="form" sx={{ width: "100%" }} onSubmit={handleLogin}>
       <TextField
         margin="normal"
         required
@@ -51,15 +58,9 @@ export function AuthLoginForm() {
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <Button
-        type="submit"
-        fullWidth
-        variant="contained"
-        sx={{my: 2, py: 1}}
-      >
+      <Button type="submit" fullWidth variant="contained" sx={{ my: 2, py: 1 }}>
         Zaloguj się
       </Button>
-
     </Box>
   );
 }

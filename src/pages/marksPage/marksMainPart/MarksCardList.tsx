@@ -1,12 +1,12 @@
-import {Box, Grid, Typography} from "@mui/material";
-import type {IMark} from "../../../interfaces/IMark.ts";
-import {MarksCard} from "./marksCard/MarksCard.tsx";
+import { Box, Grid, Typography } from "@mui/material";
+import type { IMark } from "../../../interfaces/IMark.ts";
+import { MarksCard } from "./marksCard/MarksCard.tsx";
 
 type MarksCardListProps = {
   marks: IMark[];
-}
+};
 
-export function MarksCardList({marks}: MarksCardListProps) {
+export function MarksCardList({ marks }: MarksCardListProps) {
   return (
     <Box>
       <Grid container spacing={2}>
@@ -22,7 +22,7 @@ export function MarksCardList({marks}: MarksCardListProps) {
           variant="body1"
           color="text.secondary"
           textAlign="center"
-          sx={{ py: 4, width: '100%' }}
+          sx={{ py: 4, width: "100%" }}
         >
           Brak ocen dla wybranej kategorii.
         </Typography>

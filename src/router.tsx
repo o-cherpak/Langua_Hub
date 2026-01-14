@@ -1,43 +1,52 @@
-import {createBrowserRouter} from "react-router";
-import {WelcomePage, WelcomePageLoader} from "./pages/welcomePage/WelcomePage.tsx";
-import {StudentDataPage} from "./pages/studentDataPage/StudentDataPage.tsx";
-import {AnnListingsPage, AnnListingsPageLoader} from "./pages/annListingsPage/AnnListingsPage.tsx";
-import {AuthPage} from "./pages/authPage/AuthPage.tsx";
-import {DashboardPage, DashboardPageLoader} from "./pages/dashboardPage/DashboardPage.tsx";
-import {MarksPage, MarksPageLoader} from "./pages/marksPage/MarksPage.tsx";
-import {CalendarPage} from "./pages/calendarPage/CalendarPage.tsx";
+import { createBrowserRouter } from "react-router";
+import {
+  WelcomePage,
+  WelcomePageLoader,
+} from "./pages/welcomePage/WelcomePage.tsx";
+import { StudentDataPage } from "./pages/studentDataPage/StudentDataPage.tsx";
+import {
+  AnnListingsPage,
+  AnnListingsPageLoader,
+} from "./pages/annListingsPage/AnnListingsPage.tsx";
+import { AuthPage } from "./pages/authPage/AuthPage.tsx";
+import {
+  DashboardPage,
+  DashboardPageLoader,
+} from "./pages/dashboardPage/DashboardPage.tsx";
+import { MarksPage, MarksPageLoader } from "./pages/marksPage/MarksPage.tsx";
+import { CalendarPage } from "./pages/calendarPage/CalendarPage.tsx";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <AuthPage/>,
+    element: <AuthPage />,
   },
   {
     path: "/welcome",
-    element: <WelcomePage/>,
-    loader: WelcomePageLoader
+    element: <WelcomePage />,
+    loader: WelcomePageLoader,
   },
   {
     path: "/dashboard",
-    element: <DashboardPage/>,
-    loader: DashboardPageLoader
+    element: <DashboardPage />,
+    loader: DashboardPageLoader,
   },
   {
     path: "/student",
-    element: <StudentDataPage/>,
+    element: <StudentDataPage />,
   },
   {
     path: "/ann",
-    element: <AnnListingsPage/>,
-    loader: AnnListingsPageLoader
+    element: <AnnListingsPage />,
+    loader: AnnListingsPageLoader,
   },
   {
     path: "/marks",
-    element: <MarksPage/>,
-    loader: MarksPageLoader
+    element: <MarksPage />,
+    loader: MarksPageLoader,
   },
   {
     path: "/calendarPage",
-    element: <CalendarPage/>,
-  }
+    element: <CalendarPage />,
+  },
 ]);

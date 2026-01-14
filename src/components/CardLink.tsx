@@ -1,8 +1,8 @@
-import {Card, CardActionArea, Box, Typography} from "@mui/material";
-import type {ReactNode} from "react";
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import {blue} from "@mui/material/colors";
-import {Link} from "react-router";
+import { Card, CardActionArea, Box, Typography } from "@mui/material";
+import type { ReactNode } from "react";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { blue } from "@mui/material/colors";
+import { Link } from "react-router";
 
 type CardLinkProps = {
   title: string;
@@ -10,7 +10,7 @@ type CardLinkProps = {
   icon: ReactNode;
 };
 
-export function CardLink({title, icon, href}: CardLinkProps) {
+export function CardLink({ title, icon, href }: CardLinkProps) {
   return (
     <Card
       component={Link}
@@ -23,10 +23,15 @@ export function CardLink({title, icon, href}: CardLinkProps) {
         boxShadow: 1,
       }}
     >
-      <CardActionArea sx={{p: 2}}>
-        <Box sx={{display: "flex", alignItems: "center", justifyContent: 'space-between'}}>
-
-          <Box sx={{display: 'flex', alignItems: 'center', gap: 2}}>
+      <CardActionArea sx={{ p: 2 }}>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
             <Box
               className="icon-box"
               sx={{
@@ -40,12 +45,12 @@ export function CardLink({title, icon, href}: CardLinkProps) {
               {icon}
             </Box>
 
-            <Typography variant="h6" sx={{fontSize: 16, fontWeight: 600}}>
+            <Typography variant="h6" sx={{ fontSize: 16, fontWeight: 600 }}>
               {title}
             </Typography>
           </Box>
 
-          <ArrowForwardIosIcon sx={{fontSize: 14, color: blue[600]}}/>
+          <ArrowForwardIosIcon sx={{ fontSize: 14, color: blue[600] }} />
         </Box>
       </CardActionArea>
     </Card>

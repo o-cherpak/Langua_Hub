@@ -1,13 +1,13 @@
-import {ListItem} from "@mui/material";
-import type {ICourse} from "../../interfaces/ICourse";
-import {ScheduleTime} from "./ScheduleTime.tsx";
-import {ScheduleText} from "./ScheduleText.tsx";
+import { ListItem } from "@mui/material";
+import type { ICourse } from "../../interfaces/ICourse";
+import { ScheduleTime } from "./ScheduleTime.tsx";
+import { ScheduleText } from "./ScheduleText.tsx";
 
 type ScheduleListItemProps = {
   course: ICourse;
-}
+};
 
-export function ScheduleListItem({course}: ScheduleListItemProps) {
+export function ScheduleListItem({ course }: ScheduleListItemProps) {
   return (
     <ListItem
       sx={{
@@ -21,13 +21,13 @@ export function ScheduleListItem({course}: ScheduleListItemProps) {
         transition: "0.2s",
         "&:hover": {
           background: "#eef2f7",
-          cursor: "pointer"
+          cursor: "pointer",
         },
       }}
     >
-      <ScheduleTime startTime={course.startTime} endTime={course.endTime}/>
+      <ScheduleTime startTime={course.startTime} endTime={course.endTime} />
 
-      <ScheduleText course={course}/>
+      <ScheduleText course={course} />
     </ListItem>
   );
 }

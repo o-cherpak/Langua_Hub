@@ -1,9 +1,9 @@
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
-import {Divider, MenuItem} from "@mui/material";
+import { Divider, MenuItem } from "@mui/material";
 import * as React from "react";
-import {useEffect, useState} from "react";
-import {useNavigate} from "react-router";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import { HeaderMenu } from "./HeaderMenu";
 
 export function MainMenu() {
@@ -18,11 +18,10 @@ export function MainMenu() {
     setAnchorEl(null);
   };
 
-
   const goTo = (path: string) => {
     handleClose();
     navigate(path);
-  }
+  };
 
   useEffect(() => {
     let timer: number;
@@ -47,20 +46,17 @@ export function MainMenu() {
         color="inherit"
         aria-label="menu"
       >
-        <MenuIcon sx={{fontSize: "2rem"}}/>
+        <MenuIcon sx={{ fontSize: "2rem" }} />
       </IconButton>
 
-      <HeaderMenu
-        anchorEl={anchorEl}
-        onClose={handleClose}
-      >
+      <HeaderMenu anchorEl={anchorEl} onClose={handleClose}>
         <MenuItem onClick={() => goTo("/dashboard")}>Oceny</MenuItem>
 
-        <Divider/>
+        <Divider />
 
         <MenuItem onClick={() => goTo("/ann")}>Ogłoszenia</MenuItem>
 
-        <Divider/>
+        <Divider />
 
         <MenuItem onClick={() => goTo("/schedule")}>Plany Zajęć</MenuItem>
       </HeaderMenu>

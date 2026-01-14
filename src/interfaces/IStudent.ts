@@ -1,4 +1,4 @@
-import type {ILanguage} from "./ILanguage.ts";
+import type { ILanguage } from "./ILanguage.ts";
 
 export interface IStudent {
   email: string;

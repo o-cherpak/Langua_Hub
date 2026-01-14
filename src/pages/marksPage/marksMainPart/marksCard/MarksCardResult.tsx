@@ -1,17 +1,13 @@
-import {Box, Typography} from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 type MarksCardResultProps = {
-  result: number
-}
+  result: number;
+};
 
-export function MarksCardResult({result}: MarksCardResultProps) {
+export function MarksCardResult({ result }: MarksCardResultProps) {
   return (
-    <Box sx={{textAlign: 'right'}}>
-      <Typography
-        variant="h5"
-        fontWeight="800"
-        color="primary.main"
-      >
+    <Box sx={{ textAlign: "right" }}>
+      <Typography variant="h5" fontWeight="800" color="primary.main">
         {result}
       </Typography>
 
@@ -20,12 +16,12 @@ export function MarksCardResult({result}: MarksCardResultProps) {
         fontWeight="700"
         color="text.secondary"
         sx={{
-          textTransform: 'uppercase', letterSpacing: 1
+          textTransform: "uppercase",
+          letterSpacing: 1,
         }}
       >
         Wynik
       </Typography>
     </Box>
-
   );
 }

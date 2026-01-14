@@ -1,8 +1,8 @@
-import {create} from "zustand/react";
-import type {IStudent} from "../interfaces/IStudent.ts";
-import {get, ref} from "firebase/database";
-import {auth, db} from "../firebaseConfig.ts";
-import {onAuthStateChanged} from "firebase/auth";
+import { create } from "zustand/react";
+import type { IStudent } from "../interfaces/IStudent.ts";
+import { get, ref } from "firebase/database";
+import { auth, db } from "../firebaseConfig.ts";
+import { onAuthStateChanged } from "firebase/auth";
 
 interface StudentsState {
   user: IStudent | null;
@@ -10,7 +10,7 @@ interface StudentsState {
   loading: boolean;
   fetchUser: (uid: string) => Promise<void>;
   clearAuth: () => void;
-  initializeAuth:() => void;
+  initializeAuth: () => void;
 }
 
 export const useStudentsStore = create<StudentsState>((set) => ({
@@ -24,7 +24,7 @@ export const useStudentsStore = create<StudentsState>((set) => ({
     set({
       user: snap.exists() ? { ...snap.val(), id: uid } : null,
       uid: uid,
-      loading: false
+      loading: false,
     });
   },
 
@@ -33,12 +33,12 @@ export const useStudentsStore = create<StudentsState>((set) => ({
   initializeAuth: () => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
-        set({uid: user.uid})
+        set({ uid: user.uid });
         await useStudentsStore.getState().fetchUser(user.uid);
       } else {
         useStudentsStore.getState().clearAuth();
       }
     });
     return unsubscribe;
-  }
+  },
 }));

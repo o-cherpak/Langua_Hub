@@ -1,12 +1,15 @@
-import {Box, Stack} from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import Typography from "@mui/material/Typography";
 
 type MarksSideBarBottomProps = {
   count: number;
   activeFilter: string;
-}
+};
 
-export function MarksSideBarBottom({activeFilter, count}: MarksSideBarBottomProps) {
+export function MarksSideBarBottom({
+  activeFilter,
+  count,
+}: MarksSideBarBottomProps) {
   return (
     <Stack direction="row" justifyContent="space-between">
       <Box>
@@ -19,13 +22,13 @@ export function MarksSideBarBottom({activeFilter, count}: MarksSideBarBottomProp
         </Typography>
       </Box>
 
-      <Box sx={{textAlign: 'right'}}>
+      <Box sx={{ textAlign: "right" }}>
         <Typography variant="caption" color="text.secondary" fontWeight="600">
           Język
         </Typography>
 
         <Typography variant="h6" fontWeight="700">
-          {activeFilter === 'All' ? "Wszyskie" : activeFilter}
+          {activeFilter === "All" ? "Wszyskie" : activeFilter}
         </Typography>
       </Box>
     </Stack>

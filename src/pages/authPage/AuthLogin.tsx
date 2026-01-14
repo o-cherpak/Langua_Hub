@@ -1,8 +1,7 @@
-import {SectionCard} from "../../components/SectionCard.tsx";
-import {SectionTitle} from "../../components/SectionTitle.tsx";
-import {Box} from "@mui/material";
-import {AuthLoginForm} from "./AuthLoginForm.tsx";
-
+import { SectionCard } from "../../components/SectionCard.tsx";
+import { SectionTitle } from "../../components/SectionTitle.tsx";
+import { Box } from "@mui/material";
+import { AuthLoginForm } from "./AuthLoginForm.tsx";
 
 export function AuthLogin() {
   return (
@@ -16,9 +15,9 @@ export function AuthLogin() {
       }}
     >
       <SectionCard>
-        <SectionTitle title={"Logowanie"} center/>
+        <SectionTitle title={"Logowanie"} center />
 
-        <AuthLoginForm/>
+        <AuthLoginForm />
       </SectionCard>
     </Box>
   );

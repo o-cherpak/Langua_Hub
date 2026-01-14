@@ -1,11 +1,11 @@
-import {Button} from "@mui/material";
+import { Button } from "@mui/material";
 
 type LoadMoreButtonProps = {
   onClickHandler?: () => void;
   title: string;
-}
+};
 
-export function LoadMoreButton({title,onClickHandler}: LoadMoreButtonProps) {
+export function LoadMoreButton({ title, onClickHandler }: LoadMoreButtonProps) {
   return (
     <Button
       variant="outlined"
@@ -16,11 +16,11 @@ export function LoadMoreButton({title,onClickHandler}: LoadMoreButtonProps) {
         borderRadius: 2,
         fontWeight: 700,
         fontSize: 12,
-        color: 'text.secondary',
-        '&:hover': {
-          color: 'primary.main',
-          bgcolor: 'primary.50'
-        }
+        color: "text.secondary",
+        "&:hover": {
+          color: "primary.main",
+          bgcolor: "primary.50",
+        },
       }}
     >
       {title}

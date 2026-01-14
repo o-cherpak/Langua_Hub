@@ -1,36 +1,40 @@
-import {Header} from "../../components/header/Header.tsx";
-import {Box, Container, Grid} from "@mui/material";
-import {Sidebar} from "../../components/Sidebar.tsx";
-import {Footer} from "../../components/footer/Footer.tsx";
-import {useStudentsStore} from "../../stores/useStudentsStore.ts";
-import {StudentInfoViewer} from "./StudentInfoViewer.tsx";
+import { Header } from "../../components/header/Header.tsx";
+import { Box, Container, Grid } from "@mui/material";
+import { Sidebar } from "../../components/Sidebar.tsx";
+import { Footer } from "../../components/footer/Footer.tsx";
+import { useStudentsStore } from "../../stores/useStudentsStore.ts";
+import { StudentInfoViewer } from "./StudentInfoViewer.tsx";
 
 export function StudentDataPage() {
-  const studentData = useStudentsStore(state => state.user);
+  const studentData = useStudentsStore((state) => state.user);
 
-  if(!studentData) {
+  if (!studentData) {
     return null;
   }
 
   return (
-    <Box sx={{display: 'flex', flexDirection: 'column', backgroundColor: "grey.100"}}>
-      <Header/>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        backgroundColor: "grey.100",
+      }}
+    >
+      <Header />
 
-      <Container maxWidth="lg" sx={{py: 4}}>
+      <Container maxWidth="lg" sx={{ py: 4 }}>
         <Grid container spacing={4}>
-
-          <Grid size={{xs: 12, md: 8, lg: 9}}>
-            <StudentInfoViewer student={studentData}/>
+          <Grid size={{ xs: 12, md: 8, lg: 9 }}>
+            <StudentInfoViewer student={studentData} />
           </Grid>
 
-          <Grid size={{xs: 12, md: 4, lg: 3}}>
-            <Sidebar/>
+          <Grid size={{ xs: 12, md: 4, lg: 3 }}>
+            <Sidebar />
           </Grid>
-
         </Grid>
       </Container>
 
-      <Footer/>
+      <Footer />
     </Box>
   );
 }

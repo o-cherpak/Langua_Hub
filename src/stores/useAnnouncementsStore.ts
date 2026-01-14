@@ -1,7 +1,7 @@
-import {get, ref} from "firebase/database";
-import {create} from "zustand/react";
-import {db} from "../firebaseConfig.ts";
-import type {IAnnouncement} from "../interfaces/IAnnouncement.ts";
+import { get, ref } from "firebase/database";
+import { create } from "zustand/react";
+import { db } from "../firebaseConfig.ts";
+import type { IAnnouncement } from "../interfaces/IAnnouncement.ts";
 
 interface AnnouncementState {
   announcements: IAnnouncement[];
@@ -14,7 +14,7 @@ export const useAnnouncementsStore = create<AnnouncementState>((set) => ({
   announcements: [],
   loading: false,
 
-  setAnnouncement: (a => set({announcements: a})),
+  setAnnouncement: (a) => set({ announcements: a }),
 
   fetchAnnouncement: async () => {
     set({ loading: true });
@@ -24,10 +24,12 @@ export const useAnnouncementsStore = create<AnnouncementState>((set) => ({
       const val = snap.val();
 
       if (val) {
-        const transformed: IAnnouncement[] = Object.entries(val).map(([key, value]: [string, any]) => ({
-          ...value,
-          id: key,
-        }));
+        const transformed: IAnnouncement[] = Object.entries(val).map(
+          ([key, value]: [string, any]) => ({
+            ...value,
+            id: key,
+          }),
+        );
 
         set({ announcements: transformed, loading: false });
       } else {
@@ -37,5 +39,5 @@ export const useAnnouncementsStore = create<AnnouncementState>((set) => ({
       console.error("Error fetching announcement:", err);
       set({ loading: false });
     }
-  }
-}))
+  },
+}));

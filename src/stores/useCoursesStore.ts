@@ -1,7 +1,7 @@
-import {get,ref} from "firebase/database";
-import {create} from "zustand/react";
-import {db} from "../firebaseConfig.ts";
-import type {ICourse} from "../interfaces/ICourse.ts";
+import { get, ref } from "firebase/database";
+import { create } from "zustand/react";
+import { db } from "../firebaseConfig.ts";
+import type { ICourse } from "../interfaces/ICourse.ts";
 
 interface CoursesState {
   courses: ICourse[];
@@ -21,10 +21,12 @@ export const useCoursesStore = create<CoursesState>((set) => ({
       const val = snap.val();
 
       if (val) {
-        const transformed: ICourse[] = Object.entries(val).map(([key, value]: [string, any]) => ({
-          ...value,
-          id: key,
-        }));
+        const transformed: ICourse[] = Object.entries(val).map(
+          ([key, value]: [string, any]) => ({
+            ...value,
+            id: key,
+          }),
+        );
         set({ courses: transformed, loading: false });
       } else {
         set({ courses: [], loading: false });
@@ -35,7 +37,7 @@ export const useCoursesStore = create<CoursesState>((set) => ({
     }
   },
 
-  setCourses (courses) {
-    set({ courses: courses })
-  }
+  setCourses(courses) {
+    set({ courses: courses });
+  },
 }));

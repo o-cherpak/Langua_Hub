@@ -1,12 +1,12 @@
-import {List} from "@mui/material";
-import type {IAnnouncement} from "../../interfaces/IAnnouncement.ts";
-import {AnnouncementItem} from "./AnnouncementItem.tsx";
+import { List } from "@mui/material";
+import type { IAnnouncement } from "../../interfaces/IAnnouncement.ts";
+import { AnnouncementItem } from "./AnnouncementItem.tsx";
 
 type AnnouncementListProps = {
-  announcements: IAnnouncement[]
-}
+  announcements: IAnnouncement[];
+};
 
-export function AnnouncementList({announcements}: AnnouncementListProps) {
+export function AnnouncementList({ announcements }: AnnouncementListProps) {
   const reversedAnnouncements = [...announcements].reverse();
 
   return (
@@ -18,7 +18,7 @@ export function AnnouncementList({announcements}: AnnouncementListProps) {
       }}
     >
       {reversedAnnouncements.map((announcement) => (
-        <AnnouncementItem data={announcement} key={announcement.id}/>
+        <AnnouncementItem data={announcement} key={announcement.id} />
       ))}
     </List>
   );

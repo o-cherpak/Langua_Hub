@@ -1,15 +1,15 @@
-import {Container, Box, Stack, Grid} from "@mui/material";
-import {Header} from "../../components/header/Header.tsx";
-import {useMemo} from "react";
-import {useCoursesStore} from "../../stores/useCoursesStore.ts";
-import {isSameDay} from "date-fns";
-import {Footer} from "../../components/footer/Footer.tsx";
-import {NewsSection} from "../../components/NewsSection.tsx";
-import {Sidebar} from "../../components/Sidebar.tsx";
-import {ScheduleSection} from "./ScheduleSection.tsx";
-import {useStudentsStore} from "../../stores/useStudentsStore.ts";
-import {getCurrentUser} from "../../services/getCurrentUser.ts";
-import {useAnnouncementsStore} from "../../stores/useAnnouncementsStore.ts";
+import { Container, Box, Stack, Grid } from "@mui/material";
+import { Header } from "../../components/header/Header.tsx";
+import { useMemo } from "react";
+import { useCoursesStore } from "../../stores/useCoursesStore.ts";
+import { isSameDay } from "date-fns";
+import { Footer } from "../../components/footer/Footer.tsx";
+import { NewsSection } from "../../components/NewsSection.tsx";
+import { Sidebar } from "../../components/Sidebar.tsx";
+import { ScheduleSection } from "./ScheduleSection.tsx";
+import { useStudentsStore } from "../../stores/useStudentsStore.ts";
+import { getCurrentUser } from "../../services/getCurrentUser.ts";
+import { useAnnouncementsStore } from "../../stores/useAnnouncementsStore.ts";
 
 const selectedDate = new Date("2024-01-15");
 
@@ -20,50 +20,54 @@ export const WelcomePageLoader = async () => {
     await Promise.all([
       useCoursesStore.getState().fetchCourses(),
       useStudentsStore.getState().fetchUser(user.uid),
-      useAnnouncementsStore.getState().fetchAnnouncement()
+      useAnnouncementsStore.getState().fetchAnnouncement(),
     ]);
   }
 
   return null;
-}
+};
 
 export function WelcomePage() {
-  const courses = useCoursesStore(state => state.courses);
-  const userId = useStudentsStore(state => state.uid);
+  const courses = useCoursesStore((state) => state.courses);
+  const userId = useStudentsStore((state) => state.uid);
 
   const filteredCourses = useMemo(() => {
     if (userId === null) return [];
 
-    return courses.filter((c) =>
-      c.studentIds.includes(userId) &&
-      isSameDay(new Date(c.startTime), selectedDate)
+    return courses.filter(
+      (c) =>
+        c.studentIds.includes(userId) &&
+        isSameDay(new Date(c.startTime), selectedDate),
     );
-
   }, [courses, userId]);
 
   return (
-    <Box sx={{display: 'flex', flexDirection: 'column', backgroundColor: "grey.100"}}>
-      <Header/>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        backgroundColor: "grey.100",
+      }}
+    >
+      <Header />
 
-      <Container maxWidth="lg" sx={{py: 4}}>
+      <Container maxWidth="lg" sx={{ py: 4 }}>
         <Grid container spacing={4}>
-
-          <Grid size={{xs: 12, md: 8, lg: 9}}>
+          <Grid size={{ xs: 12, md: 8, lg: 9 }}>
             <Stack spacing={4}>
-              <ScheduleSection courses={filteredCourses}/>
+              <ScheduleSection courses={filteredCourses} />
 
-              <NewsSection/>
+              <NewsSection />
             </Stack>
           </Grid>
 
-          <Grid size={{xs: 12, md: 4, lg: 3}}>
-            <Sidebar/>
+          <Grid size={{ xs: 12, md: 4, lg: 3 }}>
+            <Sidebar />
           </Grid>
-
         </Grid>
       </Container>
 
-      <Footer/>
+      <Footer />
     </Box>
   );
 }

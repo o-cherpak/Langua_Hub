@@ -1,16 +1,16 @@
-import {SectionCard} from "../../components/SectionCard.tsx";
-import {Box} from "@mui/material";
-import {useAnnouncementsStore} from "../../stores/useAnnouncementsStore.ts";
-import {type ChangeEvent, useDeferredValue, useMemo, useState} from "react";
-import {AnnPagination} from "./AnnPagination.tsx";
-import {AnnMainInfo} from "./AnnMainInfo.tsx";
+import { SectionCard } from "../../components/SectionCard.tsx";
+import { Box } from "@mui/material";
+import { useAnnouncementsStore } from "../../stores/useAnnouncementsStore.ts";
+import { type ChangeEvent, useDeferredValue, useMemo, useState } from "react";
+import { AnnPagination } from "./AnnPagination.tsx";
+import { AnnMainInfo } from "./AnnMainInfo.tsx";
 
 type AnnListContainerProps = {
   itemsPerPage: number;
-}
+};
 
-export function AnnListContainer({itemsPerPage}: AnnListContainerProps) {
-  const announcement = useAnnouncementsStore(state => state.announcements);
+export function AnnListContainer({ itemsPerPage }: AnnListContainerProps) {
+  const announcement = useAnnouncementsStore((state) => state.announcements);
 
   const [page, setPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
@@ -52,7 +52,7 @@ export function AnnListContainer({itemsPerPage}: AnnListContainerProps) {
 
   return (
     <SectionCard>
-      <Box sx={{display: "flex", flexDirection: "column", gap: 6}}>
+      <Box sx={{ display: "flex", flexDirection: "column", gap: 6 }}>
         <AnnMainInfo
           dataToDisplay={paginatedData}
           searchQuery={deferredSearchQuery}
@@ -60,7 +60,11 @@ export function AnnListContainer({itemsPerPage}: AnnListContainerProps) {
         />
 
         {filteredData.length > 0 && (
-          <AnnPagination page={page} count={count} handleChange={handleChange}/>
+          <AnnPagination
+            page={page}
+            count={count}
+            handleChange={handleChange}
+          />
         )}
       </Box>
     </SectionCard>

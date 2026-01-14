@@ -1,19 +1,19 @@
 import Typography from "@mui/material/Typography";
-import {Box, Stack} from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 
 type MarksSideBarTopProps = {
-  avg: string
-}
+  avg: string;
+};
 
-export function MarksSideBarTop({avg}: MarksSideBarTopProps) {
+export function MarksSideBarTop({ avg }: MarksSideBarTopProps) {
   return (
     <Box>
       <Typography
         variant="caption"
         color="text.secondary"
         fontWeight="800"
-        sx={{textTransform: 'uppercase'}}
+        sx={{ textTransform: "uppercase" }}
       >
         Średnia ocen
       </Typography>
@@ -23,7 +23,7 @@ export function MarksSideBarTop({avg}: MarksSideBarTopProps) {
           {avg}
         </Typography>
 
-        <TrendingUpIcon sx={{color: 'success.main', fontSize: 24}}/>
+        <TrendingUpIcon sx={{ color: "success.main", fontSize: 24 }} />
       </Stack>
     </Box>
   );

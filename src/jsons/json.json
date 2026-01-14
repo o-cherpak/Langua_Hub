@@ -183,9 +183,7 @@
       "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
       "teacherName": "Anna",
       "teacherSurname": "Kowalska",
-      "studentIds": [
-        "pN9uamtkAQS8WlLD7f6fr3jeP8F3"
-      ],
+      "studentIds": ["pN9uamtkAQS8WlLD7f6fr3jeP8F3"],
       "classroom": "101",
       "startTime": "2024-01-15T09:00:00",
       "endTime": "2024-06-15T10:30:00"
@@ -197,9 +195,7 @@
       "teacherId": "vLN0OtavfDNMeC2tEJRBTmIqYQv1",
       "teacherName": "John",
       "teacherSurname": "Smith",
-      "studentIds": [
-        "pyJjZmMVZnZU8nd6zycolDsaByy1"
-      ],
+      "studentIds": ["pyJjZmMVZnZU8nd6zycolDsaByy1"],
       "classroom": "102",
       "startTime": "2024-01-15T11:00:00",
       "endTime": "2024-06-15T12:30:00"
@@ -211,9 +207,7 @@
       "teacherId": "ybRIKPrv7LQAzoEA8NHWuHIuEzd2",
       "teacherName": "Marie",
       "teacherSurname": "Dubois",
-      "studentIds": [
-        "HaKRh2t2PPWQsgKJSbIZsJySyOu1"
-      ],
+      "studentIds": ["HaKRh2t2PPWQsgKJSbIZsJySyOu1"],
       "classroom": "103",
       "startTime": "2024-01-15T14:00:00",
       "endTime": "2024-06-15T15:30:00"
@@ -225,9 +219,7 @@
       "teacherId": "xZNOtMrHaXN2vgh5Wt4cb6cSoV82",
       "teacherName": "Hans",
       "teacherSurname": "Mueller",
-      "studentIds": [
-        "80d4aEf1aNX4cTlk2kErztbLH9F3"
-      ],
+      "studentIds": ["80d4aEf1aNX4cTlk2kErztbLH9F3"],
       "classroom": "104",
       "startTime": "2024-01-15T16:00:00",
       "endTime": "2024-06-15T17:30:00"
@@ -299,9 +291,7 @@
       "teacherId": "ybRIKPrv7LQAzoEA8NHWuHIuEzd2",
       "teacherName": "Marie",
       "teacherSurname": "Dubois",
-      "studentIds": [
-        "T4RlVlIkCxVwAwC1N5BmuYKyVtX2"
-      ],
+      "studentIds": ["T4RlVlIkCxVwAwC1N5BmuYKyVtX2"],
       "classroom": "301",
       "startTime": "2024-01-17T09:00:00",
       "endTime": "2024-06-17T10:30:00"
@@ -313,9 +303,7 @@
       "teacherId": "vLN0OtavfDNMeC2tEJRBTmIqYQv1",
       "teacherName": "John",
       "teacherSurname": "Smith",
-      "studentIds": [
-        "T4RlVlIkCxVwAwC1N5BmuYKyVtX2"
-      ],
+      "studentIds": ["T4RlVlIkCxVwAwC1N5BmuYKyVtX2"],
       "classroom": "302",
       "startTime": "2024-01-17T11:00:00",
       "endTime": "2024-06-17T12:30:00"
@@ -327,9 +315,7 @@
       "teacherId": "ybRIKPrv7LQAzoEA8NHWuHIuEzd2",
       "teacherName": "Marie",
       "teacherSurname": "Dubois",
-      "studentIds": [
-        "2w4WSmk8hGORhZS74HCK6xgu6PI3"
-      ],
+      "studentIds": ["2w4WSmk8hGORhZS74HCK6xgu6PI3"],
       "classroom": "303",
       "startTime": "2024-01-17T14:00:00",
       "endTime": "2024-06-17T15:30:00"
@@ -341,9 +327,7 @@
       "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
       "teacherName": "Anna",
       "teacherSurname": "Kowalska",
-      "studentIds": [
-        "HaKRh2t2PPWQsgKJSbIZsJySyOu1"
-      ],
+      "studentIds": ["HaKRh2t2PPWQsgKJSbIZsJySyOu1"],
       "classroom": "304",
       "startTime": "2024-01-17T16:00:00",
       "endTime": "2024-06-17T17:30:00"
@@ -355,9 +339,7 @@
       "teacherId": "xZNOtMrHaXN2vgh5Wt4cb6cSoV82",
       "teacherName": "Hans",
       "teacherSurname": "Mueller",
-      "studentIds": [
-        "AQ2xHYen5DRQn7Kdd6YLQxLgr8k2"
-      ],
+      "studentIds": ["AQ2xHYen5DRQn7Kdd6YLQxLgr8k2"],
       "classroom": "401",
       "startTime": "2024-01-18T09:00:00",
       "endTime": "2024-06-18T10:30:00"
@@ -369,9 +351,7 @@
       "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
       "teacherName": "Anna",
       "teacherSurname": "Kowalska",
-      "studentIds": [
-        "AQ2xHYen5DRQn7Kdd6YLQxLgr8k2"
-      ],
+      "studentIds": ["AQ2xHYen5DRQn7Kdd6YLQxLgr8k2"],
       "classroom": "402",
       "startTime": "2024-01-18T11:00:00",
       "endTime": "2024-06-18T12:30:00"
@@ -398,9 +378,7 @@
       "teacherId": "vLN0OtavfDNMeC2tEJRBTmIqYQv1",
       "teacherName": "John",
       "teacherSurname": "Smith",
-      "studentIds": [
-        "pyJjZmMVZnZU8nd6zycolDsaByy1"
-      ],
+      "studentIds": ["pyJjZmMVZnZU8nd6zycolDsaByy1"],
       "classroom": "101",
       "startTime": "2024-01-19T09:00:00",
       "endTime": "2024-06-19T10:30:00"
@@ -412,9 +390,7 @@
       "teacherId": "ybRIKPrv7LQAzoEA8NHWuHIuEzd2",
       "teacherName": "Marie",
       "teacherSurname": "Dubois",
-      "studentIds": [
-        "HaKRh2t2PPWQsgKJSbIZsJySyOu1"
-      ],
+      "studentIds": ["HaKRh2t2PPWQsgKJSbIZsJySyOu1"],
       "classroom": "102",
       "startTime": "2024-01-19T11:00:00",
       "endTime": "2024-06-19T12:30:00"
@@ -426,9 +402,7 @@
       "teacherId": "xZNOtMrHaXN2vgh5Wt4cb6cSoV82",
       "teacherName": "Hans",
       "teacherSurname": "Mueller",
-      "studentIds": [
-        "80d4aEf1aNX4cTlk2kErztbLH9F3"
-      ],
+      "studentIds": ["80d4aEf1aNX4cTlk2kErztbLH9F3"],
       "classroom": "103",
       "startTime": "2024-01-19T14:00:00",
       "endTime": "2024-06-19T15:30:00"
@@ -440,9 +414,7 @@
       "teacherId": "cQcyFJrOo9P3lReyGyTpP5CeAKE3",
       "teacherName": "Anna",
       "teacherSurname": "Kowalska",
-      "studentIds": [
-        "0p1JZlXZj1S6JEjG8dStKScZaHz2"
-      ],
+      "studentIds": ["0p1JZlXZj1S6JEjG8dStKScZaHz2"],
       "classroom": "104",
       "startTime": "2024-01-20T10:00:00",
       "endTime": "2024-06-20T12:00:00"
@@ -454,9 +426,7 @@
       "teacherId": "vLN0OtavfDNMeC2tEJRBTmIqYQv1",
       "teacherName": "John",
       "teacherSurname": "Smith",
-      "studentIds": [
-        "BjgRqcJRlPRnJ1elYLYNL4jhdAH3"
-      ],
+      "studentIds": ["BjgRqcJRlPRnJ1elYLYNL4jhdAH3"],
       "classroom": "201",
       "startTime": "2024-01-20T13:00:00",
       "endTime": "2024-06-20T15:00:00"

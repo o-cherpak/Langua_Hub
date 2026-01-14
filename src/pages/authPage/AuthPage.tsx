@@ -1,13 +1,10 @@
-import {
-  Container
-} from "@mui/material";
-import {AuthLogin} from "./AuthLogin.tsx";
-import {useEffect} from "react";
+import { Container } from "@mui/material";
+import { AuthLogin } from "./AuthLogin.tsx";
+import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebaseConfig.ts";
-import {useStudentsStore} from "../../stores/useStudentsStore.ts";
-import {useNavigate} from "react-router";
-
+import { useStudentsStore } from "../../stores/useStudentsStore.ts";
+import { useNavigate } from "react-router";
 
 export function AuthPage() {
   const navigate = useNavigate();
@@ -36,8 +33,7 @@ export function AuthPage() {
         background: "linear-gradient(135deg, #1976d2 0%, #664fa2 100%)",
       }}
     >
-
-      <AuthLogin/>
+      <AuthLogin />
     </Container>
   );
 }
