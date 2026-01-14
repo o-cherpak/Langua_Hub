@@ -5,6 +5,7 @@ import {AnnListingsPage, AnnListingsPageLoader} from "./pages/annListingsPage/An
 import {AuthPage} from "./pages/authPage/AuthPage.tsx";
 import {DashboardPage, DashboardPageLoader} from "./pages/dashboardPage/DashboardPage.tsx";
 import {MarksPage, MarksPageLoader} from "./pages/marksPage/MarksPage.tsx";
+import {CalendarPage} from "./pages/calendarPage/CalendarPage.tsx";
 
 export const router = createBrowserRouter([
   {
@@ -34,5 +35,9 @@ export const router = createBrowserRouter([
     path: "/marks",
     element: <MarksPage/>,
     loader: MarksPageLoader
+  },
+  {
+    path: "/calendarPage",
+    element: <CalendarPage/>,
   }
 ]);
