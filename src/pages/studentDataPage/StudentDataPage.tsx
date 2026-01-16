@@ -2,11 +2,11 @@ import { Header } from "../../components/header/Header.tsx";
 import { Box, Container, Grid } from "@mui/material";
 import { Sidebar } from "../../components/Sidebar.tsx";
 import { Footer } from "../../components/footer/Footer.tsx";
-import { useStudentsStore } from "../../stores/useStudentsStore.ts";
+import { useUsersStore } from "../../stores/useUsersStore.ts";
 import { StudentInfoViewer } from "./StudentInfoViewer.tsx";
 
 export function StudentDataPage() {
-  const studentData = useStudentsStore((state) => state.user);
+  const studentData = useUsersStore((state) => state.user);
 
   if (!studentData) {
     return null;

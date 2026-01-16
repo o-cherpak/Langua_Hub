@@ -1,7 +1,7 @@
 import {Box} from "@mui/material";
 import {addMonths, isSameDay, subMonths} from "date-fns";
 import {useCoursesStore} from "../../../stores/useCoursesStore.ts";
-import {useStudentsStore} from "../../../stores/useStudentsStore.ts";
+import {useUsersStore} from "../../../stores/useUsersStore.ts";
 import {SectionCard} from "../../../components/SectionCard.tsx";
 import {StatusHeader} from "./StatusHeader.tsx";
 import {StatusLessonList} from "./StatusLessonList.tsx";
@@ -14,7 +14,7 @@ type StatusPanelProps = {
 
 export function StatusPanel({date, onDateSelect}: StatusPanelProps) {
   const courses = useCoursesStore((state) => state.courses);
-  const userId = useStudentsStore((state) => state.uid);
+  const userId = useUsersStore((state) => state.uid);
 
   const todayCourses = courses.filter(
     (c) =>

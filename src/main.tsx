@@ -5,9 +5,9 @@ import { ThemeProvider } from "@emotion/react";
 import { theme } from "./theme.ts";
 import { router } from "./router.tsx";
 import { RouterProvider } from "react-router";
-import { useStudentsStore } from "./stores/useStudentsStore.ts";
+import { useUsersStore } from "./stores/useUsersStore.ts";
 
-useStudentsStore.getState().initializeAuth();
+useUsersStore.getState().initializeAuth();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

@@ -9,7 +9,7 @@ import {
 import { Box } from "@mui/material";
 import * as React from "react";
 import { useCoursesStore } from "../../../stores/useCoursesStore.ts";
-import { useStudentsStore } from "../../../stores/useStudentsStore.ts";
+import { useUsersStore } from "../../../stores/useUsersStore.ts";
 import { CalendarDay } from "./CalendarDay.tsx";
 
 type CalendarGridProps = {
@@ -22,7 +22,7 @@ export function CalendarGrid({
   onDateSelect,
 }: CalendarGridProps) {
   const courses = useCoursesStore((state) => state.courses);
-  const userId = useStudentsStore((state) => state.uid);
+  const userId = useUsersStore((state) => state.uid);
 
   const calendarDays = React.useMemo(() => {
     const monthStart = startOfMonth(selectedDate);

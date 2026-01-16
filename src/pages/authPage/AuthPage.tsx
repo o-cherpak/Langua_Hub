@@ -3,23 +3,24 @@ import { AuthLogin } from "./AuthLogin.tsx";
 import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebaseConfig.ts";
-import { useStudentsStore } from "../../stores/useStudentsStore.ts";
+import { useUsersStore } from "../../stores/useUsersStore.ts";
 import { useNavigate } from "react-router";
 
 export function AuthPage() {
   const navigate = useNavigate();
+  const role = useUsersStore(state => state.role);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
-        await useStudentsStore.getState().fetchUser(user.uid);
-        navigate("/welcome");
+        await useUsersStore.getState().fetchUser(user.uid);
+        navigate(role === "admin" ? "/admin" : "/welcome");
       } else {
-        useStudentsStore.getState().clearAuth();
+        useUsersStore.getState().clearAuth();
       }
     });
     return () => unsubscribe();
-  }, [navigate]);
+  }, [navigate, role]);
 
   return (
     <Container

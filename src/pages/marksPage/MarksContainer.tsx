@@ -3,13 +3,13 @@ import { useMemo, useState } from "react";
 import { useMarksStore } from "../../stores/useMarksStore.ts";
 import { MarksSideBar } from "./marksSideBar/MarksSideBar.tsx";
 import { MarksMainPart } from "./marksMainPart/MarksMainPart.tsx";
-import { useStudentsStore } from "../../stores/useStudentsStore.ts";
+import { useUsersStore } from "../../stores/useUsersStore.ts";
 
 export function MarksContainer() {
   const [activeFilter, setActiveFilter] = useState<string>("All");
 
   const { marks } = useMarksStore();
-  const user = useStudentsStore((state) => state.user);
+  const user = useUsersStore((state) => state.user);
 
   const filteredMarks = useMemo(() => {
     if (activeFilter === "All") return marks;

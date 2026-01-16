@@ -7,7 +7,7 @@ import { Footer } from "../../components/footer/Footer.tsx";
 import { NewsSection } from "../../components/NewsSection.tsx";
 import { Sidebar } from "../../components/Sidebar.tsx";
 import { ScheduleSection } from "./ScheduleSection.tsx";
-import { useStudentsStore } from "../../stores/useStudentsStore.ts";
+import { useUsersStore } from "../../stores/useUsersStore.ts";
 import { getCurrentUser } from "../../services/getCurrentUser.ts";
 import { useAnnouncementsStore } from "../../stores/useAnnouncementsStore.ts";
 
@@ -19,7 +19,7 @@ export const WelcomePageLoader = async () => {
   if (user) {
     await Promise.all([
       useCoursesStore.getState().fetchCourses(),
-      useStudentsStore.getState().fetchUser(user.uid),
+      useUsersStore.getState().fetchUser(user.uid),
       useAnnouncementsStore.getState().fetchAnnouncement(),
     ]);
   }
@@ -29,7 +29,7 @@ export const WelcomePageLoader = async () => {
 
 export function WelcomePage() {
   const courses = useCoursesStore((state) => state.courses);
-  const userId = useStudentsStore((state) => state.uid);
+  const userId = useUsersStore((state) => state.uid);
 
   const filteredCourses = useMemo(() => {
     if (userId === null) return [];

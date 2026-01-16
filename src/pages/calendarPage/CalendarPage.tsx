@@ -11,7 +11,7 @@ import {pl} from "date-fns/locale";
 import {StatusPanel} from "./statusPanel/StatusPanel.tsx";
 import {getCurrentUser} from "../../services/getCurrentUser.ts";
 import {useCoursesStore} from "../../stores/useCoursesStore.ts";
-import {useStudentsStore} from "../../stores/useStudentsStore.ts";
+import {useUsersStore} from "../../stores/useUsersStore.ts";
 
 export const CalendarPageLoader = async () => {
   const user = await getCurrentUser();
@@ -19,7 +19,7 @@ export const CalendarPageLoader = async () => {
   if (user) {
     await Promise.all([
       useCoursesStore.getState().fetchCourses(),
-      useStudentsStore.getState().fetchUser(user.uid),
+      useUsersStore.getState().fetchUser(user.uid),
     ]);
   }
 

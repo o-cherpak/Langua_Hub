@@ -4,11 +4,11 @@ import { auth } from "../../firebaseConfig";
 import { useNavigate } from "react-router";
 import * as React from "react";
 import { useEffect, useState } from "react";
-import { useStudentsStore } from "../../stores/useStudentsStore.ts";
+import { useUsersStore } from "../../stores/useUsersStore.ts";
 import { HeaderMenu } from "./HeaderMenu.tsx";
 
 export function UserMenu() {
-  const user = useStudentsStore((state) => state.user);
+  const user = useUsersStore((state) => state.user);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const navigate = useNavigate();
 
