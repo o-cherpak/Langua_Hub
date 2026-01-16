@@ -1,16 +1,17 @@
 {
+  "admin" : {
+    "5vWw18n4fpfTDhgflHQ4sUa7Jk62": {
+      "email" : "admin@gmail.com",
+      "role" : "admin"
+    }
+  },
   "students": {
     "pN9uamtkAQS8WlLD7f6fr3jeP8F3": {
       "email": "piotr.nowak@email.com",
+      "role": "student",
       "languages": [
-        {
-          "subject": "English",
-          "level": "A1"
-        },
-        {
-          "subject": "German",
-          "level": "A2"
-        }
+        { "subject": "English", "level": "A1" },
+        { "subject": "German", "level": "A2" }
       ],
       "name": "Piotr",
       "phone": "+48 555 111 222",
@@ -18,15 +19,10 @@
     },
     "pyJjZmMVZnZU8nd6zycolDsaByy1": {
       "email": "karolina.wisniewska@email.com",
+      "role": "student",
       "languages": [
-        {
-          "subject": "Spanish",
-          "level": "B1"
-        },
-        {
-          "subject": "English",
-          "level": "A2"
-        }
+        { "subject": "Spanish", "level": "B1" },
+        { "subject": "English", "level": "A2" }
       ],
       "name": "Karolina",
       "phone": "+48 555 222 333",
@@ -34,15 +30,10 @@
     },
     "HaKRh2t2PPWQsgKJSbIZsJySyOu1": {
       "email": "tomasz.lewandowski@email.com",
+      "role": "student",
       "languages": [
-        {
-          "subject": "French",
-          "level": "C1"
-        },
-        {
-          "subject": "English",
-          "level": "B2"
-        }
+        { "subject": "French", "level": "C1" },
+        { "subject": "English", "level": "B2" }
       ],
       "name": "Tomasz",
       "phone": "+48 555 333 444",
@@ -50,15 +41,10 @@
     },
     "0p1JZlXZj1S6JEjG8dStKScZaHz2": {
       "email": "magdalena.kowalczyk@email.com",
+      "role": "student",
       "languages": [
-        {
-          "subject": "English",
-          "level": "B1"
-        },
-        {
-          "subject": "Spanish",
-          "level": "A1"
-        }
+        { "subject": "English", "level": "B1" },
+        { "subject": "Spanish", "level": "A1" }
       ],
       "name": "Magdalena",
       "phone": "+48 555 444 555",
@@ -66,15 +52,10 @@
     },
     "80d4aEf1aNX4cTlk2kErztbLH9F3": {
       "email": "jakub.zielinski@email.com",
+      "role": "student",
       "languages": [
-        {
-          "subject": "German",
-          "level": "A1"
-        },
-        {
-          "subject": "English",
-          "level": "B1"
-        }
+        { "subject": "German", "level": "A1" },
+        { "subject": "English", "level": "B1" }
       ],
       "name": "Jakub",
       "phone": "+48 555 555 666",
@@ -82,15 +63,10 @@
     },
     "T4RlVlIkCxVwAwC1N5BmuYKyVtX2": {
       "email": "natalia.szymanska@email.com",
+      "role": "student",
       "languages": [
-        {
-          "subject": "Spanish",
-          "level": "B2"
-        },
-        {
-          "subject": "French",
-          "level": "A1"
-        }
+        { "subject": "Spanish", "level": "B2" },
+        { "subject": "French", "level": "A1" }
       ],
       "name": "Natalia",
       "phone": "+48 555 666 777",
@@ -98,15 +74,10 @@
     },
     "2w4WSmk8hGORhZS74HCK6xgu6PI3": {
       "email": "michal.wozniak@email.com",
+      "role": "student",
       "languages": [
-        {
-          "subject": "French",
-          "level": "B1"
-        },
-        {
-          "subject": "German",
-          "level": "A2"
-        }
+        { "subject": "French", "level": "B1" },
+        { "subject": "German", "level": "A2" }
       ],
       "name": "Michał",
       "phone": "+48 555 777 888",
@@ -114,15 +85,10 @@
     },
     "AQ2xHYen5DRQn7Kdd6YLQxLgr8k2": {
       "email": "aleksandra.dabrowska@email.com",
+      "role": "student",
       "languages": [
-        {
-          "subject": "German",
-          "level": "B1"
-        },
-        {
-          "subject": "English",
-          "level": "C1"
-        }
+        { "subject": "German", "level": "B1" },
+        { "subject": "English", "level": "C1" }
       ],
       "name": "Aleksandra",
       "phone": "+48 555 888 999",
@@ -130,15 +96,10 @@
     },
     "BjgRqcJRlPRnJ1elYLYNL4jhdAH3": {
       "email": "pawel.kozlowski@email.com",
+      "role": "student",
       "languages": [
-        {
-          "subject": "English",
-          "level": "A2"
-        },
-        {
-          "subject": "Spanish",
-          "level": "A1"
-        }
+        { "subject": "English", "level": "A2" },
+        { "subject": "Spanish", "level": "A1" }
       ],
       "name": "Paweł",
       "phone": "+48 555 999 000",
@@ -148,6 +109,7 @@
   "teachers": {
     "cQcyFJrOo9P3lReyGyTpP5CeAKE3": {
       "email": "anna.kowalska@languageschool.com",
+      "role": "teacher",
       "name": "Anna",
       "phone": "+48 123 456 789",
       "specialization": "English",
@@ -155,6 +117,7 @@
     },
     "vLN0OtavfDNMeC2tEJRBTmIqYQv1": {
       "email": "john.smith@languageschool.com",
+      "role": "teacher",
       "name": "John",
       "phone": "+48 234 567 890",
       "specialization": "Spanish",
@@ -162,6 +125,7 @@
     },
     "ybRIKPrv7LQAzoEA8NHWuHIuEzd2": {
       "email": "marie.dubois@languageschool.com",
+      "role": "teacher",
       "name": "Marie",
       "phone": "+48 345 678 901",
       "specialization": "French",
@@ -169,6 +133,7 @@
     },
     "xZNOtMrHaXN2vgh5Wt4cb6cSoV82": {
       "email": "hans.mueller@languageschool.com",
+      "role": "teacher",
       "name": "Hans",
       "phone": "+48 456 789 012",
       "specialization": "German",
