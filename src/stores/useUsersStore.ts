@@ -61,9 +61,11 @@ export const useUsersStore = create<UserState>((set) => ({
       if (user) {
         set({uid: user.uid});
         await useUsersStore.getState().fetchUserRole(user.uid);
+
+        set({ loading: false });
       } else {
         useUsersStore.getState().clearAuth();
-        set({uid: null, role: null});
+        set({ role: null, loading: false });
       }
     });
     return unsubscribe;

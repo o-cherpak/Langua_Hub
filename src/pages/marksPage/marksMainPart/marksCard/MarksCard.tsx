@@ -10,7 +10,6 @@ type MarksCardProps = {
 export function MarksCard({ m }: MarksCardProps) {
   return (
     <Paper
-      key={m.id}
       elevation={0}
       sx={{
         p: 2,

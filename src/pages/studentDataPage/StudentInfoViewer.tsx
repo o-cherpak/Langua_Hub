@@ -18,7 +18,7 @@ export function StudentInfoViewer({ student }: StudentInfoViewerProps) {
         </Typography>
 
         <Typography variant="body2" color="text.secondary">
-          Student ID: #{student.id}
+          Student ID: #{Object.keys(student)}
         </Typography>
 
         <Divider sx={{ my: 3 }} />

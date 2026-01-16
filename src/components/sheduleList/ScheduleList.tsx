@@ -10,7 +10,7 @@ export function ScheduleList({ courses }: ScheduleListProps) {
   return (
     <List sx={{ width: "100%" }}>
       {courses.map((course, index) => (
-        <Box key={course.id}>
+        <Box key={index}>
           <ScheduleListItem course={course} />
 
           {index < courses.length - 1 && <Divider sx={{ my: 1 }} />}

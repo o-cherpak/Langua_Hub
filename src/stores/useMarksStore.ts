@@ -1,7 +1,7 @@
 import { equalTo, get, orderByChild, query, ref } from "firebase/database";
 import { create } from "zustand/react";
 import { db } from "../firebaseConfig.ts";
-import type { IMark } from "../interfaces/IMark.ts";
+import type {IMark} from "../interfaces/IMark.ts";
 
 interface MarksState {
   marks: IMark[];

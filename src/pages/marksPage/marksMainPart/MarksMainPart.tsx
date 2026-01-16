@@ -1,6 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
 import type { IStudent } from "../../../interfaces/IStudent.ts";
-import type { IMark } from "../../../interfaces/IMark.ts";
+import type {IMark} from "../../../interfaces/IMark.ts";
 import { MarksCardList } from "./MarksCardList.tsx";
 import { MarksFilters } from "./MarksFilters.tsx";
 import { SectionTitle } from "../../../components/SectionTitle.tsx";

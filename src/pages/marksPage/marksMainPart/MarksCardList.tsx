@@ -1,5 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
-import type { IMark } from "../../../interfaces/IMark.ts";
+import type {IMark} from "../../../interfaces/IMark.ts";
 import { MarksCard } from "./marksCard/MarksCard.tsx";
 
 type MarksCardListProps = {
@@ -10,8 +10,8 @@ export function MarksCardList({ marks }: MarksCardListProps) {
   return (
     <Box>
       <Grid container spacing={2}>
-        {marks.map((m) => (
-          <Grid key={m.id} size={{ xs: 12, md: 6 }}>
+        {marks.map((m, index) => (
+          <Grid key={index} size={{ xs: 12, md: 6 }}>
             <MarksCard m={m} />
           </Grid>
         ))}

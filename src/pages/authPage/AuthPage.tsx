@@ -1,26 +1,22 @@
 import { Container } from "@mui/material";
 import { AuthLogin } from "./AuthLogin.tsx";
 import { useEffect } from "react";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../../firebaseConfig.ts";
 import { useUsersStore } from "../../stores/useUsersStore.ts";
 import { useNavigate } from "react-router";
 
 export function AuthPage() {
   const navigate = useNavigate();
-  const role = useUsersStore(state => state.role);
+  const { role, loading, uid } = useUsersStore();
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        await useUsersStore.getState().fetchUser(user.uid);
-        navigate(role === "admin" ? "/admin" : "/welcome");
+    if (!loading && uid) {
+      if (role === "admin") {
+        navigate("/admin", { replace: true });
       } else {
-        useUsersStore.getState().clearAuth();
+        navigate("/welcome", { replace: true });
       }
-    });
-    return () => unsubscribe();
-  }, [navigate, role]);
+    }
+  }, [loading, uid, role, navigate]);
 
   return (
     <Container

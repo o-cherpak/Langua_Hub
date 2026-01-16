@@ -18,7 +18,7 @@ export function DashboardStudentViewer({ marks }: DashboardStudentViewerProps) {
 
       <List>
         {reversedMarks.map((mark, index) => (
-          <Box key={mark.id}>
+          <Box key={index}>
             {index > 0 && <Divider />}
 
             <DashboardListItem mark={mark} />
