@@ -14,7 +14,7 @@ interface AdminTableProps {
   onDelete?: (row: any) => void;
 }
 
-export function AdminTable({columns, data, onEdit, onDelete}: UniversalTableProps) {
+export function AdminTable({columns, data, onEdit, onDelete}: AdminTableProps) {
   return (
     <TableContainer component={Paper} elevation={0} sx={{border: "1px solid", borderColor: "divider"}}>
       <Table>

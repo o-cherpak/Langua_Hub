@@ -2,18 +2,18 @@ import {IconButton, TableBody, TableCell, TableRow} from "@mui/material";
 import {Delete, Edit} from "@mui/icons-material";
 import type {Column} from "./AdminTable.tsx";
 
-type AdminTableBodyProps = {
-  data: any
+type AdminTableBodyProps<T> = {
+  data: T[]
   columns: Column[]
-  onEdit?: (row: any) => void;
-  onDelete?: (row: any) => void;
+  onEdit?: (row: T) => void;
+  onDelete?: (row: T) => void;
 }
 
-export function AdminTableBody({data, columns, onEdit, onDelete}: AdminTableBodyProps) {
+export function AdminTableBody<T>({data, columns, onEdit, onDelete}: AdminTableBodyProps<T>) {
   return (
     <TableBody>
-      {data.map((row, index) => (
-        <TableRow key={row.id || index} hover>
+      {data.map((row: any, index) => (
+        <TableRow key={row.uid || row.id || index} hover>
           {columns.map((col) => (
             <TableCell key={col.key}>
               {row[col.key]}
@@ -22,11 +22,11 @@ export function AdminTableBody({data, columns, onEdit, onDelete}: AdminTableBody
 
           <TableCell align="right">
             <IconButton onClick={() => onEdit?.(row)} size="small" color="primary">
-              <Edit fontSize="small" />
+              <Edit fontSize="small"/>
             </IconButton>
 
             <IconButton onClick={() => onDelete?.(row)} size="small" color="error">
-              <Delete fontSize="small" />
+              <Delete fontSize="small"/>
             </IconButton>
           </TableCell>
         </TableRow>
