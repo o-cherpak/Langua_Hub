@@ -7,7 +7,7 @@ export interface Column {
   label: string;
 }
 
-interface UniversalTableProps {
+interface AdminTableProps {
   columns: Column[];
   data: any[];
   onEdit?: (row: any) => void;
