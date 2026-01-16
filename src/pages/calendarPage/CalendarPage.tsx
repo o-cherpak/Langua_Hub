@@ -9,6 +9,22 @@ import Typography from "@mui/material/Typography";
 import {format} from "date-fns";
 import {pl} from "date-fns/locale";
 import {StatusPanel} from "./StatusPanel.tsx";
+import {getCurrentUser} from "../../services/getCurrentUser.ts";
+import {useCoursesStore} from "../../stores/useCoursesStore.ts";
+import {useStudentsStore} from "../../stores/useStudentsStore.ts";
+
+export const CalendarPageLoader = async () => {
+  const user = await getCurrentUser();
+
+  if (user) {
+    await Promise.all([
+      useCoursesStore.getState().fetchCourses(),
+      useStudentsStore.getState().fetchUser(user.uid),
+    ]);
+  }
+
+  return null;
+};
 
 export function CalendarPage() {
   const [selectedDate, setSelectedDate] = useState<Date>(

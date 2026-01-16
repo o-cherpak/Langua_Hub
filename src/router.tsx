@@ -14,7 +14,7 @@ import {
   DashboardPageLoader,
 } from "./pages/dashboardPage/DashboardPage.tsx";
 import { MarksPage, MarksPageLoader } from "./pages/marksPage/MarksPage.tsx";
-import { CalendarPage } from "./pages/calendarPage/CalendarPage.tsx";
+import { CalendarPage, CalendarPageLoader } from "./pages/calendarPage/CalendarPage.tsx";
 
 export const router = createBrowserRouter([
   {
@@ -48,5 +48,6 @@ export const router = createBrowserRouter([
   {
     path: "/calendarPage",
     element: <CalendarPage />,
+    loader: CalendarPageLoader,
   },
 ]);
