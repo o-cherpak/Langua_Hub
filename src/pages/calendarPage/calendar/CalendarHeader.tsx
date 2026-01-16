@@ -1,14 +1,6 @@
 import { Box, Typography } from "@mui/material";
 
-const daysOfWeek = [
-  "poniedziałek",
-  "wtorek",
-  "środa",
-  "czwartek",
-  "piątek",
-  "sobota",
-  "niedziela",
-];
+const daysOfWeek = ["Pn", "Wt", "Śr", "Cz", "Pt", "Sb", "Nd"];
 
 export function CalendarHeader() {
   return (
@@ -16,15 +8,21 @@ export function CalendarHeader() {
       sx={{
         display: "grid",
         gridTemplateColumns: "repeat(7, 1fr)",
-        bgcolor: "white",
-        color: "primary.main",
+        borderBottom: 1,
+        borderColor: "divider",
+        py: 1,
       }}
     >
       {daysOfWeek.map((day) => (
-        <Box key={day} sx={{ p: 1, textAlign: "center" }}>
+        <Box key={day} sx={{ textAlign: "center" }}>
           <Typography
             variant="caption"
-            sx={{ fontWeight: "bold", textTransform: "uppercase" }}
+            sx={{
+              fontWeight: 800,
+              textTransform: "uppercase",
+              color: "primary.main",
+              letterSpacing: "1px"
+            }}
           >
             {day}
           </Typography>

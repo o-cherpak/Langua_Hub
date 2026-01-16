@@ -11,21 +11,25 @@ export function StatusHeader({hasLessons}: StatusHeaderProps) {
       sx={{
         display: "flex",
         alignItems: "center",
-        mb: 2,
-        gap: 2,
-        color: hasLessons ? "primary.main" : "text.disabled",
+        mb: 1,
+        gap: 1,
+        color: hasLessons ? "primary.main" : "text.secondary",
       }}
     >
       {hasLessons ? (
-        <RadioButtonChecked sx={{ fontSize: 24 }} />
+        <RadioButtonChecked sx={{fontSize: 20}}/>
       ) : (
-        <CircleOutlined sx={{ fontSize: 24 }} />
+        <CircleOutlined sx={{fontSize: 20, color: "divider"}}/>
       )}
       <Typography
-        variant="subtitle1"
-        sx={{ fontWeight: 600, textTransform: "uppercase", letterSpacing: 1 }}
+        variant="overline"
+        sx={{
+          fontWeight: 700,
+          letterSpacing: "1px",
+          color: hasLessons ? "primary.main" : "text.secondary"
+        }}
       >
-        Status Dnia: {hasLessons ? "Zajęcia" : "Wolne"}
+        {hasLessons ? "Zajęcia zaplanowane" : "Brak zajęć"}
       </Typography>
     </Box>
   );

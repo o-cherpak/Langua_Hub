@@ -30,9 +30,8 @@ export function CalendarPage() {
   const [selectedDate, setSelectedDate] = useState<Date>(
     new Date("2024-01-15"),
   );
-  const dayName = format(selectedDate, "LLLL yyyy", {
-    locale: pl,
-  }).toUpperCase();
+
+  const monthName = format(selectedDate, "LLLL yyyy", {locale: pl});
 
   return (
     <Box sx={{display: "flex", flexDirection: "column", bgcolor: "#f8f9fa"}}>
@@ -55,9 +54,9 @@ export function CalendarPage() {
               <Typography
                 variant="body2"
                 component="p"
-                sx={{fontWeight: "bold", color: "primary.main"}}
+                sx={{fontWeight: "bold", color: "primary.main",textTransform: "uppercase" }}
               >
-                {dayName}
+                {monthName}
               </Typography>
             </Box>
 
