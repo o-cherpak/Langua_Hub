@@ -8,7 +8,7 @@ import {SectionTitle} from "../../components/SectionTitle.tsx";
 import Typography from "@mui/material/Typography";
 import {format} from "date-fns";
 import {pl} from "date-fns/locale";
-import {StatusPanel} from "./StatusPanel.tsx";
+import {StatusPanel} from "./statusPanel/StatusPanel.tsx";
 import {getCurrentUser} from "../../services/getCurrentUser.ts";
 import {useCoursesStore} from "../../stores/useCoursesStore.ts";
 import {useStudentsStore} from "../../stores/useStudentsStore.ts";
