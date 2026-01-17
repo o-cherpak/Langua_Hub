@@ -1,6 +1,7 @@
 import {useState} from "react";
-import {TextField, Button, Grid, Typography, Box} from "@mui/material";
-import {Add as AddIcon} from "@mui/icons-material";
+import {Grid, Typography, Box} from "@mui/material";
+import {AdminFormBody} from "./AdminFormBody.tsx";
+import {AddNewButton} from "./AddNewButton.tsx";
 
 export interface FormField {
   key: string;
@@ -38,30 +39,14 @@ export function AdminForm({title, fields, onSave}: AdminFormProps) {
       </Typography>
 
       <Grid container spacing={2} alignItems="center">
-        {fields.map((field) => (
-          <Grid size={{xs: 12, sm: 6, md: 2.4}} key={field.key}>
-            <TextField
-              fullWidth
-              size="small"
-              label={field.label}
-              type={field.type || "text"}
-              value={formData[field.key]}
-              onChange={(e) => handleChange(field.key, e.target.value)}
-              InputLabelProps={field.type === "date" ? {shrink: true} : {}}
-            />
-          </Grid>
-        ))}
+        <AdminFormBody
+          fields={fields}
+          formData={formData}
+          handleChange={handleChange}
+        />
 
         <Grid size={{xs: 12, md: 2.4}}>
-          <Button
-            fullWidth
-            variant="contained"
-            startIcon={<AddIcon/>}
-            onClick={handleAdd}
-            sx={{height: "40px"}}
-          >
-            Dodaj
-          </Button>
+          <AddNewButton handleAdd={handleAdd} />
         </Grid>
       </Grid>
     </Box>

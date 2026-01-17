@@ -5,7 +5,7 @@ import {useStudentsStore} from "../../../stores/useStudentsStore.ts";
 
 import {Chip, Box} from "@mui/material";
 import type {ILanguage} from "../../../interfaces/ILanguage.ts";
-import {AdminForm, type FormField} from "../AdminForm.tsx";
+import {AdminForm, type FormField} from "../form/AdminForm.tsx";
 
 const studentColumns = [
   {key: "uid", label: "ID"},
