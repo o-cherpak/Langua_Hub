@@ -1,20 +1,23 @@
 import {Table, TableContainer, Paper} from "@mui/material";
 import {AdminTableHead} from "./AdminTableHead.tsx";
 import {AdminTableBody} from "./AdminTableBody.tsx";
+import type { ReactNode } from "react";
 
-export interface Column {
+export interface Column<T = any> {
   key: string;
   label: string;
+  render?: (value: any, row: T) => ReactNode;
 }
 
-interface AdminTableProps {
-  columns: Column[];
-  data: any[];
-  onEdit?: (row: any) => void;
-  onDelete?: (row: any) => void;
+interface AdminTableProps<T> {
+  title?: string;
+  columns: Column<T>[];
+  data: T[];
+  onEdit?: (row: T) => void;
+  onDelete?: (row: T) => void;
 }
 
-export function AdminTable({columns, data, onEdit, onDelete}: AdminTableProps) {
+export function AdminTable<T>({columns, data, onEdit, onDelete}: AdminTableProps<T>) {
   return (
     <TableContainer component={Paper} elevation={0} sx={{border: "1px solid", borderColor: "divider"}}>
       <Table>

@@ -1,6 +1,7 @@
 import {IconButton, TableBody, TableCell, TableRow} from "@mui/material";
 import {Delete, Edit} from "@mui/icons-material";
 import type {Column} from "./AdminTable.tsx";
+import Typography from "@mui/material/Typography";
 
 type AdminTableBodyProps<T> = {
   data: T[]
@@ -16,7 +17,10 @@ export function AdminTableBody<T>({data, columns, onEdit, onDelete}: AdminTableB
         <TableRow key={row.uid || row.id || index} hover>
           {columns.map((col) => (
             <TableCell key={col.key}>
-              {row[col.key]}
+              {col.render
+                ? col.render(row[col.key], row)
+                : <Typography fontSize={14}>{row[col.key]}</Typography>
+              }
             </TableCell>
           ))}
 

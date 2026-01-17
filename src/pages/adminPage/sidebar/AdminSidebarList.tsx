@@ -5,6 +5,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import SchoolIcon from '@mui/icons-material/School';
 import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 type AdminSidebarListProps = {
   view: ViewType
@@ -16,6 +17,7 @@ const menuItems: MenuItem[] = [
   {id: "teachers", label: "Wykładowcy", icon: <SupervisorAccountIcon/>},
   {id: "news", label: "Ogłoszenia", icon: <EmailIcon/>},
   {id: "marks", label: "Oceny", icon: <AnalyticsIcon/>},
+  {id: "courses", label: "Zajęcia", icon: <AccessTimeIcon/>},
 ];
 
 export function AdminSidebarList({view, handleMenuItemClick}: AdminSidebarListProps) {

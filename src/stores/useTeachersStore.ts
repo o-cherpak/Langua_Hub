@@ -27,7 +27,7 @@ export const useTeachersStore = create<TeachersState>((set) => ({
         const transformed: ITeacher[] = Object.entries(val).map(
           ([key, value]: [string, any]) => ({
             ...value,
-            id: key,
+            uid: key,
           }),
         );
 

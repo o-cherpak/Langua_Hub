@@ -4,7 +4,7 @@ import {Menu} from "@mui/icons-material";
 import {AdminMainContent} from "./AdminMainContent.tsx";
 import {AdminSidebar} from "./sidebar/AdminSidebar.tsx";
 
-export type ViewType = "students" | "teachers" | "news" | "marks";
+export type ViewType = "students" | "teachers" | "news" | "marks" | "courses";
 
 export function AdminPage() {
   const [currentView, setCurrentView] = useState<ViewType>("students");
