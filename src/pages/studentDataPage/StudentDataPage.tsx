@@ -7,6 +7,7 @@ import { StudentInfoViewer } from "./StudentInfoViewer.tsx";
 
 export function StudentDataPage() {
   const studentData = useUsersStore((state) => state.user);
+  const uid = useUsersStore((state) => state.uid);
 
   if (!studentData) {
     return null;
@@ -25,7 +26,7 @@ export function StudentDataPage() {
       <Container maxWidth="lg" sx={{ py: 4 }}>
         <Grid container spacing={4}>
           <Grid size={{ xs: 12, md: 8, lg: 9 }}>
-            <StudentInfoViewer student={studentData} />
+            <StudentInfoViewer student={studentData} uid={uid} />
           </Grid>
 
           <Grid size={{ xs: 12, md: 4, lg: 3 }}>

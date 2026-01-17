@@ -7,9 +7,10 @@ import { StudentLanguagesSection } from "./StudentLanguagesSection.tsx";
 
 type StudentInfoViewerProps = {
   student: IStudent;
+  uid: string |null;
 };
 
-export function StudentInfoViewer({ student }: StudentInfoViewerProps) {
+export function StudentInfoViewer({ student,uid }: StudentInfoViewerProps) {
   return (
     <SectionCard>
       <Box sx={{ p: 2 }}>
@@ -18,7 +19,7 @@ export function StudentInfoViewer({ student }: StudentInfoViewerProps) {
         </Typography>
 
         <Typography variant="body2" color="text.secondary">
-          Student ID: #{Object.keys(student)}
+          Student ID: #{uid}
         </Typography>
 
         <Divider sx={{ my: 3 }} />

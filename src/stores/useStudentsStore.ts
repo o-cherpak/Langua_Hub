@@ -52,7 +52,7 @@ export const useStudentsStore = create<StudentsState>((setStore) => ({
     const tempAuth = getAuth(tempApp);
 
     try {
-      const emailPrefix = formData.email.split('@')[0];
+      const emailPrefix = formData.email.split("@")[0];
       const generatedPassword = `${emailPrefix}123`;
 
       const userCredential = await createUserWithEmailAndPassword(
@@ -89,12 +89,16 @@ export const useStudentsStore = create<StudentsState>((setStore) => ({
     }
   },
 
-  updateStudent: async (uid, data) => {
-    try {
-      await update(ref(db, `students/${uid}`), data);
-    } catch (error) {
-      console.error(error);
-      throw error;
-    }
+  updateStudent: async (uid: string, data: IStudent) => {
+    await update(ref(db, `students/${uid}`), data);
+
+    setStore((state) => ({
+      students: state.students.map((student) =>
+        student.uid === uid
+          ? {...student, ...data}
+          : student
+      ),
+    }));
+
   }
 }));
