@@ -51,14 +51,17 @@ export const useStudentsStore = create<StudentsState>((setStore) => ({
     const tempAuth = getAuth(tempApp);
 
     try {
+      const emailPrefix = formData.email.split('@')[0];
+      const generatedPassword = `${emailPrefix}123`;
+
       const userCredential = await createUserWithEmailAndPassword(
         tempAuth,
         formData.email,
-        "password123"
+        generatedPassword
       );
 
       const uid = userCredential.user.uid;
-      
+
       const newStudentData = {
         uid: uid,
         name: formData.name,
