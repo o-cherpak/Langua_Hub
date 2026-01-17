@@ -1,16 +1,19 @@
-import { Box, Typography } from "@mui/material";
-import { format } from "date-fns";
-import { pl } from "date-fns/locale";
-import type { ICourse } from "../interfaces/ICourse.ts";
-import { ScheduleList } from "./sheduleList/ScheduleList.tsx";
+import {Box, Typography} from "@mui/material";
+import {format} from "date-fns";
+import {pl} from "date-fns/locale";
+import type {ICourse} from "../interfaces/ICourse.ts";
+import {ScheduleList} from "./sheduleList/ScheduleList.tsx";
+import {EmptyCourses} from "./sheduleList/EmptyCourses.tsx";
 
 type TodayActivityProps = {
   courses: ICourse[];
 };
 
-export function TodayActivity({ courses }: TodayActivityProps) {
-  const dayName = format(new Date(), "EEEE, d MMMM", { locale: pl });
+export function TodayActivity({courses}: TodayActivityProps) {
+  const dayName = format(new Date(), "EEEE, d MMMM", {locale: pl});
   const formattedDayName = dayName.charAt(0).toUpperCase() + dayName.slice(1);
+
+  const hasCourses = courses.length > 0;
 
   return (
     <Box>
@@ -24,7 +27,7 @@ export function TodayActivity({ courses }: TodayActivityProps) {
         {formattedDayName}
       </Typography>
 
-      <ScheduleList courses={courses} />
+      {hasCourses ? <ScheduleList courses={courses}/> : <EmptyCourses/>}
     </Box>
   );
 }

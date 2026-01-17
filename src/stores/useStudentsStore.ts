@@ -1,4 +1,4 @@
-import {get, ref, set} from "firebase/database";
+import {get, ref, set, update} from "firebase/database";
 import {create} from "zustand/react";
 import {db, firebaseConfig} from "../firebaseConfig.ts";
 import type {IStudent} from "../interfaces/IStudent.ts";
@@ -11,6 +11,7 @@ interface StudentsState {
   fetchStudents: () => Promise<void>;
   setStudents: (m: IStudent[]) => void;
   addStudent: (formData: any) => void;
+  updateStudent: (uid: string, data: IStudent) => Promise<void>;
 }
 
 export const useStudentsStore = create<StudentsState>((setStore) => ({
@@ -85,6 +86,15 @@ export const useStudentsStore = create<StudentsState>((setStore) => ({
     } catch (error: any) {
       console.error("Błąd podczas dodawania:", error);
       alert("Błąd: " + error.message);
+    }
+  },
+
+  updateStudent: async (uid, data) => {
+    try {
+      await update(ref(db, `students/${uid}`), data);
+    } catch (error) {
+      console.error(error);
+      throw error;
     }
   }
 }));

@@ -25,8 +25,7 @@ export function AuthLoginForm() {
       if (!userCredential.user.email) {
         throw new Error("Email not found");
       }
-    } catch (error: any) {
-    }
+    } catch (error: any) { /* empty */ }
   };
 
   return (

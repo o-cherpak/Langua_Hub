@@ -1,4 +1,4 @@
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {Container, Stack} from "@mui/material";
 import {AdminTable} from "../table/AdminTable.tsx";
 import {useStudentsStore} from "../../../stores/useStudentsStore.ts";
@@ -6,6 +6,8 @@ import {useStudentsStore} from "../../../stores/useStudentsStore.ts";
 import {Chip, Box} from "@mui/material";
 import type {ILanguage} from "../../../interfaces/ILanguage.ts";
 import {AdminForm, type FormField} from "../form/AdminForm.tsx";
+import {StudentModal} from "../StudentModal.tsx";
+import type {IStudent} from "../../../interfaces/IStudent.ts";
 
 const studentColumns = [
   {key: "uid", label: "ID"},
@@ -36,8 +38,19 @@ const studentFormFields: FormField[] = [
 ];
 
 export function AdminStudentsView() {
-  const {students, fetchStudents} = useStudentsStore();
-  const addStudent = useStudentsStore(state => state.addStudent);
+  const {students, fetchStudents, addStudent, updateStudent} = useStudentsStore();
+  const [editUser, setEditUser] = useState<any>(null);
+  const [isEditOpen, setIsEditOpen] = useState(false);
+
+  const handleEditClick = (user: IStudent) => {
+    setEditUser(user);
+    setIsEditOpen(true);
+  };
+
+  const handleUpdate = async (updatedData: IStudent) => {
+    await updateStudent( editUser.uid, updatedData);
+    setIsEditOpen(false);
+  };
 
   useEffect(() => {
     fetchStudents();
@@ -55,6 +68,14 @@ export function AdminStudentsView() {
         <AdminTable
           columns={studentColumns}
           data={students}
+          onEdit={handleEditClick}
+        />
+
+        <StudentModal
+          open={isEditOpen}
+          onClose={() => setIsEditOpen(false)}
+          onSave={handleUpdate}
+          initialData={editUser}
         />
       </Stack>
     </Container>
