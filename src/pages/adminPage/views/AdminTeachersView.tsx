@@ -1,7 +1,7 @@
 import {useEffect} from "react";
 import {Container, Stack} from "@mui/material";
-import {AdminTable} from "./table/AdminTable.tsx";
-import {useTeachersStore} from "../../stores/useTeachersStore.ts";
+import {AdminTable} from "../table/AdminTable.tsx";
+import {useTeachersStore} from "../../../stores/useTeachersStore.ts";
 
 const teacherColumns = [
   {key: "uid", label: "ID"},

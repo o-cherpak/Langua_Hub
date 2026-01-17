@@ -1,10 +1,10 @@
 import {useEffect} from "react";
 import {Chip, Stack} from "@mui/material";
-import {AdminTable} from "./table/AdminTable.tsx";
-import {useMarksStore} from "../../stores/useMarksStore.ts";
+import {AdminTable} from "../table/AdminTable.tsx";
+import {useMarksStore} from "../../../stores/useMarksStore.ts";
 import { format } from "date-fns";
 import { pl } from "date-fns/locale";
-import type {ILanguage} from "../../interfaces/ILanguage.ts";
+import type {ILanguage} from "../../../interfaces/ILanguage.ts";
 
 const markColumns = [
   {key: "id", label: "Ocena(ID)"},

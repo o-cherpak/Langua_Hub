@@ -1,9 +1,9 @@
 import {Container} from "@mui/material";
-import {AdminStudentsView} from "./AdminStudentsView.tsx";
-import {AdminTeacherView} from "./AdminTeachersView.tsx";
-import {AdminMarksView} from "./AdminMarksView.tsx";
-import {AdminCoursesView} from "./AdminCoursesView.tsx";
-import {AdminNewsView} from "./AdminNewsVIew.tsx";
+import {AdminStudentsView} from "./views/AdminStudentsView.tsx";
+import {AdminTeacherView} from "./views/AdminTeachersView.tsx";
+import {AdminMarksView} from "./views/AdminMarksView.tsx";
+import {AdminCoursesView} from "./views/AdminCoursesView.tsx";
+import {AdminNewsView} from "./views/AdminNewsVIew.tsx";
 
 type AdminMainContentProps = {
   currentView: string
@@ -29,7 +29,7 @@ export function AdminMainContent({currentView}: AdminMainContentProps) {
 
   return (
     <Container maxWidth="xl" sx={{mt: 4, mb: 4, flexGrow: 1}}>
-      {renderContent()}
+        {renderContent()}
     </Container>
   );
 }

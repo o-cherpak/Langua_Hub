@@ -1,7 +1,7 @@
 import {useEffect} from "react";
 import {Chip, Stack} from "@mui/material";
-import {AdminTable} from "./table/AdminTable.tsx";
-import {useCoursesStore} from "../../stores/useCoursesStore.ts";
+import {AdminTable} from "../table/AdminTable.tsx";
+import {useCoursesStore} from "../../../stores/useCoursesStore.ts";
 import {format} from "date-fns";
 import {pl} from "date-fns/locale";
 
