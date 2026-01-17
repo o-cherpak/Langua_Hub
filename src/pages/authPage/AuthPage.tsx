@@ -9,10 +9,10 @@ export function AuthPage() {
   const { role, loading, uid } = useUsersStore();
 
   useEffect(() => {
-    if (!loading && uid) {
+    if (!loading && uid && role) {
       if (role === "admin") {
         navigate("/admin", { replace: true });
-      } else {
+      } else if (role === "student" || role === "teacher") {
         navigate("/welcome", { replace: true });
       }
     }

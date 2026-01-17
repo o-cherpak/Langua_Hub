@@ -6,13 +6,10 @@ import {
 } from "firebase/auth";
 import { type FormEvent, useState } from "react";
 import { auth } from "../../firebaseConfig.ts";
-import { useNavigate } from "react-router";
 
 export function AuthLoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const navigate = useNavigate();
 
   const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
@@ -28,9 +25,7 @@ export function AuthLoginForm() {
       if (!userCredential.user.email) {
         throw new Error("Email not found");
       }
-      navigate("/welcome");
-    } catch (error) {
-      console.log(error);
+    } catch (error: any) {
     }
   };
 

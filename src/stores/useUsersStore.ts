@@ -19,48 +19,50 @@ export const useUsersStore = create<UserState>((set) => ({
   user: null,
   role: null,
   uid: null,
-  loading: false,
-
-  fetchUser: async (uid: string) => {
-    set({loading: true});
-    const snap = await get(ref(db, `students/${uid}`));
-    set({
-      user: snap.exists() ? {...snap.val(), id: uid} : null,
-      uid: uid,
-      loading: false,
-    });
-  },
+  loading: true,
 
   clearAuth: () => set({user: null, uid: null}),
 
   fetchUserRole: async (uid: string) => {
     try {
-      const adminSnapshot = await get(ref(db, `admin/${uid}`));
-      if (adminSnapshot.exists()) {
-        set({role: "admin"});
-        return "admin";
+      const studentSnapshot = await get(ref(db, `students/${uid}`));
+      if (studentSnapshot.exists()) {
+        set({ role: "student" });
+        return "student";
       }
 
       const teacherSnapshot = await get(ref(db, `teachers/${uid}`));
       if (teacherSnapshot.exists()) {
-        set({role: "teacher"});
+        set({ role: "teacher" });
         return "teacher";
       }
 
-      set({role: "student"});
-      return "student";
-    } catch (error) {
-      set({role: null});
-      console.log(error);
+      const adminSnapshot = await get(ref(db, `admin/${uid}`));
+      if (adminSnapshot.exists()) {
+        set({ role: "admin" });
+        return "admin";
+      }
+
+      set({ role: null });
       return null;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (error) {
+      set({ role: "student" });
+      return "student";
     }
   },
 
   initializeAuth: () => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+    set({ loading: true });
+
+    return onAuthStateChanged(auth, async (user) => {
       if (user) {
-        set({uid: user.uid});
-        await useUsersStore.getState().fetchUserRole(user.uid);
+        set({ uid: user.uid });
+        const role = await useUsersStore.getState().fetchUserRole(user.uid);
+
+        if (role === 'student') {
+          await useUsersStore.getState().fetchUser(user.uid);
+        }
 
         set({ loading: false });
       } else {
@@ -68,7 +70,14 @@ export const useUsersStore = create<UserState>((set) => ({
         set({ role: null, loading: false });
       }
     });
-    return unsubscribe;
+  },
+
+  fetchUser: async (uid: string) => {
+    const snap = await get(ref(db, `students/${uid}`));
+    set({
+      user: snap.exists() ? {...snap.val(), id: uid} : null,
+      uid: uid,
+    });
   },
 
 
