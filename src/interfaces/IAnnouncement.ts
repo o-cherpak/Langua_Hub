@@ -1,5 +1,5 @@
 export interface IAnnouncement {
-  id: string;
+  id?: string;
   authorName: string;
   authorSurname: string;
   message: string;

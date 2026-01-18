@@ -6,6 +6,7 @@ import {useState, useEffect} from "react";
 import type {IMark} from "../../../interfaces/IMark";
 import {useStudentsStore} from "../../../stores/useStudentsStore";
 import {useTeachersStore} from "../../../stores/useTeachersStore";
+import type {ICourse} from "../../../interfaces/ICourse.ts";
 
 interface MarkModalProps {
   open: boolean;
@@ -41,16 +42,26 @@ export function MarkModal({open, onClose, onSave, initialData}: MarkModalProps) 
     }
   }, [initialData, open]);
 
-  const handleLangChange = (field: "subject" | "level", value: string) => {
-    setFormData(prev => ({
-      ...prev,
-      language: {...prev.language, [field]: value}
-    }));
+  const handleChange = (field: keyof ICourse, value: any) => {
+    setFormData(prev => ({...prev, [field]: value}));
+  };
+
+  const handleTeacherSelect = (id: string) => {
+    const teacher = teachers.find(t => t.uid === id);
+    if (teacher) {
+      setFormData(prev => ({
+        ...prev,
+        teacherId: id,
+        teacherName: teacher.name,
+        teacherSurname: teacher.surname
+      }));
+    }
   };
 
   return (
     <Dialog open={open} onClose={onClose} fullWidth maxWidth="xs">
       <DialogTitle>{initialData ? "Edytuj ocenę" : "Dodaj nową ocenę"}</DialogTitle>
+
       <DialogContent dividers>
         <Box sx={{display: "flex", flexDirection: "column", gap: 2, pt: 1}}>
 
@@ -74,10 +85,10 @@ export function MarkModal({open, onClose, onSave, initialData}: MarkModalProps) 
             <Select
               value={formData.teacherId}
               label="Nauczyciel"
-              onChange={(e) => setFormData({...formData, teacherId: e.target.value})}
+              onChange={(e) => handleTeacherSelect(e.target.value)}
             >
               {teachers.map(t => (
-                <MenuItem key={t.uid} value={t.uid}>{t.name} {t.surname}</MenuItem>
+                <MenuItem key={t.uid} value={t.uid}>{t.name} {t.surname} ({t.specialization})</MenuItem>
               ))}
             </Select>
           </FormControl>
@@ -86,14 +97,19 @@ export function MarkModal({open, onClose, onSave, initialData}: MarkModalProps) 
             <TextField
               label="Przedmiot" fullWidth
               value={formData.language.subject}
-              onChange={(e) => handleLangChange("subject", e.target.value)}
+              onChange={(e) => handleChange("subject", e.target.value)}
             />
 
-            <TextField
-              label="Poziom" sx={{width: "100px"}}
-              value={formData.language.level}
-              onChange={(e) => handleLangChange("level", e.target.value)}
-            />
+            <FormControl sx={{minWidth: 120}}>
+              <InputLabel>Poziom</InputLabel>
+
+              <Select
+                value={formData.language.level} label="Poziom"
+                onChange={(e) => handleChange("level", e.target.value)}
+              >
+                {["A1", "A2", "B1", "B2", "C1"].map(l => <MenuItem key={l} value={l}>{l}</MenuItem>)}
+              </Select>
+            </FormControl>
           </Box>
 
           <TextField

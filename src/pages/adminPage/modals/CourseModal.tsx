@@ -80,8 +80,10 @@ export function CourseModal({open, onClose, onSave, initialData}: CourseModalPro
               label="Przedmiot" fullWidth
               value={formData.subject} onChange={(e) => handleChange("subject", e.target.value)}
             />
+
             <FormControl sx={{minWidth: 120}}>
               <InputLabel>Poziom</InputLabel>
+
               <Select
                 value={formData.level} label="Poziom"
                 onChange={(e) => handleChange("level", e.target.value)}

@@ -8,7 +8,7 @@ export function ScheduleSection({ courses }: { courses: ICourse[] }) {
     <SectionCard>
       <TodayActivity courses={courses} />
 
-      <ViewAllButton href={"/calendarPage"} title={"Pełny harmonogram"} />
+      <ViewAllButton href={"/calendar"} title={"Pełny harmonogram"} />
     </SectionCard>
   );
 }

@@ -7,8 +7,6 @@ type AnnouncementListProps = {
 };
 
 export function AnnouncementList({ announcements }: AnnouncementListProps) {
-  const reversedAnnouncements = [...announcements].reverse();
-
   return (
     <List
       sx={{
@@ -17,7 +15,7 @@ export function AnnouncementList({ announcements }: AnnouncementListProps) {
         width: "100%",
       }}
     >
-      {reversedAnnouncements.map((announcement) => (
+      {announcements.map((announcement) => (
         <AnnouncementItem data={announcement} key={announcement.id} />
       ))}
     </List>

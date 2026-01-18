@@ -10,14 +10,12 @@ type DashboardStudentViewerProps = {
 };
 
 export function DashboardStudentViewer({ marks }: DashboardStudentViewerProps) {
-  const reversedMarks = [...marks].reverse();
-
   return (
     <SectionCard>
       <SectionTitle title={"Oceny i analiza"} />
 
       <List>
-        {reversedMarks.map((mark, index) => (
+        {marks.map((mark, index) => (
           <Box key={index}>
             {index > 0 && <Divider />}
 
