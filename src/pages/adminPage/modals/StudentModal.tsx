@@ -12,8 +12,8 @@ import {
 } from "@mui/material";
 import {Add, Delete} from "@mui/icons-material";
 import {useState, useEffect} from "react";
-import type {ILanguage} from "../../interfaces/ILanguage.ts";
-import type {IStudent} from "../../interfaces/IStudent.ts";
+import type {ILanguage} from "../../../interfaces/ILanguage.ts";
+import type {IStudent} from "../../../interfaces/IStudent.ts";
 
 type StudentModalProps = {
   open: boolean,

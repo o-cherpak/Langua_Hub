@@ -1,4 +1,4 @@
-import {get, ref, set, update} from "firebase/database";
+import {get, ref, remove, set, update} from "firebase/database";
 import {create} from "zustand/react";
 import {db, firebaseConfig} from "../firebaseConfig.ts";
 import type {IStudent} from "../interfaces/IStudent.ts";
@@ -10,8 +10,9 @@ interface StudentsState {
   loading: boolean;
   fetchStudents: () => Promise<void>;
   setStudents: (m: IStudent[]) => void;
-  addStudent: (formData: any) => void;
+  addStudent: (formData: IStudent) => void;
   updateStudent: (uid: string, data: IStudent) => Promise<void>;
+  deleteStudent:(uid: string) => Promise<void>;
 }
 
 export const useStudentsStore = create<StudentsState>((setStore) => ({
@@ -47,7 +48,7 @@ export const useStudentsStore = create<StudentsState>((setStore) => ({
     }
   },
 
-  addStudent: async (formData: any) => {
+  addStudent: async (formData: IStudent) => {
     const tempApp = initializeApp(firebaseConfig, "TempApp");
     const tempAuth = getAuth(tempApp);
 
@@ -99,6 +100,19 @@ export const useStudentsStore = create<StudentsState>((setStore) => ({
           : student
       ),
     }));
+  },
 
-  }
+  deleteStudent: async (uid: string) => {
+    try {
+      const studentRef = ref(db, `students/${uid}`);
+      await remove(studentRef);
+
+      setStore((state) => ({
+        students: state.students.filter((student) => student.uid !== uid),
+      }));
+    } catch (error) {
+      alert("Nie udało się usunąć studenta.");
+      throw error;
+    }
+  },
 }));

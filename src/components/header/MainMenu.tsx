@@ -58,7 +58,7 @@ export function MainMenu() {
 
         <Divider />
 
-        <MenuItem onClick={() => goTo("/schedule")}>Plany Zajęć</MenuItem>
+        <MenuItem onClick={() => goTo("/calendar")}>Plany Zajęć</MenuItem>
       </HeaderMenu>
     </>
   );

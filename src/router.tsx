@@ -39,7 +39,7 @@ export const router = createBrowserRouter([
     loader: MarksPageLoader,
   },
   {
-    path: "/calendarPage",
+    path: "/calendar",
     element: <CalendarPage/>,
     loader: CalendarPageLoader,
   },

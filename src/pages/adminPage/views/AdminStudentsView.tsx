@@ -6,7 +6,7 @@ import {useStudentsStore} from "../../../stores/useStudentsStore.ts";
 import {Chip, Box} from "@mui/material";
 import type {ILanguage} from "../../../interfaces/ILanguage.ts";
 import {AdminForm, type FormField} from "../form/AdminForm.tsx";
-import {StudentModal} from "../StudentModal.tsx";
+import {StudentModal} from "../modals/StudentModal.tsx";
 import type {IStudent} from "../../../interfaces/IStudent.ts";
 
 const studentColumns = [
@@ -30,15 +30,15 @@ const studentColumns = [
 ];
 
 const studentFormFields: FormField[] = [
-  { key: 'name', label: 'Imię' },
-  { key: 'surname', label: 'Nazwisko' },
-  { key: 'email', label: 'Email' },
-  { key: 'phone', label: 'Telefon' },
-  { key: 'role', label: 'Rola' },
+  {key: "name", label: "Imię"},
+  {key: "surname", label: "Nazwisko"},
+  {key: "email", label: "Email"},
+  {key: "phone", label: "Telefon"},
+  {key: "role", label: "Rola"},
 ];
 
 export function AdminStudentsView() {
-  const {students, fetchStudents, addStudent, updateStudent} = useStudentsStore();
+  const {students, fetchStudents, addStudent, updateStudent, deleteStudent} = useStudentsStore();
   const [editUser, setEditUser] = useState<any>(null);
   const [isEditOpen, setIsEditOpen] = useState(false);
 
@@ -48,8 +48,16 @@ export function AdminStudentsView() {
   };
 
   const handleUpdate = async (updatedData: IStudent) => {
-    await updateStudent( editUser.uid, updatedData);
+    await updateStudent(editUser.uid, updatedData);
     setIsEditOpen(false);
+  };
+
+  const handleDelete = async (student: IStudent) => {
+    const confirm = window.confirm(`Czy na pewno chcesz usunąć ${student.name} ${student.surname}?`);
+
+    if (confirm) {
+      await deleteStudent(student.uid);
+    }
   };
 
   useEffect(() => {
@@ -69,6 +77,7 @@ export function AdminStudentsView() {
           columns={studentColumns}
           data={students}
           onEdit={handleEditClick}
+          onDelete={handleDelete}
         />
 
         <StudentModal
