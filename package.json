@@ -1,5 +1,9 @@
 {
   "name": "lingua_hub",
+  "compatibility_date": "2026-01-18",
+  "assets": {
+    "directory": "./dist"
+  },
   "private": true,
   "version": "0.0.0",
   "type": "module",
