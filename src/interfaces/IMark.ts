@@ -1,6 +1,7 @@
 import type { ILanguage } from "./ILanguage.ts";
 
 export interface IMark {
+  id?: string;
   studentId: string;
   teacherId: string;
   language: ILanguage;
