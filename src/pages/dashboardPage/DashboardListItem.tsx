@@ -15,12 +15,6 @@ type DashboardListItemProps = {
   mark: IMark;
 };
 
-const getScoreColor = (mark: number) => {
-  if (mark >= 90) return "success.main";
-  if (mark >= 70) return "warning.main";
-  return "error.main";
-};
-
 export function DashboardListItem({ mark }: DashboardListItemProps) {
   return (
     <ListItem sx={{ py: 2 }}>
@@ -52,7 +46,7 @@ export function DashboardListItem({ mark }: DashboardListItemProps) {
 
       <Typography
         variant="h5"
-        sx={{ color: getScoreColor(Number(mark.mark)), fontWeight: "bold" }}
+        sx={{ color: "primary.main", fontWeight: "bold" }}
       >
         {mark.mark}
       </Typography>
