@@ -4,13 +4,14 @@ import {db, firebaseConfig} from "../firebaseConfig.ts";
 import type {IStudent} from "../interfaces/IStudent.ts";
 import {createUserWithEmailAndPassword, getAuth, signOut} from "firebase/auth";
 import {deleteApp, initializeApp} from "firebase/app";
+import {toast} from "react-hot-toast";
 
 interface StudentsState {
   students: IStudent[];
   loading: boolean;
   fetchStudents: () => Promise<void>;
   setStudents: (m: IStudent[]) => void;
-  addStudent: (formData: IStudent) => void;
+  addStudent: (formData: IStudent) => Promise<void>;
   updateStudent: (uid: string, data: IStudent) => Promise<void>;
   deleteStudent:(uid: string) => Promise<void>;
 }
@@ -43,63 +44,78 @@ export const useStudentsStore = create<StudentsState>((setStore) => ({
         setStore({students: [], loading: false});
       }
     } catch (err) {
-      console.error("Error fetching students:", err);
+      toast.error("Błąd podczas pobierania studentów");
       setStore({loading: false});
     }
   },
 
   addStudent: async (formData: IStudent) => {
-    const tempApp = initializeApp(firebaseConfig, "TempApp");
-    const tempAuth = getAuth(tempApp);
+    const addAction = (async () => {
+      const tempApp = initializeApp(firebaseConfig, "TempApp");
+      const tempAuth = getAuth(tempApp);
 
-    try {
-      const emailPrefix = formData.email.split("@")[0];
-      const generatedPassword = `${emailPrefix}123`;
+      try {
+        const emailPrefix = formData.email.split("@")[0];
+        const generatedPassword = `${emailPrefix}123`;
 
-      const userCredential = await createUserWithEmailAndPassword(
-        tempAuth,
-        formData.email,
-        generatedPassword
-      );
+        const userCredential = await createUserWithEmailAndPassword(
+          tempAuth,
+          formData.email,
+          generatedPassword
+        );
 
-      const uid = userCredential.user.uid;
+        const uid = userCredential.user.uid;
 
-      const newStudentData = {
-        uid: uid,
-        name: formData.name,
-        surname: formData.surname,
-        email: formData.email,
-        phone: formData.phone,
-        role: "student",
-        languages: []
-      };
+        const newStudentData = {
+          uid: uid,
+          name: formData.name,
+          surname: formData.surname,
+          email: formData.email,
+          phone: formData.phone,
+          role: "student",
+          languages: formData.languages || []
+        };
 
-      await set(ref(db, `students/${uid}`), newStudentData);
+        await set(ref(db, `students/${uid}`), newStudentData);
+        await signOut(tempAuth);
+        await deleteApp(tempApp);
 
-      await signOut(tempAuth);
-      await deleteApp(tempApp);
+        setStore((state) => ({
+          students: [...state.students, newStudentData]
+        }));
 
-      setStore((state) => ({
-        students: [...state.students, newStudentData]
-      }));
+        return `Student dodany! Hasło: ${generatedPassword}`;
+      } catch (error: any) {
+        await deleteApp(tempApp);
+        throw error;
+      }
+    })();
 
-      alert("Student dodany pomyślnie!");
-    } catch (error: any) {
-      console.error("Błąd podczas dodawania:", error);
-      alert("Błąd: " + error.message);
-    }
+    toast.promise(addAction, {
+      loading: 'Tworzenie konta studenta...',
+      success: (data) => data,
+      error: (err) => `Błąd: ${err.message}`,
+    }, {
+      duration: 6000
+    });
   },
 
   updateStudent: async (uid: string, data: IStudent) => {
-    await update(ref(db, `students/${uid}`), data);
+    try{
+      await update(ref(db, `students/${uid}`), data);
 
-    setStore((state) => ({
-      students: state.students.map((student) =>
-        student.uid === uid
-          ? {...student, ...data}
-          : student
-      ),
-    }));
+      setStore((state) => ({
+        students: state.students.map((student) =>
+          student.uid === uid
+            ? {...student, ...data}
+            : student
+        ),
+      }));
+
+      toast.success("Dane studenta zostały zaktualizowane");
+    } catch (error: any) {
+      toast.error("Błąd aktualizacji: " + error.message);
+    }
   },
 
   deleteStudent: async (uid: string) => {
@@ -110,9 +126,10 @@ export const useStudentsStore = create<StudentsState>((setStore) => ({
       setStore((state) => ({
         students: state.students.filter((student) => student.uid !== uid),
       }));
-    } catch (error) {
-      alert("Nie udało się usunąć studenta.");
-      throw error;
+
+      toast.success("Student został usunięty");
+    } catch (error: any) {
+      toast.error("Nie udało się usunąć studenta");
     }
   },
 }));

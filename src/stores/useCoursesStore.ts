@@ -1,7 +1,8 @@
-import { get, ref, push, set, update, remove } from "firebase/database";
-import { create } from "zustand/react";
-import { db } from "../firebaseConfig.ts";
-import type { ICourse } from "../interfaces/ICourse.ts";
+import {get, ref, push, set, update, remove} from "firebase/database";
+import {create} from "zustand/react";
+import {db} from "../firebaseConfig.ts";
+import type {ICourse} from "../interfaces/ICourse.ts";
+import {toast} from "react-hot-toast";
 
 interface CoursesState {
   courses: ICourse[];
@@ -18,7 +19,7 @@ export const useCoursesStore = create<CoursesState>((setStore) => ({
   loading: false,
 
   fetchCourses: async () => {
-    setStore({ loading: true });
+    setStore({loading: true});
     try {
       const snap = await get(ref(db, "courses"));
       const val = snap.val();
@@ -30,46 +31,52 @@ export const useCoursesStore = create<CoursesState>((setStore) => ({
             id: key,
           }),
         );
-        setStore({ courses: transformed, loading: false });
+        setStore({courses: transformed, loading: false});
       } else {
-        setStore({ courses: [], loading: false });
+        setStore({courses: [], loading: false});
       }
     } catch (err) {
-      console.error("Error fetching courses:", err);
-      setStore({ loading: false });
+      toast.error("Błąd podczas pobierania kursów");
+      setStore({loading: false});
     }
   },
 
   setCourses(courses) {
-    setStore({ courses: courses });
+    setStore({courses: courses});
   },
 
   addCourse: async (courseData) => {
-    try {
+    const promise = (async () => {
       const newRef = push(ref(db, "courses"));
       const newId = newRef.key as string;
 
       await set(newRef, courseData);
 
-      const fullCourse = { ...courseData, id: newId };
-      setStore((state) => ({ courses: [...state.courses, fullCourse] }));
-    } catch (err) {
-      console.error("Error adding course:", err);
-    }
+      const fullCourse = {...courseData, id: newId};
+      setStore((state) => ({courses: [...state.courses, fullCourse]}));
+    })();
+
+    return toast.promise(promise, {
+      loading: "Tworzenie kursu...",
+      success: "Kurs został pomyślnie utworzony!",
+      error: "Nie udało się dodać kursu.",
+    });
   },
 
   updateCourse: async (id, data) => {
     try {
-      const cleanData = { ...data };
+      const cleanData = {...data};
       if (cleanData.id) delete cleanData.id;
 
       await update(ref(db, `courses/${id}`), cleanData);
 
       setStore((state) => ({
-        courses: state.courses.map((c) => (c.id === id ? { ...c, ...cleanData } : c)),
+        courses: state.courses.map((c) => (c.id === id ? {...c, ...cleanData} : c)),
       }));
+
+      toast.success("Kurs został zaktualizowany");
     } catch (err) {
-      console.error("Error updating course:", err);
+      toast.error("Błąd podczas edycji kursu");
     }
   },
 
@@ -79,8 +86,10 @@ export const useCoursesStore = create<CoursesState>((setStore) => ({
       setStore((state) => ({
         courses: state.courses.filter((c) => c.id !== id),
       }));
+
+      toast.success("Kurs został usunięty");
     } catch (err) {
-      console.error("Error deleting course:", err);
+      toast.error("Błąd podczas usuwania kursu");
     }
   },
 }));

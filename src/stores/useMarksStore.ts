@@ -2,6 +2,7 @@ import { get, ref, push, set, update, remove, query, orderByChild, equalTo } fro
 import { create } from "zustand";
 import { db } from "../firebaseConfig.ts";
 import type {IMark} from "../interfaces/IMark.ts";
+import { toast } from "react-hot-toast";
 
 interface MarksState {
   marks: IMark[];
@@ -48,7 +49,7 @@ export const useMarksStore = create<MarksState>((setStore) => ({
         setStore({ marks: [], loading: false });
       }
     } catch (err) {
-      console.error("Error fetching marks:", err);
+      toast.error("Błąd podczas pobierania ocen ucznia");
       setStore({ loading: false });
     }
   },
@@ -75,25 +76,29 @@ export const useMarksStore = create<MarksState>((setStore) => ({
         setStore({ marks: [], loading: false });
       }
     } catch (err) {
-      console.error("Error fetching marks:", err);
+      toast.error("Nie udało się pobrać wszystkich ocen");
       setStore({ loading: false });
     }
   },
 
   addMark: async (markData) => {
-    try {
-      const newMarkRef = push(ref(db, "marks"));
-      const newId = newMarkRef.key as string;
+    const promise = (async () => {
+        const newMarkRef = push(ref(db, "marks"));
+        const newId = newMarkRef.key as string;
 
-      const fullMark = { ...markData, id: newId };
-      await set(newMarkRef, fullMark);
+        const fullMark = {...markData, id: newId};
+        await set(newMarkRef, fullMark);
 
-      setStore((state) => ({
-        marks: [...state.marks, fullMark],
-      }));
-    } catch (err) {
-      console.error("Błąd dodawania:", err);
-    }
+        setStore((state) => ({
+          marks: [...state.marks, fullMark],
+        }));
+      })();
+
+    return toast.promise(promise, {
+      loading: 'Wystawianie oceny...',
+      success: 'Ocena została pomyślnie dodana!',
+      error: 'Błąd podczas dodawania oceny.',
+    });
   },
 
   updateMark: async (id, data) => {
@@ -108,8 +113,10 @@ export const useMarksStore = create<MarksState>((setStore) => ({
           m.id === id ? { ...m, ...cleanData } : m
         ),
       }));
+
+      toast.success("Ocena została zaktualizowana");
     } catch (err) {
-      console.error("Błąd aktualizacji:", err);
+      toast.error("Błąd aktualizacji oceny");
     }
   },
 
@@ -119,8 +126,10 @@ export const useMarksStore = create<MarksState>((setStore) => ({
       setStore((state) => ({
         marks: state.marks.filter((m) => m.id !== id),
       }));
+
+      toast.success("Ocena została usunięta");
     } catch (err) {
-      console.error("Błąd usuwania:", err);
+      toast.error("Nie udało się usunąć oceny");
     }
   },
 }));

@@ -2,6 +2,7 @@ import { get, ref, push, set, update, remove } from "firebase/database";
 import { create } from "zustand";
 import { db } from "../firebaseConfig.ts";
 import type { IAnnouncement } from "../interfaces/IAnnouncement.ts";
+import { toast } from "react-hot-toast";
 
 interface AnnouncementState {
   announcements: IAnnouncement[];
@@ -39,18 +40,26 @@ export const useAnnouncementsStore = create<AnnouncementState>((setStore) => ({
         setStore({ announcements: [], loading: false });
       }
     } catch (err) {
-      console.error("Error fetching announcement:", err);
+      toast.error("Błąd podczas pobierania ogłoszeń ");
       setStore({ loading: false });
     }
   },
 
   addAnnouncement: async (data) => {
-    const newRef = push(ref(db, "announcements"));
-    const newId = newRef.key as string;
-    await set(newRef, data);
-    setStore((state) => ({
-      announcements: [{ ...data, id: newId }, ...state.announcements]
-    }));
+    const promise = (async () => {
+      const newRef = push(ref(db, "announcements"));
+      const newId = newRef.key as string;
+      await set(newRef, data);
+      setStore((state) => ({
+        announcements: [{...data, id: newId}, ...state.announcements]
+      }));
+    })();
+
+    return toast.promise(promise, {
+      loading: 'Publikowanie ogłoszenia...',
+      success: 'Ogłoszenie zostało opublikowane!',
+      error: 'Nie udało się dodać ogłoszenia.',
+    });
   },
 
   updateAnnouncement: async (id, data) => {
