@@ -43,7 +43,7 @@ export const useStudentsStore = create<StudentsState>((setStore) => ({
       } else {
         setStore({students: [], loading: false});
       }
-    } catch (err) {
+    } catch {
       toast.error("Błąd podczas pobierania studentów");
       setStore({loading: false});
     }
@@ -85,15 +85,15 @@ export const useStudentsStore = create<StudentsState>((setStore) => ({
         }));
 
         return `Student dodany! Hasło: ${generatedPassword}`;
-      } catch (error: any) {
+      } catch  {
         await deleteApp(tempApp);
-        throw error;
+        return `Вłąd dodawania studenta`;
       }
     })();
 
-    toast.promise(addAction, {
+    await toast.promise(addAction, {
       loading: 'Tworzenie konta studenta...',
-      success: (data) => data,
+      success: (msg) => msg,
       error: (err) => `Błąd: ${err.message}`,
     }, {
       duration: 6000
@@ -128,7 +128,7 @@ export const useStudentsStore = create<StudentsState>((setStore) => ({
       }));
 
       toast.success("Student został usunięty");
-    } catch (error: any) {
+    } catch {
       toast.error("Nie udało się usunąć studenta");
     }
   },

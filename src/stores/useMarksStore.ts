@@ -48,7 +48,7 @@ export const useMarksStore = create<MarksState>((setStore) => ({
       } else {
         setStore({ marks: [], loading: false });
       }
-    } catch (err) {
+    } catch {
       toast.error("Błąd podczas pobierania ocen ucznia");
       setStore({ loading: false });
     }
@@ -75,7 +75,7 @@ export const useMarksStore = create<MarksState>((setStore) => ({
       } else {
         setStore({ marks: [], loading: false });
       }
-    } catch (err) {
+    } catch {
       toast.error("Nie udało się pobrać wszystkich ocen");
       setStore({ loading: false });
     }
@@ -115,7 +115,7 @@ export const useMarksStore = create<MarksState>((setStore) => ({
       }));
 
       toast.success("Ocena została zaktualizowana");
-    } catch (err) {
+    } catch {
       toast.error("Błąd aktualizacji oceny");
     }
   },
@@ -128,7 +128,7 @@ export const useMarksStore = create<MarksState>((setStore) => ({
       }));
 
       toast.success("Ocena została usunięta");
-    } catch (err) {
+    } catch {
       toast.error("Nie udało się usunąć oceny");
     }
   },

@@ -40,7 +40,7 @@ export const useTeachersStore = create<TeachersState>((setStore) => ({
       } else {
         setStore({teachers: [], loading: false});
       }
-    } catch (err) {
+    } catch {
       toast.error("Błąd podczas pobierania wykład...");
       setStore({loading: false});
     }
@@ -82,13 +82,13 @@ export const useTeachersStore = create<TeachersState>((setStore) => ({
         }));
 
         return `Nauczyciel dodany!`;
-      } catch (error: any) {
+      } catch {
         await deleteApp(tempApp);
-        throw error;
+        return `Błąd dodawania Nauczyciela!`;
       }
     })();
 
-    toast.promise(addProcess, {
+    await toast.promise(addProcess, {
       loading: "Tworzenie konta nauczyciela...",
       success: (msg) => msg,
       error: (err) => `Błąd: ${err.message}`,
@@ -109,8 +109,8 @@ export const useTeachersStore = create<TeachersState>((setStore) => ({
       }));
 
       toast.success("Dane nauczyciela zostały zaktualizowane!");
-    } catch (error: any) {
-      toast.error("Błąd aktualizacji: " + error.message);
+    } catch {
+      toast.error("Błąd aktualizacji");
     }
   },
 
@@ -121,7 +121,7 @@ export const useTeachersStore = create<TeachersState>((setStore) => ({
         teachers: state.teachers.filter((t) => t.uid !== uid),
       }));
       toast.success("Nauczyciel został usunięty");
-    } catch (error: any) {
+    } catch {
       toast.error("Nie udało się usunąć nauczyciela");
     }
   }

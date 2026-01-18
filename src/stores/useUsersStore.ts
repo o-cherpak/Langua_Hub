@@ -45,8 +45,7 @@ export const useUsersStore = create<UserState>((set) => ({
 
       set({ role: null });
       return null;
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    } catch (error) {
+    } catch {
       set({ role: "student" });
       return "student";
     }

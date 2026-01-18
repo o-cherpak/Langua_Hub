@@ -35,7 +35,7 @@ export const useCoursesStore = create<CoursesState>((setStore) => ({
       } else {
         setStore({courses: [], loading: false});
       }
-    } catch (err) {
+    } catch {
       toast.error("Błąd podczas pobierania kursów");
       setStore({loading: false});
     }
@@ -75,7 +75,7 @@ export const useCoursesStore = create<CoursesState>((setStore) => ({
       }));
 
       toast.success("Kurs został zaktualizowany");
-    } catch (err) {
+    } catch {
       toast.error("Błąd podczas edycji kursu");
     }
   },
@@ -88,7 +88,7 @@ export const useCoursesStore = create<CoursesState>((setStore) => ({
       }));
 
       toast.success("Kurs został usunięty");
-    } catch (err) {
+    } catch {
       toast.error("Błąd podczas usuwania kursu");
     }
   },

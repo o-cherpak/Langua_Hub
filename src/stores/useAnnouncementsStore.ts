@@ -39,7 +39,7 @@ export const useAnnouncementsStore = create<AnnouncementState>((setStore) => ({
       } else {
         setStore({ announcements: [], loading: false });
       }
-    } catch (err) {
+    } catch {
       toast.error("Błąd podczas pobierania ogłoszeń ");
       setStore({ loading: false });
     }
