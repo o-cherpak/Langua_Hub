@@ -1,13 +1,16 @@
 import {useEffect, useState} from "react";
-import {Container, Stack} from "@mui/material";
+import {Button, Container, Stack} from "@mui/material";
 import {AdminTable} from "../table/AdminTable.tsx";
 import {useStudentsStore} from "../../../stores/useStudentsStore.ts";
-
 import {Chip, Box} from "@mui/material";
 import type {ILanguage} from "../../../interfaces/ILanguage.ts";
 import {AdminForm, type FormField} from "../form/AdminForm.tsx";
 import {StudentModal} from "../modals/StudentModal.tsx";
 import type {IStudent} from "../../../interfaces/IStudent.ts";
+import {PDFDownloadLink} from "@react-pdf/renderer";
+import {StudentsPDF} from "../../../services/StudentsPDF.tsx";
+import {format} from "date-fns";
+import {pl} from "date-fns/locale";
 
 const studentColumns = [
   {key: "uid", label: "ID"},
@@ -42,6 +45,8 @@ export function AdminStudentsView() {
   const [editUser, setEditUser] = useState<any>(null);
   const [isEditOpen, setIsEditOpen] = useState(false);
 
+  const fileName = `studenci_${format(new Date(), "dd_MM_yyyy",{locale: pl})}.pdf`;
+
   const handleEditClick = (user: IStudent) => {
     setEditUser(user);
     setIsEditOpen(true);
@@ -72,6 +77,21 @@ export function AdminStudentsView() {
           fields={studentFormFields}
           onSave={addStudent}
         />
+
+        <PDFDownloadLink
+          document={<StudentsPDF students={students} />}
+          fileName={fileName}
+        >
+          {({ loading }) => (
+            <Button
+              variant="outlined"
+              color="primary"
+              disabled={loading}
+            >
+              {loading ? 'Generowanie...' : 'Pobierz PDF'}
+            </Button>
+          )}
+        </PDFDownloadLink>
 
         <AdminTable
           columns={studentColumns}
